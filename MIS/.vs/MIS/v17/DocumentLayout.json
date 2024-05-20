@@ -1,0 +1,131 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\configuracion\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\configuracion\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\recepcion\\recepcionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\recepcion\\recepcionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormCotizacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T19:59:04.517Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormCotizacion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAnwG0AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T20:12:55.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CotizacionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAkwD4AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T14:38:20.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecepcionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAD8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T14:36:02.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormRecepcion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ViewState": "AQIAADMBAAAAAAAAAAAMwGEBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T20:13:02.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Configuracion\\ClientesRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Configuracion\\ClientesRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Configuracion\\ClientesRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Configuracion\\ClientesRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAIwBwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T14:38:28.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormRecepcion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\PROYECTO LOCAL MIS\\ProyectoMIS\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\PROYECTO LOCAL MIS\\ProyectoMIS\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T20:01:00.399Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
