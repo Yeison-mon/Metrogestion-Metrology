@@ -42,6 +42,8 @@
             this.cmsTabla = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inspecciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRecepcion)).BeginInit();
             this.cmsTabla.SuspendLayout();
@@ -173,21 +175,36 @@
             this.imprimirToolStripMenuItem,
             this.verItemsToolStripMenuItem});
             this.cmsTabla.Name = "cmsTabla";
-            this.cmsTabla.Size = new System.Drawing.Size(131, 48);
+            this.cmsTabla.Size = new System.Drawing.Size(181, 70);
             // 
             // imprimirToolStripMenuItem
             // 
+            this.imprimirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recepcionToolStripMenuItem,
+            this.inspecciónToolStripMenuItem});
             this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.imprimirToolStripMenuItem.Text = "Imprimir";
             this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
             // 
             // verItemsToolStripMenuItem
             // 
             this.verItemsToolStripMenuItem.Name = "verItemsToolStripMenuItem";
-            this.verItemsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.verItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verItemsToolStripMenuItem.Text = "Ver Item(s)";
             this.verItemsToolStripMenuItem.Click += new System.EventHandler(this.verItemsToolStripMenuItem_Click);
+            // 
+            // recepcionToolStripMenuItem
+            // 
+            this.recepcionToolStripMenuItem.Name = "recepcionToolStripMenuItem";
+            this.recepcionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.recepcionToolStripMenuItem.Text = "Recepción";
+            // 
+            // inspecciónToolStripMenuItem
+            // 
+            this.inspecciónToolStripMenuItem.Name = "inspecciónToolStripMenuItem";
+            this.inspecciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inspecciónToolStripMenuItem.Text = "Inspección";
             // 
             // FormRecepciones
             // 
@@ -221,5 +238,7 @@
         private System.Windows.Forms.ContextMenuStrip cmsTabla;
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recepcionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inspecciónToolStripMenuItem;
     }
 }
