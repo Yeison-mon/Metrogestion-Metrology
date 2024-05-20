@@ -1867,7 +1867,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRecepcion</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\chiri\Downloads\PROYECTO LOCAL MIS\ProyectoMIS\MIS\MIS\Reportes\Recepcion\dsRecepcion.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\PROGRAMADOR\Downloads\MIS-01-04-2024\MIS\MIS\Reportes\Recepcion\dsRecepcion.xsd</rd:SchemaPath>
         <rd:TableName>recepciones</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1895,7 +1895,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsRecepcion</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\chiri\Downloads\PROYECTO LOCAL MIS\ProyectoMIS\MIS\MIS\Reportes\Recepcion\dsRecepcion.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\PROGRAMADOR\Downloads\MIS-01-04-2024\MIS\MIS\Reportes\Recepcion\dsRecepcion.xsd</rd:SchemaPath>
         <rd:TableName>recepcion_detalle</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

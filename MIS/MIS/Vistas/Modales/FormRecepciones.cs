@@ -15,11 +15,25 @@ namespace MIS.Vistas.Modales
     {
 
         public int recepcion { get; private set; }
+        private int idcliente = 0;
         public FormRecepciones()
         {
             InitializeComponent();
             cbEstados.SelectedIndex = 0;
             TablaRecepciones();
+            tablaRecepcion.CellMouseDown += (sender, e) =>
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                    {
+                        tablaRecepcion.ClearSelection();
+                        tablaRecepcion.Rows[e.RowIndex].Selected = true;
+                        Point localMousePosition = tablaRecepcion.PointToClient(Cursor.Position);
+                        cmsTabla.Show(tablaRecepcion, localMousePosition);
+                    }
+                }
+            };
         }
 
         private async void TablaRecepciones()
@@ -63,6 +77,7 @@ namespace MIS.Vistas.Modales
 
 
 
+
         private void txtRecepcion_TextChanged(object sender, EventArgs e)
         {
             if (tablaRecepcion.DataSource != null)
@@ -85,6 +100,35 @@ namespace MIS.Vistas.Modales
                 recepcion = Convert.ToInt32(fila.Cells["nro_recepcion"].Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+        }
+
+        private void verItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaRecepcion.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = tablaRecepcion.CurrentRow;
+                int recepcion = Convert.ToInt32(selectedRow.Cells["nro_recepcion"].Value);
+                ImprimirRecepcion(recepcion);
+            }
+        }
+        private void ImprimirRecepcion(int nro)
+        {
+            int numeroRecepcion = nro;
+            string tipo = "Recepcion";
+            if (numeroRecepcion > 0)
+            {
+                FormReportes reportes = new FormReportes(nro, tipo);
+                reportes.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No se ha cargado el número de documento");
             }
         }
     }

@@ -125,7 +125,8 @@ namespace MIS.Vistas.Comercial
             }
         }
         private void ImportarRecepcion() 
-        { 
+        {
+            CotizacionRepository importar = new CotizacionRepository();
 
         }
     }

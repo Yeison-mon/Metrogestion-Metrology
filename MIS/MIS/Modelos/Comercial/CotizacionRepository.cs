@@ -47,7 +47,7 @@ namespace MIS.Modelos.Comercial
             }
         }
 
-        public async Task<DataTable> TablaDetalle(int idcliente, int idcotizacion)
+        public async Task<DataTable> Detalle(int idcliente, int idcotizacion)
         {
             try
             {
@@ -76,6 +76,12 @@ namespace MIS.Modelos.Comercial
                 MessageBox.Show($"Error al obtener datos de la base de datos: {ex.Message}", "warning");
                 return null;
             }
+        }
+
+        public async Task<bool> ImportarDetalle(int recepcion)
+        {
+            string sql = "select * from ";
+            return true;
         }
         #endregion
     }

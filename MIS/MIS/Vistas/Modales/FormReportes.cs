@@ -71,9 +71,9 @@ namespace MIS.Vistas.Modales
         {
             RecepcionRepository recepcion = new RecepcionRepository();
             DataTable te = await recepcion.GetEncabezadoRecepcion(documento);
-            ReportDataSource rdsEncabezado = new ReportDataSource("encabezado", te);
+            ReportDataSource rdsEncabezado = new ReportDataSource("recepciones", te);
             DataTable td = await recepcion.GetDetalleRecepcion(documento);
-            ReportDataSource rdsDetalle = new ReportDataSource("detalle", td);
+            ReportDataSource rdsDetalle = new ReportDataSource("recepcion_detalle", td);
             rvRecepcion.LocalReport.DataSources.Clear();
             rvRecepcion.LocalReport.DataSources.Add(rdsEncabezado);
             rvRecepcion.LocalReport.DataSources.Add(rdsDetalle);

@@ -22,8 +22,8 @@
               <xs:element name="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_UserColumnName="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" type="xs:string" minOccurs="0" />
               <xs:element name="item" msprop:Generator_ColumnPropNameInTable="itemColumn" msprop:Generator_ColumnPropNameInRow="item" msprop:Generator_UserColumnName="item" msprop:Generator_ColumnVarNameInTable="columnitem" type="xs:string" minOccurs="0" />
               <xs:element name="material" msprop:Generator_ColumnPropNameInTable="materialColumn" msprop:Generator_ColumnPropNameInRow="material" msprop:Generator_UserColumnName="material" msprop:Generator_ColumnVarNameInTable="columnmaterial" type="xs:string" minOccurs="0" />
-              <xs:element name="firma" msprop:Generator_ColumnPropNameInRow="firma" msprop:Generator_ColumnPropNameInTable="firmaColumn" msprop:Generator_ColumnVarNameInTable="columnfirma" msprop:Generator_UserColumnName="firma" type="xs:string" minOccurs="0" />
-              <xs:element name="usuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="firma" msprop:Generator_UserColumnName="firma" msprop:Generator_ColumnPropNameInTable="firmaColumn" msprop:Generator_ColumnPropNameInRow="firma" msprop:Generator_ColumnVarNameInTable="columnfirma" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_UserColumnName="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

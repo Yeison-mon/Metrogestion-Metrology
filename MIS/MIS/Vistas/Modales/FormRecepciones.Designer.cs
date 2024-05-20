@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +39,12 @@
             this.labelRecepcion = new System.Windows.Forms.Label();
             this.txtRecepcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmsTabla = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRecepcion)).BeginInit();
+            this.cmsTabla.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +81,8 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaRecepcion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaRecepcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaRecepcion.ContextMenuStrip = this.cmsTabla;
+            this.tablaRecepcion.Cursor = System.Windows.Forms.Cursors.Arrow;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
@@ -160,6 +167,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Estado";
             // 
+            // cmsTabla
+            // 
+            this.cmsTabla.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imprimirToolStripMenuItem,
+            this.verItemsToolStripMenuItem});
+            this.cmsTabla.Name = "cmsTabla";
+            this.cmsTabla.Size = new System.Drawing.Size(131, 48);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            // 
+            // verItemsToolStripMenuItem
+            // 
+            this.verItemsToolStripMenuItem.Name = "verItemsToolStripMenuItem";
+            this.verItemsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.verItemsToolStripMenuItem.Text = "Ver Item(s)";
+            this.verItemsToolStripMenuItem.Click += new System.EventHandler(this.verItemsToolStripMenuItem_Click);
+            // 
             // FormRecepciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +205,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRecepcion)).EndInit();
+            this.cmsTabla.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -188,5 +218,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbEstados;
         private System.Windows.Forms.DataGridView tablaRecepcion;
+        private System.Windows.Forms.ContextMenuStrip cmsTabla;
+        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verItemsToolStripMenuItem;
     }
 }
