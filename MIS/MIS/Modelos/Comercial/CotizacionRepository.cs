@@ -78,10 +78,52 @@ namespace MIS.Modelos.Comercial
             }
         }
 
-        public async Task<bool> ImportarDetalle(int recepcion)
+        public async Task<bool> ImportarRecepcion(int idrecepcion)
         {
-            string sql = "select * from ";
-            return true;
+            try
+            {
+                string sql = $@"select string_agg(id::text, ',') as ids, string_agg(idequipo::text, ',') as  idsequipo, 
+                                string_agg(idmodelo::text,',')as idsmodelo, string_agg(idintervalo1::text, ',') as idsintervalo1, idcliente
+                                from recepcion_detalle rd where rd.idrecepcion = {idrecepcion} and cotizado = 0 group by idcliente";
+                DataTable dataTable = await dbHelper.ExecuteQueryAsync(sql);
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    string idsStr = row["ids"].ToString();
+                    string idsEquipoStr = row["idsequipo"].ToString();
+                    string idsModeloStr = row["ididsmodelos"].ToString();
+                    string idsIntercalo1Str = row["idsintervalo1"].ToString();
+                    int idcliente = (int)row["idcliente"];
+                    string[] idsArray = idsStr.Split(',');
+                    string[] idsEquipoArray = idsEquipoStr.Split(',');
+                    string[] idsModeloArray = idsModeloStr.Split(',');
+                    string[] idsIntervalo1Array = idsIntercalo1Str.Split(',');
+                    string update = "";
+                    for (int i = 0; i < idsArray.Length; i++)
+                    {
+                        string insert = $@"INSERT INTO public.cotizacion_detalle
+                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1)
+                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])});";
+                        if (dbHelper.ExecuteNonQuery(insert) <= 0)
+                        {
+                            MessageBox.Show($"Alerta: No todos los items fueron añadidos -> Cantidad añadida: {i+1}"); 
+                            return false;
+                        } else
+                        {
+                            update = $@"update recepcion_detalle set cotizado = 1 where id = {idsArray[i]}";
+                            dbHelper.ExecuteNonQuery(update);
+                        }
+                        update = $"UPDATE recepciones SET estado = 'Cotizado' WHERE id = {idrecepcion}";
+                        dbHelper.ExecuteNonQuery(update);
+                        return true;
+                    }
+                }
+                return true;
+            } catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message, "Acción cancelada");
+                return false;
+            }
         }
         #endregion
     }

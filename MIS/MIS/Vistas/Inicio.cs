@@ -16,10 +16,7 @@ namespace MIS.Vistas
         private bool menuAbierto = false;
         private bool mouseDown;
         private Point lastLocation;
-        private int tolerance = 12;
-        private const int WM_NCHITTEST = 132;
-        private const int HTBOTTOMRIGHT = 17;
-        private Rectangle sizeGripRectangle;
+        
         public Inicio()
         {
             InitializeComponent();

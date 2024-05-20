@@ -101,7 +101,8 @@ namespace MIS.Vistas.Comercial
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     recepcion = form.recepcion;
-                    //ImportarRecepcion(recepcion, 0);
+                    int id = form.idrecepcion;
+                    ImportarRecepcion(id);
                 }
             }
         }
@@ -124,7 +125,7 @@ namespace MIS.Vistas.Comercial
                 }
             }
         }
-        private void ImportarRecepcion() 
+        private void ImportarRecepcion(int id) 
         {
             CotizacionRepository importar = new CotizacionRepository();
 

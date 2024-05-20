@@ -199,12 +199,14 @@
             this.recepcionToolStripMenuItem.Name = "recepcionToolStripMenuItem";
             this.recepcionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.recepcionToolStripMenuItem.Text = "Recepción";
+            this.recepcionToolStripMenuItem.Click += new System.EventHandler(this.recepcionToolStripMenuItem_Click);
             // 
             // inspecciónToolStripMenuItem
             // 
             this.inspecciónToolStripMenuItem.Name = "inspecciónToolStripMenuItem";
             this.inspecciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inspecciónToolStripMenuItem.Text = "Inspección";
+            this.inspecciónToolStripMenuItem.Click += new System.EventHandler(this.inspecciónToolStripMenuItem_Click);
             // 
             // FormRecepciones
             // 

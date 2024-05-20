@@ -15,6 +15,7 @@ namespace MIS.Vistas.Modales
     {
 
         public int recepcion { get; private set; }
+        public int idrecepcion { get; private set; }
         private int idcliente = 0;
         public FormRecepciones()
         {
@@ -56,6 +57,7 @@ namespace MIS.Vistas.Modales
                     tablaRecepcion.Font = new Font("Calibri", 12F, FontStyle.Bold);
                     tablaRecepcion.Columns["id"].Visible = false;
                     tablaRecepcion.Columns["nro_recepcion"].Visible = false;
+                    tablaRecepcion.Columns["nro_inspeccion"].Visible = false;
                     tablaRecepcion.Columns["fila"].HeaderText = "#";
                     tablaRecepcion.Columns["anio"].HeaderText = "Año";
                     tablaRecepcion.Columns["recepcion"].HeaderText = "Recepción";
@@ -98,6 +100,7 @@ namespace MIS.Vistas.Modales
             {
                 DataGridViewRow fila = tablaRecepcion.Rows[filaSeleccionada];
                 recepcion = Convert.ToInt32(fila.Cells["nro_recepcion"].Value);
+                idrecepcion = Convert.ToInt32(fila.Cells["id"].Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -105,22 +108,20 @@ namespace MIS.Vistas.Modales
 
         private void verItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
             if (tablaRecepcion.CurrentRow != null)
             {
                 DataGridViewRow selectedRow = tablaRecepcion.CurrentRow;
                 int recepcion = Convert.ToInt32(selectedRow.Cells["nro_recepcion"].Value);
-                ImprimirRecepcion(recepcion);
             }
         }
-        private void ImprimirRecepcion(int nro)
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void Imprimir(int nro, string tipo)
         {
             int numeroRecepcion = nro;
-            string tipo = "Recepcion";
             if (numeroRecepcion > 0)
             {
                 FormReportes reportes = new FormReportes(nro, tipo);
@@ -129,6 +130,26 @@ namespace MIS.Vistas.Modales
             else
             {
                 MessageBox.Show("No se ha cargado el número de documento");
+            }
+        }
+
+        private void recepcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaRecepcion.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = tablaRecepcion.CurrentRow;
+                int recepcion = Convert.ToInt32(selectedRow.Cells["nro_recepcion"].Value);
+                Imprimir(recepcion, "Recepcion");
+            }
+        }
+
+        private void inspecciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaRecepcion.CurrentRow != null)
+            {
+                DataGridViewRow selectedRow = tablaRecepcion.CurrentRow;
+                int numero = Convert.ToInt32(selectedRow.Cells["nro_inspeccion"]?.Value);
+                Imprimir(numero, "Inspeccion");
             }
         }
     }
