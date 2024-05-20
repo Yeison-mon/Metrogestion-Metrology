@@ -152,7 +152,7 @@
             this.tcGeneral.Name = "tcGeneral";
             this.tcGeneral.Padding = new System.Drawing.Point(5, 3);
             this.tcGeneral.SelectedIndex = 0;
-            this.tcGeneral.Size = new System.Drawing.Size(1117, 905);
+            this.tcGeneral.Size = new System.Drawing.Size(1117, 981);
             this.tcGeneral.TabIndex = 3;
             this.tcGeneral.TabStop = false;
             // 
@@ -165,7 +165,7 @@
             this.tpRegistro.Location = new System.Drawing.Point(4, 28);
             this.tpRegistro.Margin = new System.Windows.Forms.Padding(0);
             this.tpRegistro.Name = "tpRegistro";
-            this.tpRegistro.Size = new System.Drawing.Size(1109, 873);
+            this.tpRegistro.Size = new System.Drawing.Size(1109, 949);
             this.tpRegistro.TabIndex = 0;
             this.tpRegistro.Text = "Registro";
             // 
@@ -182,14 +182,14 @@
             this.panelCotizacion.Margin = new System.Windows.Forms.Padding(0);
             this.panelCotizacion.Name = "panelCotizacion";
             this.panelCotizacion.Padding = new System.Windows.Forms.Padding(10);
-            this.panelCotizacion.Size = new System.Drawing.Size(1109, 873);
+            this.panelCotizacion.Size = new System.Drawing.Size(1109, 949);
             this.panelCotizacion.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(10, 538);
+            this.panel4.Location = new System.Drawing.Point(10, 614);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1089, 250);
@@ -564,7 +564,7 @@
             this.tablaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaDetalle.RowHeadersVisible = false;
             this.tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaDetalle.Size = new System.Drawing.Size(1089, 630);
+            this.tablaDetalle.Size = new System.Drawing.Size(1089, 706);
             this.tablaDetalle.TabIndex = 19;
             // 
             // ColumnNumero
@@ -909,7 +909,7 @@
             this.panel2.Controls.Add(this.btnGuardar);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(10, 788);
+            this.panel2.Location = new System.Drawing.Point(10, 864);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1089, 75);
@@ -926,6 +926,7 @@
             this.btnImportar.Size = new System.Drawing.Size(68, 68);
             this.btnImportar.TabIndex = 18;
             this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // btnAgregarItems
             // 

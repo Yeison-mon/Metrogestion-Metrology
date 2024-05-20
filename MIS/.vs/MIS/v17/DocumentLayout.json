@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\configuracion\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FormCotizacion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
@@ -54,15 +58,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FormCotizacion.cs",
               "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAnwG0AAAA8AAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAmwGAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T20:12:55.499Z"
+              "WhenOpened": "2024-05-15T20:12:55.499Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

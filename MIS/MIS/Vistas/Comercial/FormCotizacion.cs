@@ -1,5 +1,6 @@
 ﻿using MIS.Helpers;
 using MIS.Modelos.Comercial;
+using MIS.Reportes.Recepcion;
 using MIS.Vistas.Modales;
 using System;
 using System.Data;
@@ -16,6 +17,7 @@ namespace MIS.Vistas.Comercial
         }
         private int idcliente = 0;
         private int idcotizacion = 0;
+        private int recepcion = 0;
 
         private void labelSede_Click(object sender, EventArgs e)
         {
@@ -70,6 +72,7 @@ namespace MIS.Vistas.Comercial
             btnAgregarItems.Visible = false;
             btnImportar.Visible = false;
             btnLimpiar.Visible = false;
+            btnImprimir.Visible = false;
             idcliente = 0;
             idcotizacion = 0;
             txtDocumento.Text = string.Empty;
@@ -79,7 +82,6 @@ namespace MIS.Vistas.Comercial
             tablaDetalle.DataSource = null;
             tablaDetalle.Rows.Clear();
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             using (FormBuscarCliente form = new FormBuscarCliente())
@@ -92,7 +94,17 @@ namespace MIS.Vistas.Comercial
                 }
             }
         }
-
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            using (FormRecepciones form = new FormRecepciones())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    recepcion = form.recepcion;
+                    //Buscar(recepcion, 0);
+                }
+            }
+        }
         private async void BuscarCliente(int id, string documento, int idsede, int idcontacto)
         {
             CotizacionRepository cliente = new CotizacionRepository();
@@ -107,9 +119,10 @@ namespace MIS.Vistas.Comercial
                     btnAgregarItems.Enabled = true;
                     await FG.CargarCombos(cbSedes, "sedes", $"{idcliente}", idsede);
                     await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", idcontacto);
+                    btnImportar.Visible = true;
                     //TablaDetalle(idcliente, idcotizacion);
                 }
             }
-        }
+        }        
     }
 }
