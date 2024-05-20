@@ -101,7 +101,7 @@ namespace MIS.Vistas.Comercial
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     recepcion = form.recepcion;
-                    //Buscar(recepcion, 0);
+                    //ImportarRecepcion(recepcion, 0);
                 }
             }
         }
@@ -123,6 +123,10 @@ namespace MIS.Vistas.Comercial
                     //TablaDetalle(idcliente, idcotizacion);
                 }
             }
-        }        
+        }
+        private void ImportarRecepcion() 
+        { 
+
+        }
     }
 }
