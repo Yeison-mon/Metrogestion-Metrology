@@ -70,7 +70,6 @@ namespace MIS.Vistas.Comercial
         {
             btnGuardar.Visible = false;
             btnAgregarItems.Visible = false;
-            btnImportar.Visible = false;
             btnLimpiar.Visible = false;
             btnImprimir.Visible = false;
             idcliente = 0;
@@ -102,6 +101,10 @@ namespace MIS.Vistas.Comercial
                 {
                     recepcion = form.recepcion;
                     int id = form.idrecepcion;
+                    if (idcliente == 0)
+                    {
+                        BuscarCliente(form.idcliente, "", 0, 0);
+                    }
                     ImportarRecepcion(id);
                 }
             }
@@ -120,7 +123,6 @@ namespace MIS.Vistas.Comercial
                     btnAgregarItems.Enabled = true;
                     await FG.CargarCombos(cbSedes, "sedes", $"{idcliente}", idsede);
                     await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", idcontacto);
-                    btnImportar.Visible = true;
                     //TablaDetalle(idcliente, idcotizacion);
                 }
             }
@@ -132,7 +134,7 @@ namespace MIS.Vistas.Comercial
             if (importado)
             {
                 MessageBox.Show("Importado con éxito");
-                //Detalle
+                //TablaDetalle(idcliente, idcotizacion);
             }
         }
     }

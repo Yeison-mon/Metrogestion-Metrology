@@ -997,7 +997,7 @@
             this.tpConsultar.Location = new System.Drawing.Point(4, 28);
             this.tpConsultar.Margin = new System.Windows.Forms.Padding(0);
             this.tpConsultar.Name = "tpConsultar";
-            this.tpConsultar.Size = new System.Drawing.Size(1109, 873);
+            this.tpConsultar.Size = new System.Drawing.Size(1109, 949);
             this.tpConsultar.TabIndex = 1;
             this.tpConsultar.Text = "Consultar";
             // 
@@ -1015,7 +1015,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1109, 873);
+            this.panel1.Size = new System.Drawing.Size(1109, 949);
             this.panel1.TabIndex = 3;
             // 
             // tablaRecepciones
@@ -1063,7 +1063,7 @@
             this.tablaRecepciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaRecepciones.RowHeadersVisible = false;
             this.tablaRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaRecepciones.Size = new System.Drawing.Size(1089, 652);
+            this.tablaRecepciones.Size = new System.Drawing.Size(1089, 728);
             this.tablaRecepciones.TabIndex = 12;
             // 
             // tableLayoutPanel4
@@ -1278,7 +1278,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.panel3.Controls.Add(this.btnConsultar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(10, 788);
+            this.panel3.Location = new System.Drawing.Point(10, 864);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1089, 75);
             this.panel3.TabIndex = 11;

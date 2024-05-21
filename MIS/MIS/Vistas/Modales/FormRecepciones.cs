@@ -16,7 +16,7 @@ namespace MIS.Vistas.Modales
 
         public int recepcion { get; private set; }
         public int idrecepcion { get; private set; }
-        private int idcliente = 0;
+        public int idcliente { get; private set; }
         public FormRecepciones(int idcliente)
         {
             InitializeComponent();
@@ -59,6 +59,7 @@ namespace MIS.Vistas.Modales
                     tablaRecepcion.Columns["id"].Visible = false;
                     tablaRecepcion.Columns["nro_recepcion"].Visible = false;
                     tablaRecepcion.Columns["nro_inspeccion"].Visible = false;
+                    tablaRecepcion.Columns["idcliente"].Visible = false;
                     tablaRecepcion.Columns["fila"].HeaderText = "#";
                     tablaRecepcion.Columns["anio"].HeaderText = "Año";
                     tablaRecepcion.Columns["recepcion"].HeaderText = "Recepción";
@@ -102,6 +103,7 @@ namespace MIS.Vistas.Modales
                 DataGridViewRow fila = tablaRecepcion.Rows[filaSeleccionada];
                 recepcion = Convert.ToInt32(fila.Cells["nro_recepcion"].Value);
                 idrecepcion = Convert.ToInt32(fila.Cells["id"].Value);
+                idcliente = Convert.ToInt32(fila.Cells["idcliente"].Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

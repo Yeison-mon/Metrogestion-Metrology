@@ -665,7 +665,7 @@ namespace MIS.Modelos.Registros
             }
             
             string query = $@"
-                    select r.id, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, r.estado, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
+                    select r.id, r.idcliente, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, r.estado, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
                     to_char(r.fecha, 'DD-MM-YYYY') as fecha, count(rd.renglon) as cantidad, string_agg(distinct m.descripcion, ', ') as magnitud, ru.nombrecompleto as registrado_por, r.observacion
                             from recepciones r
                         inner join clientes c on c.id = r.idcliente
@@ -675,9 +675,8 @@ namespace MIS.Modelos.Registros
                         left join inspeccion_detalle id on id.idingreso = rd.id
                         left join inspecciones i on i.id = id.idinspeccion
                     {where}
-                    group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion
+                    group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente
                     order by r.recepcion desc";
-            MessageBox.Show(query);
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
             if (dataTable == null)
             {

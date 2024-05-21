@@ -82,8 +82,8 @@ namespace MIS.Modelos.Comercial
         {
             try
             {
-                string sql = $@"select string_agg(id::text, ',') as ids, string_agg(idequipo::text, ',') as  idsequipo, 
-                                string_agg(idmodelo::text,',')as idsmodelo, string_agg(idintervalo1::text, ',') as idsintervalo1, idcliente
+                string sql = $@"select string_agg(id::text, ',') as ids, string_agg(idequipo::text, ',') as  idsequipo, string_agg(codigo, ',') as codigos, 
+                                string_agg(idmodelo::text,',')as idsmodelo, string_agg(idintervalo1::text, ',') as idsintervalo1, string_agg(idintervalo2::text, ',') as idsintervalo2, idcliente
                                 from recepcion_detalle rd where rd.idrecepcion = {idrecepcion} and cotizado = 0 group by idcliente";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(sql);
                 if (dataTable.Rows.Count > 0)
@@ -93,17 +93,23 @@ namespace MIS.Modelos.Comercial
                     string idsEquipoStr = row["idsequipo"].ToString();
                     string idsModeloStr = row["idsmodelo"].ToString();
                     string idsIntercalo1Str = row["idsintervalo1"].ToString();
+                    string idsIntercalo2Str = row["idsintervalo2"].ToString();
+                    string seriesStr = row["series"].ToString();
+                    string codigosStr = row["codigos"].ToString();
                     int idcliente = (int)row["idcliente"];
                     string[] idsArray = idsStr.Split(',');
                     string[] idsEquipoArray = idsEquipoStr.Split(',');
                     string[] idsModeloArray = idsModeloStr.Split(',');
                     string[] idsIntervalo1Array = idsIntercalo1Str.Split(',');
+                    string[] idsIntervalo2Array = idsIntercalo2Str.Split(',');
+                    string[] seriesArray = seriesStr.Split(',');
+                    string[] codigosArray = codigosStr.Split(',');
                     string update = "";
                     for (int i = 0; i < idsArray.Length; i++)
                     {
                         string insert = $@"INSERT INTO public.cotizacion_detalle
-                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1)
-                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])});";
+                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1, idintervalo2, serie, codigo)
+                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])}, {int.Parse(idsIntervalo2Array[i])}, '{seriesArray[i]}', '{codigosArray[i]}');";
                         if (dbHelper.ExecuteNonQuery(insert) <= 0)
                         {
                             MessageBox.Show($"Alerta: No todos los items fueron añadidos -> Cantidad añadida: {i+1}"); 
