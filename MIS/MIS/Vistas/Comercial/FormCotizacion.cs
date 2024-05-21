@@ -96,7 +96,7 @@ namespace MIS.Vistas.Comercial
         }
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            using (FormRecepciones form = new FormRecepciones())
+            using (FormRecepciones form = new FormRecepciones(idcliente))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -125,10 +125,15 @@ namespace MIS.Vistas.Comercial
                 }
             }
         }
-        private void ImportarRecepcion(int id) 
+        private async void ImportarRecepcion(int id) 
         {
             CotizacionRepository importar = new CotizacionRepository();
-
+            bool importado = await importar.ImportarRecepcion(id);
+            if (importado)
+            {
+                MessageBox.Show("Importado con éxito");
+                //Detalle
+            }
         }
     }
 }

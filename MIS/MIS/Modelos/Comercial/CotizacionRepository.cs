@@ -91,7 +91,7 @@ namespace MIS.Modelos.Comercial
                     DataRow row = dataTable.Rows[0];
                     string idsStr = row["ids"].ToString();
                     string idsEquipoStr = row["idsequipo"].ToString();
-                    string idsModeloStr = row["ididsmodelos"].ToString();
+                    string idsModeloStr = row["idsmodelo"].ToString();
                     string idsIntercalo1Str = row["idsintervalo1"].ToString();
                     int idcliente = (int)row["idcliente"];
                     string[] idsArray = idsStr.Split(',');

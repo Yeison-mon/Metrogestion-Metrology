@@ -17,9 +17,10 @@ namespace MIS.Vistas.Modales
         public int recepcion { get; private set; }
         public int idrecepcion { get; private set; }
         private int idcliente = 0;
-        public FormRecepciones()
+        public FormRecepciones(int idcliente)
         {
             InitializeComponent();
+            this.idcliente = idcliente;
             cbEstados.SelectedIndex = 0;
             TablaRecepciones();
             tablaRecepcion.CellMouseDown += (sender, e) =>
@@ -43,7 +44,7 @@ namespace MIS.Vistas.Modales
             tablaRecepcion.Rows.Clear();
             RecepcionRepository recepciones = new RecepcionRepository();
             string estado = cbEstados.SelectedItem.ToString();
-            DataTable tabla = await recepciones.ModalRecepciones(estado);
+            DataTable tabla = await recepciones.ModalRecepciones(estado, idcliente);
 
             if (tabla != null)
             {

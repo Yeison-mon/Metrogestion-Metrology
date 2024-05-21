@@ -652,12 +652,16 @@ namespace MIS.Modelos.Registros
         }
         #endregion
         #region Modal Recepción
-        public async Task<DataTable> ModalRecepciones(string estado)
+        public async Task<DataTable> ModalRecepciones(string estado, int idcliente)
         {
-            string where = "";
+            string where = "where 1=1 ";
             if (estado != "Todos")
             {
-                where = $"where r.estado = '{estado}'";
+                where += $" and r.estado = '{estado}'";
+            }
+            if (idcliente > 0)
+            {
+                where += $" and r.idcliente = {idcliente}";
             }
             
             string query = $@"
@@ -673,6 +677,7 @@ namespace MIS.Modelos.Registros
                     {where}
                     group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion
                     order by r.recepcion desc";
+            MessageBox.Show(query);
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
             if (dataTable == null)
             {

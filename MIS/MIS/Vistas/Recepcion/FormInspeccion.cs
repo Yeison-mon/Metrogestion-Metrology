@@ -107,7 +107,7 @@ namespace MIS.Vistas.Recepcion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            using (FormRecepciones form = new FormRecepciones())
+            using (FormRecepciones form = new FormRecepciones(0))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
