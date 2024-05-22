@@ -51,16 +51,28 @@ namespace MIS.Modelos.Comercial
         {
             try
             {
-                string where = "";
-                if (idcotizacion > 0)
-                {
-                    where += $" where r.recepcion = {idcotizacion} and cd.idcliente = {idcliente}";
-                }
-                else
-                {
-                    where += $" where cd.idrecepcion = 0 and cd.idcliente = {idcliente}";
-                }
-                string query = $@"";
+
+                string where = $" where cd.idcliente = {idcliente} and cd.idcotizacion = {idcotizacion}";
+                string query = $@"SELECT cd.id, renglon, cd.idcliente,
+                           'NR-' || to_char(rd.fechaing, 'YY-') || to_char(r.recepcion, '0000') || '-' || rd.renglon AS ingreso,
+                           'EQUIPO: ' || e.descripcion || '; MAGNITUD: ' || m.descripcion ||
+                           '; MARCA: ' || ma.descripcion || '; MODELO: ' || mo.descripcion || CASE WHEN cd.codigo not in ('', 'Sin Información') THEN ' SERIE: ' || cd.serie || ' CÓDIGO: ' || cd.codigo ELSE ' SERIE: ' || cd.serie end ||
+                           CASE WHEN cd.idintervalo1 > 0 then '; RANGO: (' || mi1.desde || ' a ' || mi1.hasta || ') ' || mi1.medida else '; RANGO: VER ESPECIFICACIONES' end ||
+                           CASE WHEN cd.idintervalo2 > 0 then '; RANGO 2: (' || mi2.desde || ' a ' || mi2.hasta || ') ' || mi2.medida else '' end as descripcion,
+                           cd.precio, cd.iva, cd.descuento, case when cd.cantidad = 0 then 1 else cd.cantidad end as cantidad, tm.descripcion as moneda
+                           from cotizacion_detalle cd 
+                        INNER JOIN equipos e ON cd.idequipo = e.id  
+                        INNER JOIN magnitudes m ON e.idmagnitud = m.id  
+                        INNER JOIN magnitud_intervalos mi1 ON cd.idintervalo1 = mi1.id  
+                        inner JOIN modelos mo ON cd.idmodelo = mo.id  
+                        inner JOIN marcas ma ON mo.idmarca = ma.id
+                        inner join magnitud_intervalos mi2 ON cd.idintervalo2 = mi2.id
+                        inner join tipo_moneda tm on tm.id = cd.idmoneda
+                        left join recepcion_detalle rd on rd.id = cd.idingreso 
+                        left JOIN recepciones r ON rd.idrecepcion = r.id
+                        left join inspeccion_detalle id on id.idingreso = rd.id
+                        {where} order by id desc";
+                //MessageBox.Show(query);
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
                 if (dataTable != null)
                 {
@@ -82,7 +94,7 @@ namespace MIS.Modelos.Comercial
         {
             try
             {
-                string sql = $@"select string_agg(id::text, ',') as ids, string_agg(idequipo::text, ',') as  idsequipo, string_agg(codigo, ',') as codigos, 
+                string sql = $@"select string_agg(id::text, ',') as ids, string_agg(idequipo::text, ',') as  idsequipo, string_agg(serie, ',') as series, string_agg(codigo, ',') as codigos, 
                                 string_agg(idmodelo::text,',')as idsmodelo, string_agg(idintervalo1::text, ',') as idsintervalo1, string_agg(idintervalo2::text, ',') as idsintervalo2, idcliente
                                 from recepcion_detalle rd where rd.idrecepcion = {idrecepcion} and cotizado = 0 group by idcliente";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(sql);
@@ -108,8 +120,8 @@ namespace MIS.Modelos.Comercial
                     for (int i = 0; i < idsArray.Length; i++)
                     {
                         string insert = $@"INSERT INTO public.cotizacion_detalle
-                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1, idintervalo2, serie, codigo)
-                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])}, {int.Parse(idsIntervalo2Array[i])}, '{seriesArray[i]}', '{codigosArray[i]}');";
+                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1, idintervalo2, serie, codigo, iva)
+                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])}, {int.Parse(idsIntervalo2Array[i])}, '{seriesArray[i]}', '{codigosArray[i]}', 19);";
                         if (dbHelper.ExecuteNonQuery(insert) <= 0)
                         {
                             MessageBox.Show($"Alerta: No todos los items fueron añadidos -> Cantidad añadida: {i+1}"); 

@@ -4,6 +4,7 @@ using MIS.Reportes.Recepcion;
 using MIS.Vistas.Modales;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MIS.Vistas.Comercial
@@ -123,7 +124,8 @@ namespace MIS.Vistas.Comercial
                     btnAgregarItems.Enabled = true;
                     await FG.CargarCombos(cbSedes, "sedes", $"{idcliente}", idsede);
                     await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", idcontacto);
-                    //TablaDetalle(idcliente, idcotizacion);
+                    btnLimpiar.Enabled = true;
+                    TablaDetalle();
                 }
             }
         }
@@ -134,7 +136,43 @@ namespace MIS.Vistas.Comercial
             if (importado)
             {
                 MessageBox.Show("Importado con éxito");
-                //TablaDetalle(idcliente, idcotizacion);
+                TablaDetalle();
+            }
+        }
+
+        private async void TablaDetalle()
+        {
+            CotizacionRepository detalle = new CotizacionRepository();
+            DataTable tabla = await detalle.Detalle(idcliente, idcotizacion);
+            if (tabla != null)
+            {
+                if (tabla.Rows.Count > 0)
+                {
+                    tablaDetalle.Rows.Clear();
+                    int numeroFila = 1;
+                    foreach (DataRow row in tabla.Rows)
+                    {
+                        int id = Convert.ToInt32(row["id"]);
+                        string ingreso = row["ingreso"].ToString();
+                        string descripcion = row["descripcion"].ToString();
+                        string moneda = row["moneda"].ToString();
+                        decimal precio = Convert.ToDecimal(row["precio"]);
+                        int cantidad = Convert.ToInt32(row["precio"]);
+                        int iva = Convert.ToInt32(row["iva"]);
+                        int descuento = Convert.ToInt32(row["descuento"]);
+                        decimal subtotal = (precio * cantidad) - (precio*cantidad*descuento/100);
+                        tablaDetalle.CurrentCell = null;
+                        tablaDetalle.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
+                        tablaDetalle.Columns["ColumnDescripcion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                        tablaDetalle.Columns["ColumnCantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        tablaDetalle.Columns["ColumnDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        tablaDetalle.Columns["ColumnIva"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        tablaDetalle.Rows.Add(id, numeroFila, ingreso, descripcion, "", moneda, cantidad, precio, descuento, iva, subtotal);
+                        numeroFila++;
+                    }
+                }
             }
         }
     }
