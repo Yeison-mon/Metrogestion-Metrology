@@ -63,6 +63,16 @@ namespace MIS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adjuntar64 {
+            get {
+                object obj = ResourceManager.GetObject("Adjuntar64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap advertencia64 {
             get {
                 object obj = ResourceManager.GetObject("advertencia64", resourceCulture);
@@ -96,6 +106,16 @@ namespace MIS.Properties {
         internal static System.Drawing.Bitmap agregar64 {
             get {
                 object obj = ResourceManager.GetObject("agregar64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap aprobado_rechazar64 {
+            get {
+                object obj = ResourceManager.GetObject("aprobado_rechazar64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

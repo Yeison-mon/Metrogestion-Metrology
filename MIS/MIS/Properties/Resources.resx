@@ -154,8 +154,11 @@
   <data name="cancelar64rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar64rojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimizar-ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar-ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="importar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\importar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contraer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contraer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="advertencia64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\advertencia64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,6 +220,9 @@
   <data name="etiquetas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\etiquetas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Adjuntar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adjuntar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="recepcion32blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recepcion32blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,8 +235,8 @@
   <data name="agregar32verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar32verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contraer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contraer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimizar-ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizar-ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grabar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grabar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,7 +247,7 @@
   <data name="LogoCircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoCircular1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="importar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\importar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aprobado_rechazar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aprobado_rechazar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

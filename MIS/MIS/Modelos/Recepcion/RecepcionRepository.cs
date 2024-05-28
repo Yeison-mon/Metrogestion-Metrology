@@ -654,7 +654,7 @@ namespace MIS.Modelos.Registros
         #region Modal Recepción
         public async Task<DataTable> ModalRecepciones(string estado, int idcliente)
         {
-            string where = "where 1=1 ";
+            string where = "where r.estado != 'Cotizado' ";
             if (estado != "Todos")
             {
                 where += $" and r.estado = '{estado}'";

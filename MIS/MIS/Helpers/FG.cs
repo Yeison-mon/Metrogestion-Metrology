@@ -41,10 +41,23 @@ namespace MIS.Helpers
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, format);
-                byte[] imageBytes = ms.ToArray();
-                return Convert.ToBase64String(imageBytes);
+                if (image != null)
+                {
+                    image.Save(ms, format);
+                    byte[] imageBytes = ms.ToArray();
+                    return Convert.ToBase64String(imageBytes);
+                }else
+                {
+                    return string.Empty;
+                }
+                
             }
+        }
+
+        public static string FileToBase64(string filePath)
+        {
+            byte[] fileBytes = File.ReadAllBytes(filePath);
+            return Convert.ToBase64String(fileBytes);
         }
     }
 }

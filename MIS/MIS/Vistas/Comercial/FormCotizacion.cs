@@ -3,8 +3,10 @@ using MIS.Modelos.Comercial;
 using MIS.Reportes.Recepcion;
 using MIS.Vistas.Modales;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MIS.Vistas.Comercial
@@ -15,8 +17,17 @@ namespace MIS.Vistas.Comercial
         {
             InitializeComponent();
             limpiar();
+            cmsAdjuntos.Visible = false;
+            btnAdjuntar.Click += (sender, e) =>
+            {
+                MouseEventArgs me = e as MouseEventArgs;
+                Point localMousePosition = btnAdjuntar.PointToClient(Cursor.Position);
+                cmsAdjuntos.Show(btnAdjuntar, localMousePosition);
+                
+            };
         }
         private int idcliente = 0;
+        private int cotizacion = 0;
         private int idcotizacion = 0;
         private int recepcion = 0;
 
@@ -74,13 +85,19 @@ namespace MIS.Vistas.Comercial
             btnLimpiar.Visible = false;
             btnImprimir.Visible = false;
             idcliente = 0;
+            cotizacion = 0;
             idcotizacion = 0;
+            recepcion = 0;
             txtDocumento.Text = string.Empty;
             txtCliente.Text = string.Empty;
             txtAnio.Text = DateTime.Now.Year.ToString();
             txtEstado.Text = "Temporal";
             tablaDetalle.DataSource = null;
             tablaDetalle.Rows.Clear();
+            cbContactos.DataSource = null;
+            cbContactos.Items.Clear();
+            cbSedes.DataSource = null;
+            cbSedes.Items.Clear();
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -124,7 +141,7 @@ namespace MIS.Vistas.Comercial
                     btnAgregarItems.Enabled = true;
                     await FG.CargarCombos(cbSedes, "sedes", $"{idcliente}", idsede);
                     await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", idcontacto);
-                    btnLimpiar.Enabled = true;
+                    btnLimpiar.Visible = true;
                     TablaDetalle();
                 }
             }
@@ -143,7 +160,7 @@ namespace MIS.Vistas.Comercial
         private async void TablaDetalle()
         {
             CotizacionRepository detalle = new CotizacionRepository();
-            DataTable tabla = await detalle.Detalle(idcliente, idcotizacion);
+            DataTable tabla = await detalle.Detalle(idcliente, cotizacion);
             if (tabla != null)
             {
                 if (tabla.Rows.Count > 0)
@@ -155,6 +172,7 @@ namespace MIS.Vistas.Comercial
                         int id = Convert.ToInt32(row["id"]);
                         string ingreso = row["ingreso"].ToString();
                         string descripcion = row["descripcion"].ToString();
+                        string inspeccion = row["inspeccion"].ToString();
                         string moneda = row["moneda"].ToString();
                         decimal precio = Convert.ToDecimal(row["precio"]);
                         int cantidad = Convert.ToInt32(row["precio"]);
@@ -164,16 +182,228 @@ namespace MIS.Vistas.Comercial
                         tablaDetalle.CurrentCell = null;
                         tablaDetalle.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
                         tablaDetalle.Columns["ColumnDescripcion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                        tablaDetalle.Columns["ColumnInspeccion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                         tablaDetalle.Columns["ColumnCantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         tablaDetalle.Columns["ColumnDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         tablaDetalle.Columns["ColumnIva"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                         tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Rows.Add(id, numeroFila, ingreso, descripcion, "", moneda, cantidad, precio, descuento, iva, subtotal);
+                        tablaDetalle.Rows.Add(id, numeroFila, ingreso, descripcion, inspeccion, "", moneda, cantidad, precio, descuento, iva, subtotal);
                         numeroFila++;
                     }
+                    btnGuardar.Visible = true;
                 }
             }
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDocumento.Text.Trim().Length == 0)
+            {
+                idcliente = 0;
+                cotizacion = 0;
+                idcotizacion = 0;
+                limpiar();
+            }
+
+                
+        }
+
+        private void txtCotizacion_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCotizacion.Text.Trim().Length == 0)
+            {
+                idcliente = 0;
+                cotizacion = 0;
+                idcotizacion = 0;
+                limpiar();
+            }
+        }
+
+       
+        private async void Buscar(int cotizacion, string anio)
+        {
+            CotizacionRepository buscar = new CotizacionRepository();
+            DataTable tabla = await buscar.Buscar(cotizacion, anio);
+            if (tabla != null)
+            {
+                if (tabla.Rows.Count > 0)
+                {
+                    this.cotizacion = Convert.ToInt32(tabla.Rows[0]["cotizacion"]);
+                    idcotizacion = Convert.ToInt32(tabla.Rows[0]["id"]);
+                    idcliente = Convert.ToInt32(tabla.Rows[0]["idcliente"]);
+                    txtAnio.Text = tabla.Rows[0]["anio"].ToString();
+                    txtEstado.Text = tabla.Rows[0]["estado"].ToString();
+                    int idsede = Convert.ToInt32(tabla.Rows[0]["idsede"]);
+                    int idcontacto= Convert.ToInt32(tabla.Rows[0]["idcontacto"]);
+                    BuscarCliente(idcliente, "", idsede, idcontacto);
+                    btnImprimir.Visible = true;
+                    btnAdjuntar.Visible = true;
+                    btnAprobar.Visible = true;
+                }
+            }
+        }
+
+        private void txtDocumento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && txtDocumento.Text.Length > 0)
+            {
+                BuscarCliente(0, txtDocumento.Text, 0, 0);
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private async void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            List<int> ids = new List<int>();
+            int idsede = 0;
+            int idcontacto = 0;
+            if (cbSedes.SelectedValue != null)
+                idsede = (int)cbSedes.SelectedValue;
+            else
+                MessageBox.Show("Debe agregar una sede al cliente");
+            if (cbContactos.SelectedValue != null)
+                idcontacto = (int)cbContactos.SelectedValue;
+            else
+                MessageBox.Show("Debe agregar un contacto al cliente");
+            foreach (DataGridViewRow row in tablaDetalle.Rows)
+            {
+                int id = Convert.ToInt32(row.Cells["ColumnId"].Value);
+                ids.Add(id);
+            }
+            CotizacionRepository guardar = new CotizacionRepository();
+            int cotizacion = await guardar.Guardar(ids, idcliente, idsede, idcontacto, this.cotizacion, "");
+            if (cotizacion > 0)
+            {
+                Buscar(cotizacion, txtAnio.Text);
+                txtCotizacion.Text = cotizacion.ToString();
+                btnAdjuntar.Visible = true;
+                btnAprobar.Visible = true;
+                btnImprimir.Visible = true;
+            }
+            
+        }
+
+        private void txtCotizacion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab) && txtCotizacion.Text.Length > 0)
+            {
+                Buscar(int.Parse(txtCotizacion.Text), txtAnio.Text);
+                e.SuppressKeyPress = true;
+            }
+            
+        }
+
+        private void btnAprobar_Click(object sender, EventArgs e)
+        {
+            using (FormAprobarCotizacion form = new FormAprobarCotizacion(idcotizacion))
+            {
+                DialogResult result = form.ShowDialog();
+                Buscar(cotizacion, txtAnio.Text);
+            }
+        }
+
+        private async void AdjuntarCotizacion_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos PDF|*.pdf";
+            openFileDialog.Title = "Seleccionar archivo PDF";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                try
+                {
+                    string base64String = FG.FileToBase64(filePath);
+                    CotizacionRepository adjuntar = new CotizacionRepository();
+                    await adjuntar.AdjuntarArchivo(idcotizacion, base64String, "COTIZACION ADJUNTO");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async void AdjuntarAnexo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos PDF|*.pdf";
+            openFileDialog.Title = "Seleccionar archivo PDF";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                try
+                {
+                    string base64String = FG.FileToBase64(filePath);
+                    CotizacionRepository adjuntar = new CotizacionRepository();
+                    await adjuntar.AdjuntarArchivo(idcotizacion, base64String, "COTIZACION ANEXO");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async void VerCotizacionAdj_Click(object sender, EventArgs e)
+        {
+            
+            string tipo = "COTIZACION ADJUNTO";
+
+            CotizacionRepository adjunto = new CotizacionRepository();
+            var (tipoArchivo, base64) = await adjunto.VerAdjunto(idcotizacion, tipo);
+
+            if (!string.IsNullOrEmpty(base64))
+            {
+                byte[] fileBytes = Convert.FromBase64String(base64);
+
+                // Guardar el archivo temporalmente
+                string tempFilePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.pdf");
+                File.WriteAllBytes(tempFilePath, fileBytes);
+
+                // Abrir el archivo con el visor de PDF predeterminado del sistema
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = tempFilePath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el adjunto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void VerAnexoAdj_Click(object sender, EventArgs e)
+        {
+            string tipo = "COTIZACION ANEXO";
+
+            CotizacionRepository adjunto = new CotizacionRepository();
+            var (tipoArchivo, base64) = await adjunto.VerAdjunto(idcotizacion, tipo);
+
+            if (!string.IsNullOrEmpty(base64))
+            {
+                byte[] fileBytes = Convert.FromBase64String(base64);
+                string tempFilePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.pdf");
+                File.WriteAllBytes(tempFilePath, fileBytes);
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = tempFilePath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el adjunto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

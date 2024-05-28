@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,9 +61,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.tablaDetalle = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnInspeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCertificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnMoneda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +90,14 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelContenedorPrincipar = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAprobar = new System.Windows.Forms.Button();
+            this.btnAdjuntar = new System.Windows.Forms.Button();
+            this.cmsAdjuntos = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AdjuntarCotizacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdjuntarAnexo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.VerCotizacionAdj = new System.Windows.Forms.ToolStripMenuItem();
+            this.VerAnexoAdj = new System.Windows.Forms.ToolStripMenuItem();
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnAgregarItems = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -119,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaDetalle)).BeginInit();
             this.tableLayoutPanelContainer2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.cmsAdjuntos.SuspendLayout();
             this.tpConsultar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRecepciones)).BeginInit();
@@ -135,7 +147,7 @@
             this.labelDescripcion.ForeColor = System.Drawing.Color.Black;
             this.labelDescripcion.Location = new System.Drawing.Point(0, 0);
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(1117, 64);
+            this.labelDescripcion.Size = new System.Drawing.Size(1052, 64);
             this.labelDescripcion.TabIndex = 1;
             this.labelDescripcion.Text = "COTIZACIÓN";
             this.labelDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,7 +164,7 @@
             this.tcGeneral.Name = "tcGeneral";
             this.tcGeneral.Padding = new System.Drawing.Point(5, 3);
             this.tcGeneral.SelectedIndex = 0;
-            this.tcGeneral.Size = new System.Drawing.Size(1117, 981);
+            this.tcGeneral.Size = new System.Drawing.Size(1052, 981);
             this.tcGeneral.TabIndex = 3;
             this.tcGeneral.TabStop = false;
             // 
@@ -165,7 +177,7 @@
             this.tpRegistro.Location = new System.Drawing.Point(4, 28);
             this.tpRegistro.Margin = new System.Windows.Forms.Padding(0);
             this.tpRegistro.Name = "tpRegistro";
-            this.tpRegistro.Size = new System.Drawing.Size(1109, 949);
+            this.tpRegistro.Size = new System.Drawing.Size(1044, 949);
             this.tpRegistro.TabIndex = 0;
             this.tpRegistro.Text = "Registro";
             // 
@@ -182,7 +194,7 @@
             this.panelCotizacion.Margin = new System.Windows.Forms.Padding(0);
             this.panelCotizacion.Name = "panelCotizacion";
             this.panelCotizacion.Padding = new System.Windows.Forms.Padding(10);
-            this.panelCotizacion.Size = new System.Drawing.Size(1109, 949);
+            this.panelCotizacion.Size = new System.Drawing.Size(1044, 949);
             this.panelCotizacion.TabIndex = 2;
             // 
             // panel4
@@ -192,7 +204,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 614);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1089, 250);
+            this.panel4.Size = new System.Drawing.Size(1024, 250);
             this.panel4.TabIndex = 20;
             // 
             // tableLayoutPanel2
@@ -222,7 +234,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtSubtotal, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(801, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(736, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 9;
@@ -527,9 +539,11 @@
             this.tablaDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
             this.ColumnNumero,
             this.ColumnIngreso,
             this.ColumnDescripcion,
+            this.ColumnInspeccion,
             this.ColumnCertificacion,
             this.ColumnMoneda,
             this.ColumnCantidad,
@@ -564,8 +578,16 @@
             this.tablaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaDetalle.RowHeadersVisible = false;
             this.tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaDetalle.Size = new System.Drawing.Size(1089, 706);
+            this.tablaDetalle.Size = new System.Drawing.Size(1024, 706);
             this.tablaDetalle.TabIndex = 19;
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "ID";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Visible = false;
+            this.ColumnId.Width = 28;
             // 
             // ColumnNumero
             // 
@@ -587,6 +609,13 @@
             this.ColumnDescripcion.Name = "ColumnDescripcion";
             this.ColumnDescripcion.ReadOnly = true;
             this.ColumnDescripcion.Width = 112;
+            // 
+            // ColumnInspeccion
+            // 
+            this.ColumnInspeccion.HeaderText = "Inspección";
+            this.ColumnInspeccion.Name = "ColumnInspeccion";
+            this.ColumnInspeccion.ReadOnly = true;
+            this.ColumnInspeccion.Width = 105;
             // 
             // ColumnCertificacion
             // 
@@ -669,7 +698,7 @@
             this.tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelContainer2.Size = new System.Drawing.Size(1089, 148);
+            this.tableLayoutPanelContainer2.Size = new System.Drawing.Size(1024, 148);
             this.tableLayoutPanelContainer2.TabIndex = 7;
             // 
             // cbContactos
@@ -754,6 +783,8 @@
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(213, 27);
             this.txtDocumento.TabIndex = 21;
+            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
+            this.txtDocumento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDocumento_KeyDown);
             // 
             // label10
             // 
@@ -854,6 +885,8 @@
             this.txtCotizacion.Size = new System.Drawing.Size(94, 27);
             this.txtCotizacion.TabIndex = 18;
             this.txtCotizacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCotizacion.TextChanged += new System.EventHandler(this.txtCotizacion_TextChanged);
+            this.txtCotizacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCotizacion_KeyDown);
             // 
             // labelEstado
             // 
@@ -896,12 +929,14 @@
             this.tableLayoutPanelContenedorPrincipar.RowCount = 1;
             this.tableLayoutPanelContenedorPrincipar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelContenedorPrincipar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanelContenedorPrincipar.Size = new System.Drawing.Size(1089, 0);
+            this.tableLayoutPanelContenedorPrincipar.Size = new System.Drawing.Size(1024, 0);
             this.tableLayoutPanelContenedorPrincipar.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
+            this.panel2.Controls.Add(this.btnAprobar);
+            this.panel2.Controls.Add(this.btnAdjuntar);
             this.panel2.Controls.Add(this.btnImportar);
             this.panel2.Controls.Add(this.btnAgregarItems);
             this.panel2.Controls.Add(this.btnLimpiar);
@@ -912,8 +947,80 @@
             this.panel2.Location = new System.Drawing.Point(10, 864);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1089, 75);
+            this.panel2.Size = new System.Drawing.Size(1024, 75);
             this.panel2.TabIndex = 11;
+            // 
+            // btnAprobar
+            // 
+            this.btnAprobar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAprobar.FlatAppearance.BorderSize = 0;
+            this.btnAprobar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAprobar.Image = global::MIS.Properties.Resources.aprobado_rechazar64;
+            this.btnAprobar.Location = new System.Drawing.Point(448, 3);
+            this.btnAprobar.Name = "btnAprobar";
+            this.btnAprobar.Size = new System.Drawing.Size(68, 68);
+            this.btnAprobar.TabIndex = 20;
+            this.btnAprobar.UseVisualStyleBackColor = true;
+            this.btnAprobar.Visible = false;
+            this.btnAprobar.Click += new System.EventHandler(this.btnAprobar_Click);
+            // 
+            // btnAdjuntar
+            // 
+            this.btnAdjuntar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdjuntar.ContextMenuStrip = this.cmsAdjuntos;
+            this.btnAdjuntar.FlatAppearance.BorderSize = 0;
+            this.btnAdjuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjuntar.Image = global::MIS.Properties.Resources.Adjuntar64;
+            this.btnAdjuntar.Location = new System.Drawing.Point(374, 3);
+            this.btnAdjuntar.Name = "btnAdjuntar";
+            this.btnAdjuntar.Size = new System.Drawing.Size(68, 68);
+            this.btnAdjuntar.TabIndex = 19;
+            this.btnAdjuntar.UseVisualStyleBackColor = true;
+            this.btnAdjuntar.Visible = false;
+            // 
+            // cmsAdjuntos
+            // 
+            this.cmsAdjuntos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AdjuntarCotizacion,
+            this.AdjuntarAnexo,
+            this.toolStripSeparator1,
+            this.VerCotizacionAdj,
+            this.VerAnexoAdj});
+            this.cmsAdjuntos.Name = "cmsAdjuntos";
+            this.cmsAdjuntos.Size = new System.Drawing.Size(180, 98);
+            // 
+            // AdjuntarCotizacion
+            // 
+            this.AdjuntarCotizacion.Name = "AdjuntarCotizacion";
+            this.AdjuntarCotizacion.Size = new System.Drawing.Size(179, 22);
+            this.AdjuntarCotizacion.Text = "Adjuntar Cotizacion";
+            this.AdjuntarCotizacion.Click += new System.EventHandler(this.AdjuntarCotizacion_Click);
+            // 
+            // AdjuntarAnexo
+            // 
+            this.AdjuntarAnexo.Name = "AdjuntarAnexo";
+            this.AdjuntarAnexo.Size = new System.Drawing.Size(179, 22);
+            this.AdjuntarAnexo.Text = "Adjuntar Anexo";
+            this.AdjuntarAnexo.Click += new System.EventHandler(this.AdjuntarAnexo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
+            // 
+            // VerCotizacionAdj
+            // 
+            this.VerCotizacionAdj.Name = "VerCotizacionAdj";
+            this.VerCotizacionAdj.Size = new System.Drawing.Size(179, 22);
+            this.VerCotizacionAdj.Text = "Ver Cotizacion";
+            this.VerCotizacionAdj.Click += new System.EventHandler(this.VerCotizacionAdj_Click);
+            // 
+            // VerAnexoAdj
+            // 
+            this.VerAnexoAdj.Name = "VerAnexoAdj";
+            this.VerAnexoAdj.Size = new System.Drawing.Size(179, 22);
+            this.VerAnexoAdj.Text = "Ver Anexo";
+            this.VerAnexoAdj.Click += new System.EventHandler(this.VerAnexoAdj_Click);
             // 
             // btnImportar
             // 
@@ -934,7 +1041,7 @@
             this.btnAgregarItems.FlatAppearance.BorderSize = 0;
             this.btnAgregarItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarItems.Image = global::MIS.Properties.Resources.agregar64;
-            this.btnAgregarItems.Location = new System.Drawing.Point(1011, 4);
+            this.btnAgregarItems.Location = new System.Drawing.Point(946, 4);
             this.btnAgregarItems.Name = "btnAgregarItems";
             this.btnAgregarItems.Size = new System.Drawing.Size(68, 68);
             this.btnAgregarItems.TabIndex = 17;
@@ -951,6 +1058,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(68, 68);
             this.btnLimpiar.TabIndex = 16;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnImprimir
             // 
@@ -975,6 +1083,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(68, 68);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnBuscar
             // 
@@ -997,7 +1106,7 @@
             this.tpConsultar.Location = new System.Drawing.Point(4, 28);
             this.tpConsultar.Margin = new System.Windows.Forms.Padding(0);
             this.tpConsultar.Name = "tpConsultar";
-            this.tpConsultar.Size = new System.Drawing.Size(1109, 949);
+            this.tpConsultar.Size = new System.Drawing.Size(1044, 949);
             this.tpConsultar.TabIndex = 1;
             this.tpConsultar.Text = "Consultar";
             // 
@@ -1015,7 +1124,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(1109, 949);
+            this.panel1.Size = new System.Drawing.Size(1044, 949);
             this.panel1.TabIndex = 3;
             // 
             // tablaRecepciones
@@ -1063,7 +1172,7 @@
             this.tablaRecepciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.tablaRecepciones.RowHeadersVisible = false;
             this.tablaRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaRecepciones.Size = new System.Drawing.Size(1089, 728);
+            this.tablaRecepciones.Size = new System.Drawing.Size(1024, 728);
             this.tablaRecepciones.TabIndex = 12;
             // 
             // tableLayoutPanel4
@@ -1084,7 +1193,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1089, 63);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1024, 63);
             this.tableLayoutPanel4.TabIndex = 13;
             // 
             // label3
@@ -1094,10 +1203,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label3.Location = new System.Drawing.Point(544, 31);
+            this.label3.Location = new System.Drawing.Point(511, 31);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 21);
+            this.label3.Size = new System.Drawing.Size(214, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Filtro";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1107,7 +1216,7 @@
             this.txtFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtFiltro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtFiltro.Location = new System.Drawing.Point(782, 31);
+            this.txtFiltro.Location = new System.Drawing.Point(735, 31);
             this.txtFiltro.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(223, 27);
@@ -1126,7 +1235,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1089, 0);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1024, 0);
             this.tableLayoutPanel5.TabIndex = 7;
             // 
             // tableLayoutPanel8
@@ -1153,7 +1262,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1089, 63);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1024, 63);
             this.tableLayoutPanel8.TabIndex = 6;
             // 
             // dtpCHasta
@@ -1163,7 +1272,7 @@
             this.dtpCHasta.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.dtpCHasta.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCHasta.Location = new System.Drawing.Point(671, 31);
+            this.dtpCHasta.Location = new System.Drawing.Point(631, 31);
             this.dtpCHasta.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.dtpCHasta.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpCHasta.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -1178,7 +1287,7 @@
             this.dtpCDesde.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.dtpCDesde.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCDesde.Location = new System.Drawing.Point(544, 31);
+            this.dtpCDesde.Location = new System.Drawing.Point(511, 31);
             this.dtpCDesde.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.dtpCDesde.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dtpCDesde.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -1196,10 +1305,10 @@
             this.cbCCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cbCCliente.FormattingEnabled = true;
-            this.cbCCliente.Location = new System.Drawing.Point(163, 31);
+            this.cbCCliente.Location = new System.Drawing.Point(153, 31);
             this.cbCCliente.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.cbCCliente.Name = "cbCCliente";
-            this.cbCCliente.Size = new System.Drawing.Size(371, 27);
+            this.cbCCliente.Size = new System.Drawing.Size(348, 27);
             this.cbCCliente.TabIndex = 10;
             // 
             // txtCNro
@@ -1220,10 +1329,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label7.Location = new System.Drawing.Point(671, 0);
+            this.label7.Location = new System.Drawing.Point(631, 0);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(408, 21);
+            this.label7.Size = new System.Drawing.Size(383, 21);
             this.label7.TabIndex = 7;
             this.label7.Text = "Hasta";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1235,10 +1344,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label6.Location = new System.Drawing.Point(544, 0);
+            this.label6.Location = new System.Drawing.Point(511, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 21);
+            this.label6.Size = new System.Drawing.Size(110, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Desde";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1250,10 +1359,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label5.Location = new System.Drawing.Point(163, 0);
+            this.label5.Location = new System.Drawing.Point(153, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(371, 21);
+            this.label5.Size = new System.Drawing.Size(348, 21);
             this.label5.TabIndex = 5;
             this.label5.Text = "Cliente";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1268,7 +1377,7 @@
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 21);
+            this.label4.Size = new System.Drawing.Size(143, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Recepcion";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1280,7 +1389,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(10, 864);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1089, 75);
+            this.panel3.Size = new System.Drawing.Size(1024, 75);
             this.panel3.TabIndex = 11;
             // 
             // btnConsultar
@@ -1300,7 +1409,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1134, 731);
+            this.ClientSize = new System.Drawing.Size(1069, 731);
             this.Controls.Add(this.tcGeneral);
             this.Controls.Add(this.labelDescripcion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1319,6 +1428,7 @@
             this.tableLayoutPanelContainer2.ResumeLayout(false);
             this.tableLayoutPanelContainer2.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.cmsAdjuntos.ResumeLayout(false);
             this.tpConsultar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1379,16 +1489,6 @@
         private System.Windows.Forms.ComboBox cbSedes;
         private System.Windows.Forms.Button btnAgregarItems;
         private System.Windows.Forms.DataGridView tablaDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIngreso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCertificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMoneda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIva;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubtotal;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label18;
@@ -1410,5 +1510,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Button btnImportar;
+        private System.Windows.Forms.Button btnAdjuntar;
+        private System.Windows.Forms.Button btnAprobar;
+        private System.Windows.Forms.ContextMenuStrip cmsAdjuntos;
+        private System.Windows.Forms.ToolStripMenuItem AdjuntarCotizacion;
+        private System.Windows.Forms.ToolStripMenuItem AdjuntarAnexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnInspeccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCertificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMoneda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIva;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubtotal;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem VerCotizacionAdj;
+        private System.Windows.Forms.ToolStripMenuItem VerAnexoAdj;
     }
 }

@@ -994,7 +994,7 @@
             this.imprimirToolStripMenuItem,
             this.abrirToolStripMenuItem});
             this.cmsTablaConsultar.Name = "cmsTablaConsultar";
-            this.cmsTablaConsultar.Size = new System.Drawing.Size(224, 70);
+            this.cmsTablaConsultar.Size = new System.Drawing.Size(224, 48);
             // 
             // imprimirToolStripMenuItem
             // 

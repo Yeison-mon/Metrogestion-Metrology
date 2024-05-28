@@ -519,14 +519,14 @@ namespace MIS.Vistas.Recepcion
             {
                 MessageBox.Show("Debe de seleccionar el cliente", "Sugerencias", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-            } else if(cbContactos.DataSource == null || (int)cbContactos.SelectedValue == 0)
+            } else if(cbSedes.DataSource == null || (int)cbSedes.SelectedValue == 0)
             {
                 MessageBox.Show("Debe de seleccionar la sede del cliente", "Sugerencias", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else
             {
-                using(FormContactos form = new FormContactos(idcliente, (int)cbContactos.SelectedValue, txtCliente.Text))
+                using(FormContactos form = new FormContactos(idcliente, (int)cbSedes.SelectedValue, txtCliente.Text))
                 {
                     form.ContactoGuardado += async (eventSender, args) => await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", 0);
                     DialogResult result = form.ShowDialog();

@@ -36,36 +36,36 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
             this.btnSubConf_Clientes = new System.Windows.Forms.Button();
+            this.btnMConfiguracion = new System.Windows.Forms.Button();
+            this.panelSubComercial = new System.Windows.Forms.Panel();
+            this.btnSubCom_Cotizaciones = new System.Windows.Forms.Button();
+            this.btnMComercial = new System.Windows.Forms.Button();
             this.panelSubrecepcion = new System.Windows.Forms.Panel();
             this.btnSubRecep_Devolucion = new System.Windows.Forms.Button();
             this.btnSubRecep_Inspeccion = new System.Windows.Forms.Button();
             this.btnSubRecep_RegistroEquipos = new System.Windows.Forms.Button();
-            this.Tittle_Bar = new System.Windows.Forms.Panel();
-            this.btnMComercial = new System.Windows.Forms.Button();
-            this.btnMConfiguracion = new System.Windows.Forms.Button();
             this.btnMRecepcion = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.Tittle_Bar = new System.Windows.Forms.Panel();
             this.contraer = new System.Windows.Forms.PictureBox();
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnMinize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.panelSubComercial = new System.Windows.Forms.Panel();
-            this.btnSubCom_Cotizaciones = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelSubConfiguracion.SuspendLayout();
+            this.panelSubComercial.SuspendLayout();
             this.panelSubrecepcion.SuspendLayout();
-            this.Tittle_Bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.Tittle_Bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contraer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            this.panelSubComercial.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -186,6 +186,84 @@
             this.btnSubConf_Clientes.UseVisualStyleBackColor = false;
             this.btnSubConf_Clientes.Click += new System.EventHandler(this.btnSubConf_Clientes_Click);
             // 
+            // btnMConfiguracion
+            // 
+            this.btnMConfiguracion.BackColor = System.Drawing.Color.Transparent;
+            this.btnMConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMConfiguracion.FlatAppearance.BorderSize = 0;
+            this.btnMConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnMConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMConfiguracion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMConfiguracion.ForeColor = System.Drawing.Color.White;
+            this.btnMConfiguracion.Image = global::MIS.Properties.Resources.configuracion32blanco;
+            this.btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMConfiguracion.Location = new System.Drawing.Point(0, 340);
+            this.btnMConfiguracion.Name = "btnMConfiguracion";
+            this.btnMConfiguracion.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
+            this.btnMConfiguracion.Size = new System.Drawing.Size(250, 40);
+            this.btnMConfiguracion.TabIndex = 8;
+            this.btnMConfiguracion.Text = "CONFIGURACIÓN";
+            this.btnMConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMConfiguracion.UseVisualStyleBackColor = false;
+            this.btnMConfiguracion.Click += new System.EventHandler(this.btnMConfiguracion_Click);
+            // 
+            // panelSubComercial
+            // 
+            this.panelSubComercial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panelSubComercial.Controls.Add(this.btnSubCom_Cotizaciones);
+            this.panelSubComercial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubComercial.Location = new System.Drawing.Point(0, 301);
+            this.panelSubComercial.Name = "panelSubComercial";
+            this.panelSubComercial.Size = new System.Drawing.Size(250, 39);
+            this.panelSubComercial.TabIndex = 13;
+            // 
+            // btnSubCom_Cotizaciones
+            // 
+            this.btnSubCom_Cotizaciones.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubCom_Cotizaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubCom_Cotizaciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubCom_Cotizaciones.FlatAppearance.BorderSize = 0;
+            this.btnSubCom_Cotizaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSubCom_Cotizaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSubCom_Cotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubCom_Cotizaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubCom_Cotizaciones.ForeColor = System.Drawing.Color.White;
+            this.btnSubCom_Cotizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubCom_Cotizaciones.Location = new System.Drawing.Point(0, 0);
+            this.btnSubCom_Cotizaciones.Name = "btnSubCom_Cotizaciones";
+            this.btnSubCom_Cotizaciones.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnSubCom_Cotizaciones.Size = new System.Drawing.Size(250, 40);
+            this.btnSubCom_Cotizaciones.TabIndex = 4;
+            this.btnSubCom_Cotizaciones.Text = "Cotizaciones";
+            this.btnSubCom_Cotizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubCom_Cotizaciones.UseVisualStyleBackColor = false;
+            this.btnSubCom_Cotizaciones.Click += new System.EventHandler(this.btnSubCom_Cotizaciones_Click);
+            // 
+            // btnMComercial
+            // 
+            this.btnMComercial.BackColor = System.Drawing.Color.Transparent;
+            this.btnMComercial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMComercial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMComercial.FlatAppearance.BorderSize = 0;
+            this.btnMComercial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMComercial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnMComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMComercial.ForeColor = System.Drawing.Color.White;
+            this.btnMComercial.Image = global::MIS.Properties.Resources.Comercial32;
+            this.btnMComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMComercial.Location = new System.Drawing.Point(0, 261);
+            this.btnMComercial.Name = "btnMComercial";
+            this.btnMComercial.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
+            this.btnMComercial.Size = new System.Drawing.Size(250, 40);
+            this.btnMComercial.TabIndex = 12;
+            this.btnMComercial.Text = "COMERCIAL";
+            this.btnMComercial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMComercial.UseVisualStyleBackColor = false;
+            this.btnMComercial.Click += new System.EventHandler(this.btnMComercial_Click);
+            // 
             // panelSubrecepcion
             // 
             this.panelSubrecepcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -263,70 +341,6 @@
             this.btnSubRecep_RegistroEquipos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubRecep_RegistroEquipos.UseVisualStyleBackColor = false;
             this.btnSubRecep_RegistroEquipos.Click += new System.EventHandler(this.btnSubRecep_RegistroEquipos_Click);
-            // 
-            // Tittle_Bar
-            // 
-            this.Tittle_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(59)))));
-            this.Tittle_Bar.Controls.Add(this.contraer);
-            this.Tittle_Bar.Controls.Add(this.maximizar);
-            this.Tittle_Bar.Controls.Add(this.pictureBox3);
-            this.Tittle_Bar.Controls.Add(this.btnMinize);
-            this.Tittle_Bar.Controls.Add(this.btnClose);
-            this.Tittle_Bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Tittle_Bar.Location = new System.Drawing.Point(0, 0);
-            this.Tittle_Bar.Name = "Tittle_Bar";
-            this.Tittle_Bar.Size = new System.Drawing.Size(1201, 25);
-            this.Tittle_Bar.TabIndex = 3;
-            this.Tittle_Bar.Visible = false;
-            this.Tittle_Bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseDown);
-            this.Tittle_Bar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseMove);
-            this.Tittle_Bar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseUp);
-            // 
-            // btnMComercial
-            // 
-            this.btnMComercial.BackColor = System.Drawing.Color.Transparent;
-            this.btnMComercial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMComercial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMComercial.FlatAppearance.BorderSize = 0;
-            this.btnMComercial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnMComercial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnMComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMComercial.ForeColor = System.Drawing.Color.White;
-            this.btnMComercial.Image = global::MIS.Properties.Resources.Comercial32;
-            this.btnMComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMComercial.Location = new System.Drawing.Point(0, 261);
-            this.btnMComercial.Name = "btnMComercial";
-            this.btnMComercial.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnMComercial.Size = new System.Drawing.Size(250, 40);
-            this.btnMComercial.TabIndex = 12;
-            this.btnMComercial.Text = "COMERCIAL";
-            this.btnMComercial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMComercial.UseVisualStyleBackColor = false;
-            this.btnMComercial.Click += new System.EventHandler(this.btnMComercial_Click);
-            // 
-            // btnMConfiguracion
-            // 
-            this.btnMConfiguracion.BackColor = System.Drawing.Color.Transparent;
-            this.btnMConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnMConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnMConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnMConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMConfiguracion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnMConfiguracion.Image = global::MIS.Properties.Resources.configuracion32blanco;
-            this.btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMConfiguracion.Location = new System.Drawing.Point(0, 340);
-            this.btnMConfiguracion.Name = "btnMConfiguracion";
-            this.btnMConfiguracion.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnMConfiguracion.Size = new System.Drawing.Size(250, 40);
-            this.btnMConfiguracion.TabIndex = 8;
-            this.btnMConfiguracion.Text = "CONFIGURACIÓN";
-            this.btnMConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMConfiguracion.UseVisualStyleBackColor = false;
-            this.btnMConfiguracion.Click += new System.EventHandler(this.btnMConfiguracion_Click);
             // 
             // btnMRecepcion
             // 
@@ -411,6 +425,24 @@
             this.btnMenu.TabStop = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // Tittle_Bar
+            // 
+            this.Tittle_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(59)))));
+            this.Tittle_Bar.Controls.Add(this.contraer);
+            this.Tittle_Bar.Controls.Add(this.maximizar);
+            this.Tittle_Bar.Controls.Add(this.pictureBox3);
+            this.Tittle_Bar.Controls.Add(this.btnMinize);
+            this.Tittle_Bar.Controls.Add(this.btnClose);
+            this.Tittle_Bar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Tittle_Bar.Location = new System.Drawing.Point(0, 0);
+            this.Tittle_Bar.Name = "Tittle_Bar";
+            this.Tittle_Bar.Size = new System.Drawing.Size(1201, 25);
+            this.Tittle_Bar.TabIndex = 3;
+            this.Tittle_Bar.Visible = false;
+            this.Tittle_Bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseDown);
+            this.Tittle_Bar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseMove);
+            this.Tittle_Bar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseUp);
+            // 
             // contraer
             // 
             this.contraer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -474,38 +506,6 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panelSubComercial
-            // 
-            this.panelSubComercial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelSubComercial.Controls.Add(this.btnSubCom_Cotizaciones);
-            this.panelSubComercial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubComercial.Location = new System.Drawing.Point(0, 301);
-            this.panelSubComercial.Name = "panelSubComercial";
-            this.panelSubComercial.Size = new System.Drawing.Size(250, 39);
-            this.panelSubComercial.TabIndex = 13;
-            // 
-            // btnSubCom_Cotizaciones
-            // 
-            this.btnSubCom_Cotizaciones.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubCom_Cotizaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubCom_Cotizaciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubCom_Cotizaciones.FlatAppearance.BorderSize = 0;
-            this.btnSubCom_Cotizaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubCom_Cotizaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubCom_Cotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubCom_Cotizaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubCom_Cotizaciones.ForeColor = System.Drawing.Color.White;
-            this.btnSubCom_Cotizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Cotizaciones.Location = new System.Drawing.Point(0, 0);
-            this.btnSubCom_Cotizaciones.Name = "btnSubCom_Cotizaciones";
-            this.btnSubCom_Cotizaciones.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubCom_Cotizaciones.Size = new System.Drawing.Size(250, 40);
-            this.btnSubCom_Cotizaciones.TabIndex = 4;
-            this.btnSubCom_Cotizaciones.Text = "Cotizaciones";
-            this.btnSubCom_Cotizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Cotizaciones.UseVisualStyleBackColor = false;
-            this.btnSubCom_Cotizaciones.Click += new System.EventHandler(this.btnSubCom_Cotizaciones_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,19 +517,20 @@
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
             this.panelContenedor.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelSubConfiguracion.ResumeLayout(false);
+            this.panelSubComercial.ResumeLayout(false);
             this.panelSubrecepcion.ResumeLayout(false);
-            this.Tittle_Bar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.Tittle_Bar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contraer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            this.panelSubComercial.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
