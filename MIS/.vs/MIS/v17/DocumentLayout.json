@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\modelos\\recepcion\\recepcionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\recepcion\\recepcionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\comercial\\formcotizacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\modales\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\modales\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\comercial\\cotizacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\modales\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\modales\\camara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\modales\\formrecepciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\modales\\formrecepciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\helpers\\fg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\helpers\\fg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CotizacionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
-              "RelativeDocumentMoniker": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
-              "RelativeToolTip": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T19:11:26.309Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -67,78 +58,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormCotizacion.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
-              "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAMwO4AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T19:10:32.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormCotizacion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
               "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs [Dise\u00F1o]",
               "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T18:48:51.946Z",
+              "WhenOpened": "2024-05-31T15:16:25.231Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormRecepcion.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
-              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
-              "ViewState": "AQIAAMcBAAAAAAAAAAApwAwCAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T18:33:44.435Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Camara.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\Camara.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Modales\\Camara.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\Camara.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MIS\\Vistas\\Modales\\Camara.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T06:22:53.575Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FG.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\FG.cs",
-              "RelativeDocumentMoniker": "MIS\\Helpers\\FG.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\FG.cs",
-              "RelativeToolTip": "MIS\\Helpers\\FG.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAADgvzkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T02:17:25.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Camara.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\Camara.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Modales\\Camara.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\Camara.cs",
-              "RelativeToolTip": "MIS\\Vistas\\Modales\\Camara.cs",
-              "ViewState": "AQIAAHgAAAAAAAAAAAASwIgAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:55:47.569Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -149,8 +77,95 @@
               "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
               "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T03:31:21.576Z",
+              "WhenOpened": "2024-05-31T14:58:32.673Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormRecepcion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ViewState": "AQIAAGgDAAAAAAAAAAA2wH0DAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T14:58:28.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormCotizacion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Comercial\\FormCotizacion.cs",
+              "ViewState": "AQIAAEIBAAAAAAAAAIA5wFUBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T22:29:29.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RecepcionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Recepcion\\RecepcionRepository.cs",
+              "ViewState": "AQIAAFQBAAAAAAAAAADgv2IBAADqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T05:05:12.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CotizacionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Comercial\\CotizacionRepository.cs",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAhwDQBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T20:47:13.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormRecepciones.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAYwFoAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T22:07:16.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormOrdenTrabajo.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAmwCcAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T16:54:04.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormOrdenTrabajo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T20:41:36.479Z"
             }
           ]
         }

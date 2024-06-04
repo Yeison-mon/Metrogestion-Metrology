@@ -1,12 +1,7 @@
 ﻿using MIS.Modelos.Registros;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MIS.Vistas.Modales
@@ -17,10 +12,26 @@ namespace MIS.Vistas.Modales
         public int recepcion { get; private set; }
         public int idrecepcion { get; private set; }
         public int idcliente { get; private set; }
-        public FormRecepciones(int idcliente)
+        private string tipo = "";
+        public FormRecepciones(int idcliente, string tipo)
         {
             InitializeComponent();
             this.idcliente = idcliente;
+            this.tipo = tipo;
+            if (tipo == "IR")
+            {
+                cbEstados.Items.Add("Ingresado");
+                cbEstados.Items.Add("Inspeccionado");
+            }
+            if (tipo == "Cotizacion")
+            {
+                cbEstados.Items.Add("Inspeccionado");
+            }
+            if (tipo == "ODT")
+            {
+                cbEstados.Items.Add("Cotizado");
+                cbEstados.Items.Add("Inspeccionado");
+            }
             cbEstados.SelectedIndex = 0;
             TablaRecepciones();
             tablaRecepcion.CellMouseDown += (sender, e) =>
@@ -36,6 +47,7 @@ namespace MIS.Vistas.Modales
                     }
                 }
             };
+            
         }
 
         private async void TablaRecepciones()
@@ -44,7 +56,7 @@ namespace MIS.Vistas.Modales
             tablaRecepcion.Rows.Clear();
             RecepcionRepository recepciones = new RecepcionRepository();
             string estado = cbEstados.SelectedItem.ToString();
-            DataTable tabla = await recepciones.ModalRecepciones(estado, idcliente);
+            DataTable tabla = await recepciones.ModalRecepciones(estado, idcliente, tipo);
 
             if (tabla != null)
             {
@@ -68,6 +80,8 @@ namespace MIS.Vistas.Modales
                     tablaRecepcion.Columns["magnitud"].HeaderText = "Magnitudes";
                     tablaRecepcion.Columns["cantidad"].HeaderText = "Cantidad de Ingresos";
                     tablaRecepcion.Columns["cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    tablaRecepcion.Columns["anulados"].HeaderText = "Anulados";
+                    tablaRecepcion.Columns["anulados"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     tablaRecepcion.Columns["cantidad"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                     tablaRecepcion.Columns["fecha"].HeaderText = "Fecha";
                     tablaRecepcion.Columns["registrado_por"].HeaderText = "Registrado por";

@@ -78,7 +78,7 @@ namespace MIS.Modelos.Comercial
             try
             {
 
-                string where = $" where cd.idcliente = {idcliente} and c.cotizacion = {cotizacion}";
+                string where = $" where cd.idcliente = {idcliente} and coalesce(c.cotizacion, 0) = {cotizacion}";
                 string query = $@"SELECT cd.id, renglon, cd.idcliente,
                            'NR-' || to_char(rd.fechaing, 'YY-') || to_char(r.recepcion, '0000') || '-' || rd.renglon AS ingreso,
                            'EQUIPO: ' || e.descripcion || '; MAGNITUD: ' || m.descripcion ||
@@ -129,7 +129,7 @@ namespace MIS.Modelos.Comercial
             }
         }
 
-        public async Task<bool> ImportarRecepcion(int idrecepcion)
+        public async Task<bool> ImportarRecepcion(int idrecepcion, int idcotizacion)
         {
             try
             {
@@ -180,11 +180,11 @@ namespace MIS.Modelos.Comercial
                     for (int i = 0; i < idsArray.Length; i++)
                     {
                         string insert = $@"INSERT INTO public.cotizacion_detalle
-                        (idcliente, idingreso, idequipo, idmodelo, idintervalo1, idintervalo2, serie, codigo, iva)
-                        VALUES({idcliente}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])}, {int.Parse(idsIntervalo2Array[i])}, '{seriesArray[i]}', '{codigosArray[i]}', 19);";
+                        (idcliente, idcotizacion, idingreso, idequipo, idmodelo, idintervalo1, idintervalo2, serie, codigo, iva)
+                        VALUES({idcliente}, {idcotizacion}, {int.Parse(idsArray[i])}, {int.Parse(idsEquipoArray[i])}, {int.Parse(idsModeloArray[i])}, {int.Parse(idsIntervalo1Array[i])}, {int.Parse(idsIntervalo2Array[i])}, '{seriesArray[i]}', '{codigosArray[i]}', 19);";
                         if (dbHelper.ExecuteNonQuery(insert) <= 0)
                         {
-                            MessageBox.Show($"Alerta: No todos los items fueron añadidos -> Cantidad añadida: {i+1}"); 
+                            MessageBox.Show($"Alerta: No todos los items fueron añadidos -> Cantidad añadida: {i}"); 
                             return false;
                         } else
                         {

@@ -10,12 +10,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MIS</RootNamespace>
     <AssemblyName>MIS</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -39,6 +40,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
       <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
@@ -59,11 +63,41 @@
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.28\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.28\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.28.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -96,6 +130,10 @@
     <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
@@ -171,6 +209,12 @@
     </Compile>
     <Compile Include="Vistas\Comercial\FormCotizacion.Designer.cs">
       <DependentUpon>FormCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Laboratorio\FormOrdenTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Laboratorio\FormOrdenTrabajo.Designer.cs">
+      <DependentUpon>FormOrdenTrabajo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Modales\Camara.cs">
       <SubType>Form</SubType>
@@ -284,6 +328,9 @@
     <EmbeddedResource Include="Reportes\Recepcion\rpInspeccion.rdlc" />
     <EmbeddedResource Include="Vistas\Comercial\FormCotizacion.resx">
       <DependentUpon>FormCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Laboratorio\FormOrdenTrabajo.resx">
+      <DependentUpon>FormOrdenTrabajo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Modales\Camara.resx">
       <DependentUpon>Camara.cs</DependentUpon>
@@ -413,6 +460,8 @@
     <None Include="Resources\importar64.png" />
     <None Include="Resources\Adjuntar64.png" />
     <None Include="Resources\aprobado_rechazar64.png" />
+    <None Include="Resources\analisis32.png" />
+    <None Include="Resources\documentoborrar64.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -457,7 +506,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reportes\Orden_Trabajo\" />
-    <Folder Include="Vistas\Laboratorio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

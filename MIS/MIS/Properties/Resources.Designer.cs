@@ -113,6 +113,16 @@ namespace MIS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analisis32 {
+            get {
+                object obj = ResourceManager.GetObject("analisis32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap aprobado_rechazar64 {
             get {
                 object obj = ResourceManager.GetObject("aprobado_rechazar64", resourceCulture);
@@ -196,6 +206,16 @@ namespace MIS.Properties {
         internal static System.Drawing.Bitmap contraer {
             get {
                 object obj = ResourceManager.GetObject("contraer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documentoborrar64 {
+            get {
+                object obj = ResourceManager.GetObject("documentoborrar64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

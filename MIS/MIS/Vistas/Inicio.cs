@@ -1,6 +1,7 @@
 ﻿using MIS.Modelos.Seguridad;
 using MIS.Vistas.Comercial;
 using MIS.Vistas.Configuracion;
+using MIS.Vistas.Laboratorio;
 using MIS.Vistas.Recepcion;
 using System;
 using System.Drawing;
@@ -34,6 +35,7 @@ namespace MIS.Vistas
             btnMRecepcion.Text = "";
             btnMComercial.Text = "";
             btnMConfiguracion.Text = "";
+            btnLaboratorio.Text = "";
             btnSalir.Text = "";
         }
         #region Funcionalidades formulario
@@ -160,6 +162,7 @@ namespace MIS.Vistas
                 btnMRecepcion.Text = "";
                 btnMComercial.Text = "";
                 btnMConfiguracion.Text = "";
+                btnLaboratorio.Text = "";
                 btnSalir.Text = "";
                 hideSubmenu();
 
@@ -177,6 +180,7 @@ namespace MIS.Vistas
                 btnMRecepcion.Text = "RECEPCIÓN";
                 btnMComercial.Text = "COMERCIAL";
                 btnMConfiguracion.Text = "CONFIGURACIÓN";
+                btnLaboratorio.Text = "";
                 btnSalir.Text = "SALIR";
             }
         }
@@ -194,8 +198,7 @@ namespace MIS.Vistas
             }
 
             Form formulario;
-            formulario = panelContenedorForms.Controls.OfType<MiForm>().FirstOrDefault(); // Busca el formulario
-                                                                                          // si no existe
+            formulario = panelContenedorForms.Controls.OfType<MiForm>().FirstOrDefault();
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -246,6 +249,7 @@ namespace MIS.Vistas
                 btnMRecepcion.Text = "RECEPCIÓN";
                 btnMComercial.Text = "COMERCIAL";
                 btnMConfiguracion.Text = "CONFIGURACIÓN";
+                btnLaboratorio.Text = "LABORATORIO";
                 btnSalir.Text = "SALIR";
             }
         }
@@ -266,12 +270,17 @@ namespace MIS.Vistas
             ValidarMenu();
             showSubmenu(panelSubConfiguracion);
         }
+        private void btnLaboratorio_Click(object sender, EventArgs e)
+        {
+            ValidarMenu();
+            showSubmenu(panelSubLaboratorio);
+        }
 
         private void CloseForms(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["FormDashboard"] == null)
                 btnDashboard.BackColor = Color.FromArgb(15, 15, 15);
-            if (Application.OpenForms["FormRecepcion"] == null || Application.OpenForms["FormInspeccion"] == null)
+            if (Application.OpenForms["FormRecepcion"] == null || Application.OpenForms["FormInspeccion"] == null || Application.OpenForms["FormDevolucion"] == null)
                 btnMRecepcion.BackColor = Color.FromArgb(15, 15, 15);
             if (Application.OpenForms["FormClientes"] == null)
                 btnMConfiguracion.BackColor = Color.FromArgb(15, 15, 15);
@@ -285,6 +294,7 @@ namespace MIS.Vistas
             panelSubrecepcion.Visible = false;
             panelSubConfiguracion.Visible = false;
             panelSubComercial.Visible = false;
+            panelSubLaboratorio.Visible = false;
         }
 
         private void btnSubRecep_RecibirEquipos_Click(object sender, EventArgs e)
@@ -335,7 +345,12 @@ namespace MIS.Vistas
             hideSubmenu();
         }
 
-        
+        private void btnSubLab_OrdenTrabajo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormOrdenTrabajo>();
+            btnLaboratorio.BackColor = Color.FromArgb(50, 50, 50);
+            hideSubmenu();
+        }
 
         private void hideSubmenu()
         {
@@ -345,6 +360,8 @@ namespace MIS.Vistas
                 panelSubConfiguracion.Visible = false;
             if (panelSubComercial.Visible == true)
                 panelSubComercial.Visible = false;
+            if (panelSubLaboratorio.Visible == true)
+                panelSubLaboratorio.Visible = false;
         }
         private void showSubmenu(Panel subMenu)
         {

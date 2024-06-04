@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MIS.Vistas.Comercial
@@ -25,6 +26,20 @@ namespace MIS.Vistas.Comercial
                 cmsAdjuntos.Show(btnAdjuntar, localMousePosition);
                 
             };
+            tablaDetalle.CellMouseDown += (sender, e) =>
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                    {
+                        tablaDetalle.ClearSelection();
+                        tablaDetalle.Rows[e.RowIndex].Selected = true;
+                        Point localMousePosition = tablaDetalle.PointToClient(Cursor.Position);
+                        cmsDetalle.Show(tablaDetalle, localMousePosition);
+                    }
+                }
+            };
+
         }
         private int idcliente = 0;
         private int cotizacion = 0;
@@ -84,6 +99,8 @@ namespace MIS.Vistas.Comercial
             btnAgregarItems.Visible = false;
             btnLimpiar.Visible = false;
             btnImprimir.Visible = false;
+            btnAdjuntar.Visible = false;
+            btnAprobar.Visible = false;
             idcliente = 0;
             cotizacion = 0;
             idcotizacion = 0;
@@ -113,7 +130,7 @@ namespace MIS.Vistas.Comercial
         }
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            using (FormRecepciones form = new FormRecepciones(idcliente))
+            using (FormRecepciones form = new FormRecepciones(idcliente, "Cotizacion"))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -142,59 +159,58 @@ namespace MIS.Vistas.Comercial
                     await FG.CargarCombos(cbSedes, "sedes", $"{idcliente}", idsede);
                     await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", idcontacto);
                     btnLimpiar.Visible = true;
-                    TablaDetalle();
+                    await TablaDetalle();
                 }
             }
         }
         private async void ImportarRecepcion(int id) 
         {
             CotizacionRepository importar = new CotizacionRepository();
-            bool importado = await importar.ImportarRecepcion(id);
+            bool importado = await importar.ImportarRecepcion(id, idcotizacion);
             if (importado)
             {
                 MessageBox.Show("Importado con éxito");
-                TablaDetalle();
+                await TablaDetalle();
             }
         }
 
-        private async void TablaDetalle()
+        private async Task TablaDetalle()
         {
             CotizacionRepository detalle = new CotizacionRepository();
             DataTable tabla = await detalle.Detalle(idcliente, cotizacion);
-            if (tabla != null)
+            if (tabla != null && tabla.Rows.Count > 0)
             {
-                if (tabla.Rows.Count > 0)
+                tablaDetalle.Rows.Clear();
+                tablaDetalle.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
+                tablaDetalle.Columns["ColumnDescripcion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                tablaDetalle.Columns["ColumnInspeccion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                tablaDetalle.Columns["ColumnCantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                tablaDetalle.Columns["ColumnDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                tablaDetalle.Columns["ColumnIva"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                int numeroFila = 1;
+                foreach (DataRow row in tabla.Rows)
                 {
-                    tablaDetalle.Rows.Clear();
-                    int numeroFila = 1;
-                    foreach (DataRow row in tabla.Rows)
-                    {
-                        int id = Convert.ToInt32(row["id"]);
-                        string ingreso = row["ingreso"].ToString();
-                        string descripcion = row["descripcion"].ToString();
-                        string inspeccion = row["inspeccion"].ToString();
-                        string moneda = row["moneda"].ToString();
-                        decimal precio = Convert.ToDecimal(row["precio"]);
-                        int cantidad = Convert.ToInt32(row["precio"]);
-                        int iva = Convert.ToInt32(row["iva"]);
-                        int descuento = Convert.ToInt32(row["descuento"]);
-                        decimal subtotal = (precio * cantidad) - (precio*cantidad*descuento/100);
-                        tablaDetalle.CurrentCell = null;
-                        tablaDetalle.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
-                        tablaDetalle.Columns["ColumnDescripcion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                        tablaDetalle.Columns["ColumnInspeccion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-                        tablaDetalle.Columns["ColumnCantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Columns["ColumnDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Columns["ColumnIva"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Columns["ColumnPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                        tablaDetalle.Rows.Add(id, numeroFila, ingreso, descripcion, inspeccion, "", moneda, cantidad, precio, descuento, iva, subtotal);
-                        numeroFila++;
-                    }
-                    btnGuardar.Visible = true;
+                    int id = Convert.ToInt32(row["id"]);
+                    string ingreso = row["ingreso"].ToString();
+                    string descripcion = row["descripcion"].ToString();
+                    string inspeccion = row["inspeccion"].ToString();
+                    string moneda = row["moneda"].ToString();
+                    int cantidad = Convert.ToInt32(row["cantidad"]);
+                    decimal precio = Convert.ToDecimal(row["precio"]);
+                    int descuento = Convert.ToInt32(row["descuento"]);
+                    int iva = Convert.ToInt32(row["iva"]);
+                    decimal subtotal = (precio * cantidad) - (precio * cantidad * descuento / 100);
+
+                    tablaDetalle.Rows.Add(id, numeroFila, ingreso, descripcion, inspeccion, "", moneda, cantidad, precio, descuento, iva, subtotal);
+                    numeroFila++;
                 }
+                btnGuardar.Visible = true;
             }
         }
+
 
         private void txtDocumento_TextChanged(object sender, EventArgs e)
         {
@@ -404,6 +420,20 @@ namespace MIS.Vistas.Comercial
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void asignarAnexo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Seleccionar archivo anexo";
+            openFileDialog.Filter = "Todos los archivos (*.*)|*.*";
+            openFileDialog.Multiselect = false;
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string rutaArchivo = openFileDialog.FileName;
+                MessageBox.Show("Archivo seleccionado: " + rutaArchivo);
+            }
         }
     }
 }

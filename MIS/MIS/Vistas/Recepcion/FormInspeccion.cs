@@ -107,7 +107,7 @@ namespace MIS.Vistas.Recepcion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            using (FormRecepciones form = new FormRecepciones(0))
+            using (FormRecepciones form = new FormRecepciones(0, "IR"))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -144,10 +144,7 @@ namespace MIS.Vistas.Recepcion
             tablaIngresos.Columns.Clear();
             InspeccionRepository ingresos = new InspeccionRepository();
             DataTable tabla = await ingresos.TablaIngresos(id);
-            // Agregar columnas TextBox dinámicamente
             
-
-            // Resto de tu código
             if (tabla != null && tabla.Rows.Count > 0)
             {
                 btnGuardar.Visible = true;

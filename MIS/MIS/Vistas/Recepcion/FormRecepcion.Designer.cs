@@ -46,10 +46,14 @@
             this.etiquetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.códigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serieClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarIngresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularIngresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarAnulaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.labelFormasLlegada = new System.Windows.Forms.Label();
             this.cbFormasLlegada = new System.Windows.Forms.ComboBox();
@@ -79,6 +83,8 @@
             this.txtAnio = new System.Windows.Forms.TextBox();
             this.labelAnio = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAdjuntar = new System.Windows.Forms.Button();
+            this.btnRechazar = new System.Windows.Forms.Button();
             this.btnCamara = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEtiqueta = new System.Windows.Forms.Button();
@@ -263,60 +269,92 @@
             this.duplicarToolStripMenuItem,
             this.fotoToolStripMenuItem,
             this.eliminarToolStripMenuItem,
-            this.agregarIngresoToolStripMenuItem});
+            this.agregarIngresoToolStripMenuItem,
+            this.anularIngresoToolStripMenuItem,
+            this.eliminarAnulaciónToolStripMenuItem});
             this.cmsTabla.Name = "cmsTabla";
-            this.cmsTabla.Size = new System.Drawing.Size(159, 114);
+            this.cmsTabla.Size = new System.Drawing.Size(175, 158);
             // 
             // etiquetaToolStripMenuItem
             // 
             this.etiquetaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoToolStripMenuItem,
-            this.serieToolStripMenuItem});
+            this.serieToolStripMenuItem,
+            this.códigoToolStripMenuItem,
+            this.serieClienteToolStripMenuItem});
             this.etiquetaToolStripMenuItem.Name = "etiquetaToolStripMenuItem";
-            this.etiquetaToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.etiquetaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.etiquetaToolStripMenuItem.Text = "Etiqueta";
             // 
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.ingresoToolStripMenuItem.Text = "Ingreso";
             this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // serieToolStripMenuItem
             // 
             this.serieToolStripMenuItem.Name = "serieToolStripMenuItem";
-            this.serieToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.serieToolStripMenuItem.Text = "Serie";
+            this.serieToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.serieToolStripMenuItem.Text = "Serie (Ingreso)";
             this.serieToolStripMenuItem.Click += new System.EventHandler(this.serieToolStripMenuItem_Click);
+            // 
+            // códigoToolStripMenuItem
+            // 
+            this.códigoToolStripMenuItem.Name = "códigoToolStripMenuItem";
+            this.códigoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.códigoToolStripMenuItem.Text = "Código";
+            this.códigoToolStripMenuItem.Click += new System.EventHandler(this.codigoToolStripMenuItem_Click);
+            // 
+            // serieClienteToolStripMenuItem
+            // 
+            this.serieClienteToolStripMenuItem.Name = "serieClienteToolStripMenuItem";
+            this.serieClienteToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.serieClienteToolStripMenuItem.Text = "Serie (Cliente)";
+            this.serieClienteToolStripMenuItem.Click += new System.EventHandler(this.serieClienteToolStripMenuItem_Click);
             // 
             // duplicarToolStripMenuItem
             // 
             this.duplicarToolStripMenuItem.Name = "duplicarToolStripMenuItem";
-            this.duplicarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.duplicarToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.duplicarToolStripMenuItem.Text = "Duplicar";
             this.duplicarToolStripMenuItem.Click += new System.EventHandler(this.duplicarToolStripMenuItem_Click);
             // 
             // fotoToolStripMenuItem
             // 
             this.fotoToolStripMenuItem.Name = "fotoToolStripMenuItem";
-            this.fotoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.fotoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.fotoToolStripMenuItem.Text = "Foto";
             this.fotoToolStripMenuItem.Click += new System.EventHandler(this.fotoToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // agregarIngresoToolStripMenuItem
             // 
             this.agregarIngresoToolStripMenuItem.Name = "agregarIngresoToolStripMenuItem";
-            this.agregarIngresoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.agregarIngresoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.agregarIngresoToolStripMenuItem.Text = "Agregar ingreso";
             this.agregarIngresoToolStripMenuItem.Click += new System.EventHandler(this.agregarIngresoToolStripMenuItem_Click);
+            // 
+            // anularIngresoToolStripMenuItem
+            // 
+            this.anularIngresoToolStripMenuItem.Name = "anularIngresoToolStripMenuItem";
+            this.anularIngresoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.anularIngresoToolStripMenuItem.Text = "Anular Ingreso";
+            this.anularIngresoToolStripMenuItem.Click += new System.EventHandler(this.anularIngresoToolStripMenuItem_Click);
+            // 
+            // eliminarAnulaciónToolStripMenuItem
+            // 
+            this.eliminarAnulaciónToolStripMenuItem.Name = "eliminarAnulaciónToolStripMenuItem";
+            this.eliminarAnulaciónToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.eliminarAnulaciónToolStripMenuItem.Text = "Eliminar Anulación";
+            this.eliminarAnulaciónToolStripMenuItem.Click += new System.EventHandler(this.eliminarAnulaciónToolStripMenuItem_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -768,6 +806,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
+            this.panel2.Controls.Add(this.btnAdjuntar);
+            this.panel2.Controls.Add(this.btnRechazar);
             this.panel2.Controls.Add(this.btnCamara);
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnEtiqueta);
@@ -782,6 +822,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(924, 75);
             this.panel2.TabIndex = 11;
+            // 
+            // btnAdjuntar
+            // 
+            this.btnAdjuntar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAdjuntar.FlatAppearance.BorderSize = 0;
+            this.btnAdjuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjuntar.Image = global::MIS.Properties.Resources.Adjuntar64;
+            this.btnAdjuntar.Location = new System.Drawing.Point(374, 3);
+            this.btnAdjuntar.Name = "btnAdjuntar";
+            this.btnAdjuntar.Size = new System.Drawing.Size(68, 68);
+            this.btnAdjuntar.TabIndex = 20;
+            this.toolTipbtn.SetToolTip(this.btnAdjuntar, "Anexar Talonario");
+            this.btnAdjuntar.UseVisualStyleBackColor = true;
+            this.btnAdjuntar.Visible = false;
+            this.btnAdjuntar.Click += new System.EventHandler(this.btnAdjuntar_Click);
+            // 
+            // btnRechazar
+            // 
+            this.btnRechazar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRechazar.FlatAppearance.BorderSize = 0;
+            this.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazar.Image = global::MIS.Properties.Resources.documentoborrar64;
+            this.btnRechazar.Location = new System.Drawing.Point(300, 6);
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.Size = new System.Drawing.Size(68, 68);
+            this.btnRechazar.TabIndex = 18;
+            this.toolTipbtn.SetToolTip(this.btnRechazar, "Rechazar Recepción");
+            this.btnRechazar.UseVisualStyleBackColor = true;
+            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
             // 
             // btnCamara
             // 
@@ -1367,5 +1436,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label labelFormasLlegada;
         private System.Windows.Forms.ComboBox cbFormasLlegada;
+        private System.Windows.Forms.ToolStripMenuItem códigoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serieClienteToolStripMenuItem;
+        private System.Windows.Forms.Button btnRechazar;
+        private System.Windows.Forms.Button btnAdjuntar;
+        private System.Windows.Forms.ToolStripMenuItem anularIngresoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarAnulaciónToolStripMenuItem;
     }
 }

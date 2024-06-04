@@ -35,15 +35,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRecepciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tablaRecepcion = new System.Windows.Forms.DataGridView();
+            this.cmsTabla = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inspecciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbEstados = new System.Windows.Forms.ComboBox();
             this.labelRecepcion = new System.Windows.Forms.Label();
             this.txtRecepcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmsTabla = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recepcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inspecciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRecepcion)).BeginInit();
             this.cmsTabla.SuspendLayout();
@@ -114,6 +114,45 @@
             this.tablaRecepcion.TabIndex = 13;
             this.tablaRecepcion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaRecepcion_CellDoubleClick);
             // 
+            // cmsTabla
+            // 
+            this.cmsTabla.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.imprimirToolStripMenuItem,
+            this.verItemsToolStripMenuItem});
+            this.cmsTabla.Name = "cmsTabla";
+            this.cmsTabla.Size = new System.Drawing.Size(131, 48);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recepcionToolStripMenuItem,
+            this.inspecciónToolStripMenuItem});
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            // 
+            // recepcionToolStripMenuItem
+            // 
+            this.recepcionToolStripMenuItem.Name = "recepcionToolStripMenuItem";
+            this.recepcionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.recepcionToolStripMenuItem.Text = "Recepción";
+            this.recepcionToolStripMenuItem.Click += new System.EventHandler(this.recepcionToolStripMenuItem_Click);
+            // 
+            // inspecciónToolStripMenuItem
+            // 
+            this.inspecciónToolStripMenuItem.Name = "inspecciónToolStripMenuItem";
+            this.inspecciónToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.inspecciónToolStripMenuItem.Text = "Inspección";
+            this.inspecciónToolStripMenuItem.Click += new System.EventHandler(this.inspecciónToolStripMenuItem_Click);
+            // 
+            // verItemsToolStripMenuItem
+            // 
+            this.verItemsToolStripMenuItem.Name = "verItemsToolStripMenuItem";
+            this.verItemsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.verItemsToolStripMenuItem.Text = "Ver Item(s)";
+            this.verItemsToolStripMenuItem.Click += new System.EventHandler(this.verItemsToolStripMenuItem_Click);
+            // 
             // cbEstados
             // 
             this.cbEstados.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -123,10 +162,6 @@
             this.cbEstados.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.cbEstados.FormattingEnabled = true;
-            this.cbEstados.Items.AddRange(new object[] {
-            "Todos",
-            "Ingresado",
-            "Inspeccionado"});
             this.cbEstados.Location = new System.Drawing.Point(237, 74);
             this.cbEstados.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.cbEstados.Name = "cbEstados";
@@ -168,45 +203,6 @@
             this.label1.Size = new System.Drawing.Size(55, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Estado";
-            // 
-            // cmsTabla
-            // 
-            this.cmsTabla.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.imprimirToolStripMenuItem,
-            this.verItemsToolStripMenuItem});
-            this.cmsTabla.Name = "cmsTabla";
-            this.cmsTabla.Size = new System.Drawing.Size(181, 70);
-            // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recepcionToolStripMenuItem,
-            this.inspecciónToolStripMenuItem});
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.imprimirToolStripMenuItem.Text = "Imprimir";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
-            // 
-            // verItemsToolStripMenuItem
-            // 
-            this.verItemsToolStripMenuItem.Name = "verItemsToolStripMenuItem";
-            this.verItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verItemsToolStripMenuItem.Text = "Ver Item(s)";
-            this.verItemsToolStripMenuItem.Click += new System.EventHandler(this.verItemsToolStripMenuItem_Click);
-            // 
-            // recepcionToolStripMenuItem
-            // 
-            this.recepcionToolStripMenuItem.Name = "recepcionToolStripMenuItem";
-            this.recepcionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.recepcionToolStripMenuItem.Text = "Recepción";
-            this.recepcionToolStripMenuItem.Click += new System.EventHandler(this.recepcionToolStripMenuItem_Click);
-            // 
-            // inspecciónToolStripMenuItem
-            // 
-            this.inspecciónToolStripMenuItem.Name = "inspecciónToolStripMenuItem";
-            this.inspecciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.inspecciónToolStripMenuItem.Text = "Inspección";
-            this.inspecciónToolStripMenuItem.Click += new System.EventHandler(this.inspecciónToolStripMenuItem_Click);
             // 
             // FormRecepciones
             // 

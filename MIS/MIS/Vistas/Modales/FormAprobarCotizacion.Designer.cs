@@ -194,7 +194,7 @@
             this.tpDocumento.Size = new System.Drawing.Size(998, 297);
             this.tpDocumento.TabIndex = 0;
             this.tpDocumento.Tag = "1";
-            this.tpDocumento.Text = "Documento";
+            this.tpDocumento.Text = "Orden de Compra";
             // 
             // panelRecepcion
             // 

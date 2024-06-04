@@ -1,5 +1,6 @@
 ﻿using MIS.Helpers;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -18,14 +19,14 @@ namespace MIS.Modelos.Registros
             dbHelper = PostgreSQLHelper.GetInstance();
         }
         #region Modulo Recepcion
-        public async Task<DataTable> TablaIngresosAsync(int idcliente, int recepcion)
+        public async Task<DataTable> TablaIngresosAsync(int idcliente, int recepcion, string anio)
         {
             try
             {
                 string where = "";
                 if (recepcion > 0)
                 {
-                    where += $" where r.recepcion = {recepcion} and rd.idcliente = {idcliente}";
+                    where += $" where r.recepcion = {recepcion} and r.anio = '{anio}' and rd.idcliente = {idcliente}";
                 } else
                 {
                     where += $" where rd.idrecepcion = 0 and rd.idcliente = {idcliente}";
@@ -37,7 +38,8 @@ namespace MIS.Modelos.Registros
                                     'Magnitud: ' || m.descripcion as magnitud, rd.con_serie,
                                     CASE WHEN rd.codigo != '' THEN 'SERIE: ' || rd.serie || ' CODIGO: ' || rd.codigo ELSE 'SERIE: ' || rd.serie END as serie, 
                                     ma.descripcion as marca, mo.descripcion as modelo, to_char(rd.fechaing, 'DD-MM-YY') as fechaingreso, rd.idmagnitud as idmagnitud,
-                                    CASE WHEN rd.accesorios != '' THEN 'Observacion: ' || rd.observacion || ' Accesorios: ' || rd.accesorios ELSE rd.observacion END as observacion
+                                    CASE WHEN rd.accesorios != '' THEN 'Observacion: ' || rd.observacion || ' Accesorios: ' || rd.accesorios ELSE rd.observacion END as observacion,
+                                    rd.codigo, rd.estado
                                 FROM recepcion_detalle rd 
                                 INNER JOIN equipos e ON rd.idequipo = e.id 
                                 INNER JOIN magnitudes m ON rd.idmagnitud = m.id 
@@ -195,7 +197,7 @@ namespace MIS.Modelos.Registros
                     if (idGenerado != null && idGenerado != DBNull.Value && Convert.ToInt32(idGenerado) != 0)
                     {
                         string idsConcatenados = string.Join(",", ids);
-                        string updateQuery = $"UPDATE recepcion_detalle SET idrecepcion = {idGenerado} WHERE id IN ({idsConcatenados})";
+                        string updateQuery = $"UPDATE recepcion_detalle SET idrecepcion = {idGenerado}, estado = 'Ingresado' WHERE id IN ({idsConcatenados}) and inactivo = 0";
                         foreach(int id in ids)
                         {
                             string update = $"update recepcion_detalle set serie='NR' || (select to_char(fecha, 'YY') || trim(to_char(recepcion, '0000')) from recepciones where id = {idGenerado}) || '-'|| (select renglon from recepcion_detalle where id = {id}) where id = {id} and con_serie = false";
@@ -286,6 +288,102 @@ namespace MIS.Modelos.Registros
             else
             {
                 return dataTable;
+            }
+        }
+        public async Task<bool> Anular(List<int> ingresos, int tipo)
+        {
+            try
+            {
+                string ingresosList = string.Join(", ", ingresos);
+                if (tipo == 1)
+                {
+                    
+                    string inspeccionados = $"select count(*) from inspeccion_detalle where idingreso in ({ingresosList})";
+                    object cantinsp = await dbHelper.ExecuteScalarAsync(inspeccionados);
+                    if (Convert.ToInt32(cantinsp) > 0)
+                    {
+                        MessageBox.Show("No se puede anular un ingreso(s) inspeccionado(s)");
+                        return false;
+                    }
+                    string anulados = $"select count(*) from recepcion_detalle where id in ({ingresosList}) and inactivo = 1";
+                    object cantianulado = await dbHelper.ExecuteScalarAsync(anulados);
+                    if (Convert.ToInt32(cantianulado) > 0)
+                    {
+                        MessageBox.Show("No se puede anular un ingreso(s) anulado(s)");
+                        return false;
+                    }
+                    string sql = $"UPDATE recepcion_detalle SET estado = 'Anulado', inactivo = 1 WHERE id IN ({ingresosList})";
+                    int guardado = dbHelper.ExecuteNonQuery(sql);
+                    if (guardado > 0)
+                    {
+                        MessageBox.Show("Ingreso(s) anulado(s) con éxito");
+                        return true;
+                    }
+                } else
+                {
+                    string anulados = $"select count(*) from recepcion_detalle where id in ({ingresosList}) and inactivo = 0";
+                    object cantianulado = await dbHelper.ExecuteScalarAsync(anulados);
+                    if (Convert.ToInt32(cantianulado) > 0)
+                    {
+                        MessageBox.Show("No se puede elimanr la anulación sino esta anulado");
+                        return false;
+                    }
+                    string sql = $"UPDATE recepcion_detalle SET estado = 'Temporal', inactivo = 0 WHERE id IN ({ingresosList})";
+                    int guardado = dbHelper.ExecuteNonQuery(sql);
+                    if (guardado > 0)
+                    {
+                        MessageBox.Show("Anulación eliminada");
+                        return true;
+                    }
+                }
+                return false;
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Error: "+ ex.Message);
+                return false;
+            }
+            
+        }
+        public async Task<bool> AdjuntarArchivo(int recepcion, string anio, string base64, string talonario)
+        {
+            try
+            {
+                string query = "";
+                object idrecepcion = await dbHelper.ExecuteScalarAsync($@"select id from recepciones where recepcion = {recepcion} and anio = '{anio}'");
+                object id = await dbHelper.ExecuteScalarAsync($@"select coalesce(id, 0) as id from archivos.archivos_laboratorio where nrocontrol = {Convert.ToInt32(idrecepcion)} and base64 = '{base64}' and tipo = 'TALONARIO RECEPCION'");
+                if (Convert.ToInt32(id) == 0)
+                {
+                    query = $@"insert into archivos.archivos_laboratorio
+                                    (tipo, nrocontrol, base64, nroarchivo)
+                                values('TALONARIO RECEPCION', {Convert.ToInt32(idrecepcion)}, '{base64}', 1)";
+                    string update = $"update recepciones set talonario = '{talonario}'";
+                    int actualizado = dbHelper.ExecuteNonQuery(update);
+                    if (actualizado > 0)
+                    {
+                        MessageBox.Show("Ingreso(s) anulado(s) con éxito");
+                        return true;
+                    }
+                }
+                else
+                {
+                    query = $@"update archivos.archivos_laboratorio set base64 = '{base64}' where id = {id}";
+                }
+                int guardado = dbHelper.ExecuteNonQuery(query);
+                if (guardado > 0)
+                {
+                    MessageBox.Show("Guardado o Actualizado con éxito");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Error al Guardadar o Actualizadar");
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message, "Acción cancelada");
+                return false;
             }
         }
         #endregion
@@ -652,7 +750,7 @@ namespace MIS.Modelos.Registros
         }
         #endregion
         #region Modal Recepción
-        public async Task<DataTable> ModalRecepciones(string estado, int idcliente)
+        public async Task<DataTable> ModalRecepciones(string estado, int idcliente, string tipo)
         {
             string where = "where r.estado != 'Cotizado' ";
             if (estado != "Todos")
@@ -663,10 +761,15 @@ namespace MIS.Modelos.Registros
             {
                 where += $" and r.idcliente = {idcliente}";
             }
+            if (tipo == "")
+            {
+
+            }
             
             string query = $@"
                     select r.id, r.idcliente, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, r.estado, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
-                    to_char(r.fecha, 'DD-MM-YYYY') as fecha, count(rd.renglon) as cantidad, string_agg(distinct m.descripcion, ', ') as magnitud, ru.nombrecompleto as registrado_por, r.observacion
+                    to_char(r.fecha, 'DD-MM-YYYY') as fecha, count(rd.renglon) as cantidad, string_agg(distinct m.descripcion, ', ') as magnitud, ru.nombrecompleto as registrado_por, r.observacion,
+                    count(rd.inactivo) as anulados
                             from recepciones r
                         inner join clientes c on c.id = r.idcliente
                         inner join seguridad.rbac_usuarios ru on ru.id = r.idusuario
@@ -674,7 +777,9 @@ namespace MIS.Modelos.Registros
                         inner join magnitudes m on m.id = rd.idmagnitud
                         left join inspeccion_detalle id on id.idingreso = rd.id
                         left join inspecciones i on i.id = id.idinspeccion
-                    {where}
+                        left join cotizacion_detalle cd on cd.idingreso = rd.id
+                        left join cotizaciones co on co.id = cd.idcotizacion
+                    {where} and rd.inactivo = 0
                     group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente
                     order by r.recepcion desc";
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);

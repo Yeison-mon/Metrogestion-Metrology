@@ -10,7 +10,6 @@ using MIS.Vistas.Modales;
 using bpac;
 using System.IO;
 using MIS.Modelos;
-using System.Text.RegularExpressions;
 
 namespace MIS.Vistas.Recepcion
 {
@@ -212,16 +211,23 @@ namespace MIS.Vistas.Recepcion
         {
             if (tablaIngresos.SelectedRows.Count > 0)
             {
-                if (txtEstado.Text == "Temporal" || FG.UserId == 1)
+                if (txtEstado.Text == "Temporal" || txtEstado.Text == "Ingresado" || FG.UserId == 1)
                 {
                     List<int> ids = new List<int>();
                     List<string> ingresos = new List<string>();
                     foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
                     {
-                        string ingreso = row.Cells["ingreso"].Value.ToString();
-                        ingresos.Add(ingreso);
-                        int id = Convert.ToInt32(row.Cells["id"].Value);
-                        ids.Add(id);
+                        if (row.Cells["estado"].ToString() != "Anulado")
+                        {
+                            string ingreso = row.Cells["ingreso"].Value.ToString();
+                            ingresos.Add(ingreso);
+                            int id = Convert.ToInt32(row.Cells["id"].Value);
+                            ids.Add(id);
+                        } else
+                        {
+                            MessageBox.Show("Ingresos anulados no se pueden eliminar");
+                        }
+                        
                     }
                     string ingresosText = string.Join(", ", ingresos);
                     DialogResult result = MessageBox.Show($"¿Desea borrar los ingresos: {ingresosText}?", "Confirmar borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -298,7 +304,7 @@ namespace MIS.Vistas.Recepcion
             tablaIngresos.Rows.Clear();
             tablaIngresos.Columns.Clear();
             RecepcionRepository ingresos = new RecepcionRepository();
-            DataTable tabla = await ingresos.TablaIngresosAsync(idcliente, nro);
+            DataTable tabla = await ingresos.TablaIngresosAsync(idcliente, nro, txtAnio.Text);
 
             if (tabla != null && tabla.Rows.Count > 0)
             {
@@ -315,6 +321,7 @@ namespace MIS.Vistas.Recepcion
                 tablaIngresos.Columns["id"].Visible = false;
                 tablaIngresos.Columns["con_serie"].Visible = false;
                 tablaIngresos.Columns["idmagnitud"].Visible = false;
+                tablaIngresos.Columns["codigo"].Visible = false;
                 tablaIngresos.Columns["etiqueta"].Visible = false;
                 tablaIngresos.Columns["renglon"].HeaderText = "Renglon";
                 tablaIngresos.Columns["ingreso"].HeaderText = "Ingreso Unico";
@@ -323,6 +330,7 @@ namespace MIS.Vistas.Recepcion
                 tablaIngresos.Columns["serie"].HeaderText = "Serie / Codigo";
                 tablaIngresos.Columns["marca"].HeaderText = "Marca";
                 tablaIngresos.Columns["modelo"].HeaderText = "Modelo";
+                tablaIngresos.Columns["estado"].HeaderText = "Estado";
                 tablaIngresos.Columns["fechaingreso"].HeaderText = "Fecha de Ingreso";
                 tablaIngresos.Columns["observacion"].HeaderText = "Observacion / Accesorios";
                 tablaIngresos.Columns["observacion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
@@ -466,7 +474,113 @@ namespace MIS.Vistas.Recepcion
             {
                 MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+        }
+        private void codigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tablaIngresos.SelectedRows.Count > 0)
+                {
+                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\INGRESOS.lbx";
+                    if (!File.Exists(path))
+                    {
+                        MessageBox.Show("El archivo no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    var doc = new bpac.Document();
+                    if (doc.Open(path) != false)
+                    {
+                        bool success = false;
+                        success = doc.SetPrinter(@"\\RECEPCION\Brother QL-800", true);
+
+                        foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
+                        {
+                            doc.GetObject("NUMERO").Text = row.Cells["codigo"].Value.ToString();
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo establecer la impresora.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                doc.Close();
+                                return;
+                            }
+                            for (int i = 0; i < 2; i++)
+                            {
+                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
+                                doc.PrintOut(1, PrintOptionConstants.bpoDefault);
+                                doc.EndPrint();
+                            }
+
+                        }
+                        doc.Close();
+                        MessageBox.Show("Etiqueta(s) impresa(s)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al abrir el archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar uno o más ingresos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void serieClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tablaIngresos.SelectedRows.Count > 0)
+                {
+                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\INGRESOS.lbx";
+                    if (!File.Exists(path))
+                    {
+                        MessageBox.Show("El archivo no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    var doc = new bpac.Document();
+                    if (doc.Open(path) != false)
+                    {
+                        bool success = false;
+                        success = doc.SetPrinter(@"\\RECEPCION\Brother QL-800", true);
+
+                        foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
+                        {
+                            doc.GetObject("NUMERO").Text = row.Cells["serie"].Value.ToString();
+                            if (!success)
+                            {
+                                MessageBox.Show("No se pudo establecer la impresora.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                doc.Close();
+                                return;
+                            }
+                            for (int i = 0; i < 2; i++)
+                            {
+                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
+                                doc.PrintOut(1, PrintOptionConstants.bpoDefault);
+                                doc.EndPrint();
+                            }
+
+                        }
+                        doc.Close();
+                        MessageBox.Show("Etiqueta(s) impresa(s)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al abrir el archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar uno o más ingresos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void txtNro_TextChanged(object sender, EventArgs e)
         {
@@ -619,20 +733,7 @@ namespace MIS.Vistas.Recepcion
                 MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private string FormatearSerie(string serie)
-        {
-            // Patrón de expresión regular para encontrar el número después del primer guion
-            string patron = @"NR-(\d+)-(\d+)-(\d+)";
-
-            // Reemplazar los guiones con una cadena vacía
-            string serieSinGuiones = Regex.Replace(serie, "-", "");
-
-            // Aplicar el formato deseado
-            string serieFormateada = Regex.Replace(serieSinGuiones, patron, "NR$1$2-$3");
-
-            return serieFormateada;
-        }
-
+        
         private void tablaIngresos_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             bool valor = (bool)tablaIngresos.Rows[e.RowIndex].Cells["con_serie"].Value;
@@ -740,8 +841,110 @@ namespace MIS.Vistas.Recepcion
             }
         }
 
+
+
         #endregion
 
-        
+        private async void btnRechazar_Click(object sender, EventArgs e)
+        {
+            if (tablaIngresos.SelectedRows.Count > 0)
+            {
+                RecepcionRepository anular = new RecepcionRepository();
+                List<int> ingresos = new List<int>();
+                foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
+                {
+                    ingresos.Add((int)row.Cells["id"].Value);
+                }
+                bool anulado = await anular.Anular(ingresos, 1);
+                if (anulado)
+                {
+                    BuscarRecepcion(nro_recepcion);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar mínimo un ingreso");
+            }
+            
+        }
+
+        private async void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            
+            using (FormAgregarDescripciones form = new FormAgregarDescripciones())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    string texto = form.TextoIngresado;
+                    if (texto != "")
+                    {
+                        OpenFileDialog openFileDialog = new OpenFileDialog();
+                        openFileDialog.Filter = "Archivos PDF|*.pdf";
+                        openFileDialog.Title = "Seleccionar archivo PDF";
+
+                        if (openFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string filePath = openFileDialog.FileName;
+                            try
+                            {
+                                string base64String = FG.FileToBase64(filePath);
+                                RecepcionRepository adjuntar = new RecepcionRepository();
+                                bool adjuntado = await adjuntar.AdjuntarArchivo(nro_recepcion, txtAnio.Text, base64String, texto);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error al cargar el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+
+        private async void anularIngresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaIngresos.SelectedRows.Count > 0)
+            {
+                RecepcionRepository anular = new RecepcionRepository();
+                List<int> ingresos = new List<int>();
+                foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
+                {
+                    ingresos.Add((int)row.Cells["id"].Value);
+                }
+                bool anulado = await anular.Anular(ingresos, 1);
+                if (anulado)
+                {
+                    BuscarRecepcion(nro_recepcion);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar mínimo un ingreso");
+            }
+        }
+
+        private async void eliminarAnulaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tablaIngresos.SelectedRows.Count > 0)
+            {
+                RecepcionRepository anular = new RecepcionRepository();
+                List<int> ingresos = new List<int>();
+                foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
+                {
+                    ingresos.Add((int)row.Cells["id"].Value);
+                }
+                bool anulado = await anular.Anular(ingresos, 2);
+                if (anulado)
+                {
+                    BuscarRecepcion(nro_recepcion);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar mínimo un ingreso");
+            }
+        }
     }
 }

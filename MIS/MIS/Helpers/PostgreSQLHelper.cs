@@ -14,7 +14,7 @@ namespace MIS.Helpers
         private PostgreSQLHelper()
         {
             // Aquí puedes definir tus datos de conexión
-            //string host = "192.168.1.18";
+            //string host = "192.168.0.104";
             //string password = "integration2024";
             string host = "localhost";
             string password = "Yeison.2024.";

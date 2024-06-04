@@ -77,7 +77,7 @@ namespace MIS.Modelos.Recepcion
                 INNER JOIN recepciones r ON rd.idrecepcion = r.id
                 inner join magnitud_intervalos mi2 ON rd.idintervalo2 = mi2.id
                 left join inspeccion_detalle id on id.idingreso = rd.id
-                WHERE r.id = {id} order by ingreso";
+                WHERE r.id = {id} and rd.inactivo = 0 order by ingreso";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
                 if (dataTable != null)
                 {
@@ -138,6 +138,8 @@ namespace MIS.Modelos.Recepcion
                                         SET piezas='{pieza}', funcionalidades='{funcionalidad}', acabado='{acabado}', observacion= '{observacion_ingreso}', estado={(estado == "Aprobado")}
                                         WHERE idingreso = {id}";
                                 dbHelper.ExecuteNonQuery(update);
+                                update = $"update recepcion_detalle set estado = 'Inspeccionado' where id = {id}";
+                                dbHelper.ExecuteNonQuery(update);
                             }
                             else
                             {
@@ -148,8 +150,6 @@ namespace MIS.Modelos.Recepcion
                             }
 
                         }
-                        update = $"UPDATE recepciones SET estado = 'Inspeccionado' WHERE recepcion = {nro_recepcion}";
-                        dbHelper.ExecuteNonQuery(update);
                         if (nro_inspeccion <= 0)
                         {
                             update = $"UPDATE contador SET inspeccion = {inspeccion} WHERE id = 1";
