@@ -13,15 +13,22 @@ namespace MIS.Helpers
 
         private PostgreSQLHelper()
         {
-            // Aquí puedes definir tus datos de conexión
-            //string host = "192.168.0.104";
-            //string password = "integration2024";
-            string host = "localhost";
-            string password = "Yeison.2024.";
+            string host = "";
+            string password = "";
+            if (false)
+            {
+                host = "192.168.0.107";
+                password = "integration2024";
+            } else
+            {
+                host = "localhost";
+                password = "Yeison.2024.";
+            }
+            
+            
             int port = 5432;
             string database = "metrology";
             string username = "postgres";
-            // Construir la cadena de conexión
             connectionString = $"Host={host};Port={port};Database={database};Username={username};Password={password};";
         }
 

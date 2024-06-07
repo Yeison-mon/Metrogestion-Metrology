@@ -286,6 +286,8 @@ namespace MIS.Vistas
                 btnMConfiguracion.BackColor = Color.FromArgb(15, 15, 15);
             if (Application.OpenForms["FormCotizacion"] == null)
                 btnMComercial.BackColor = Color.FromArgb(15, 15, 15);
+            if (Application.OpenForms["FormOrdenTrabajo"] == null)
+                btnLaboratorio.BackColor = Color.FromArgb(15, 15, 15);
             formularioActual = null;
         }
 
@@ -350,6 +352,11 @@ namespace MIS.Vistas
             AbrirFormulario<FormOrdenTrabajo>();
             btnLaboratorio.BackColor = Color.FromArgb(50, 50, 50);
             hideSubmenu();
+        }
+
+        private void btnSubLab_Inspeccion_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void hideSubmenu()

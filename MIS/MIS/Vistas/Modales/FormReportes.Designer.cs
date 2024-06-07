@@ -33,32 +33,61 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes));
+            this.recepcionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcion = new MIS.Reportes.Recepcion.dsRecepcion();
+            this.recepciondetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inspeccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsInspeccion = new MIS.Reportes.Recepcion.dsInspeccion();
+            this.inspecciondetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rvRecepcion = new Microsoft.Reporting.WinForms.ReportViewer();
             this.rvInspeccion = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.inspeccionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inspecciondetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recepcionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recepciondetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsInspeccion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspeccionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspecciondetalleBindingSource)).BeginInit();
+            this.rvOrdenTrabajo = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dsOrdenTrabajo = new MIS.Reportes.Laboratorio.dsOrdenTrabajo();
+            this.ordentrabajoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordentrabajodetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.recepcionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recepciondetalleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspeccionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInspeccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspecciondetalleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsOrdenTrabajo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordentrabajoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordentrabajodetalleBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // recepcionesBindingSource
+            // 
+            this.recepcionesBindingSource.DataMember = "recepciones";
+            this.recepcionesBindingSource.DataSource = this.dsRecepcion;
             // 
             // dsRecepcion
             // 
             this.dsRecepcion.DataSetName = "dsRecepcion";
             this.dsRecepcion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // recepciondetalleBindingSource
+            // 
+            this.recepciondetalleBindingSource.DataMember = "recepcion_detalle";
+            this.recepciondetalleBindingSource.DataSource = this.dsRecepcion;
+            // 
+            // inspeccionesBindingSource
+            // 
+            this.inspeccionesBindingSource.DataMember = "inspecciones";
+            this.inspeccionesBindingSource.DataSource = this.dsInspeccion;
+            // 
             // dsInspeccion
             // 
             this.dsInspeccion.DataSetName = "dsInspeccion";
             this.dsInspeccion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inspecciondetalleBindingSource
+            // 
+            this.inspecciondetalleBindingSource.DataMember = "inspeccion_detalle";
+            this.inspecciondetalleBindingSource.DataSource = this.dsInspeccion;
             // 
             // rvRecepcion
             // 
@@ -92,31 +121,43 @@
             this.rvInspeccion.Size = new System.Drawing.Size(730, 745);
             this.rvInspeccion.TabIndex = 1;
             // 
-            // inspeccionesBindingSource
+            // rvOrdenTrabajo
             // 
-            this.inspeccionesBindingSource.DataMember = "inspecciones";
-            this.inspeccionesBindingSource.DataSource = this.dsInspeccion;
+            this.rvOrdenTrabajo.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource5.Name = "ordentrabajo";
+            reportDataSource5.Value = this.ordentrabajoBindingSource;
+            reportDataSource6.Name = "ordentrabajo_detalle";
+            reportDataSource6.Value = this.ordentrabajodetalleBindingSource;
+            this.rvOrdenTrabajo.LocalReport.DataSources.Add(reportDataSource5);
+            this.rvOrdenTrabajo.LocalReport.DataSources.Add(reportDataSource6);
+            this.rvOrdenTrabajo.LocalReport.ReportEmbeddedResource = "MIS.Reportes.Laboratorio.rpOrdenTrabajo.rdlc";
+            this.rvOrdenTrabajo.Location = new System.Drawing.Point(0, 0);
+            this.rvOrdenTrabajo.Name = "rvOrdenTrabajo";
+            this.rvOrdenTrabajo.ServerReport.BearerToken = null;
+            this.rvOrdenTrabajo.Size = new System.Drawing.Size(730, 745);
+            this.rvOrdenTrabajo.TabIndex = 2;
             // 
-            // inspecciondetalleBindingSource
+            // dsOrdenTrabajo
             // 
-            this.inspecciondetalleBindingSource.DataMember = "inspeccion_detalle";
-            this.inspecciondetalleBindingSource.DataSource = this.dsInspeccion;
+            this.dsOrdenTrabajo.DataSetName = "dsOrdenTrabajo";
+            this.dsOrdenTrabajo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // recepcionesBindingSource
+            // ordentrabajoBindingSource
             // 
-            this.recepcionesBindingSource.DataMember = "recepciones";
-            this.recepcionesBindingSource.DataSource = this.dsRecepcion;
+            this.ordentrabajoBindingSource.DataMember = "ordentrabajo";
+            this.ordentrabajoBindingSource.DataSource = this.dsOrdenTrabajo;
             // 
-            // recepciondetalleBindingSource
+            // ordentrabajodetalleBindingSource
             // 
-            this.recepciondetalleBindingSource.DataMember = "recepcion_detalle";
-            this.recepciondetalleBindingSource.DataSource = this.dsRecepcion;
+            this.ordentrabajodetalleBindingSource.DataMember = "ordentrabajo_detalle";
+            this.ordentrabajodetalleBindingSource.DataSource = this.dsOrdenTrabajo;
             // 
             // FormReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 745);
+            this.Controls.Add(this.rvOrdenTrabajo);
             this.Controls.Add(this.rvInspeccion);
             this.Controls.Add(this.rvRecepcion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -124,12 +165,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Reportes";
             this.Load += new System.EventHandler(this.FormReportes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsInspeccion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspeccionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspecciondetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recepcionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recepciondetalleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspeccionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsInspeccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspecciondetalleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsOrdenTrabajo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordentrabajoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordentrabajodetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,5 +187,9 @@
         private System.Windows.Forms.BindingSource recepciondetalleBindingSource;
         private System.Windows.Forms.BindingSource inspeccionesBindingSource;
         private System.Windows.Forms.BindingSource inspecciondetalleBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer rvOrdenTrabajo;
+        private System.Windows.Forms.BindingSource ordentrabajoBindingSource;
+        private Reportes.Laboratorio.dsOrdenTrabajo dsOrdenTrabajo;
+        private System.Windows.Forms.BindingSource ordentrabajodetalleBindingSource;
     }
 }

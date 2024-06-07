@@ -108,7 +108,7 @@ namespace MIS.Modelos
                         query = "select id, descripcion from formas_llegada where id > 0 order by descripcion";
                             break;
                     case "metrologo":
-                        query = "select id, nombrecompleto as descripcion from seguridad.rbac_usuarios where id > 0";
+                        query = "select id, nombrecompleto as descripcion from seguridad.rbac_usuarios where id > 0 and estado != 'INACTIVO'";
                         break;
                     default:
                         return null;

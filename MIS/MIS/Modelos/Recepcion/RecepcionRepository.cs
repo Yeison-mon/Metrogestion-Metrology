@@ -173,7 +173,7 @@ namespace MIS.Modelos.Registros
                 return false;
             }
         }
-        public async Task<int> GuardarRecepcion(List<int> ids, int idcliente, int idsede, int idcontacto, int nro_recepcion, string observacion, int idforma_llegada)
+        public async Task<int> GuardarRecepcion(List<int> ids, int idcliente, int idsede, int idcontacto, int nro_recepcion, string observacion, int idforma_llegada, string fecha)
         {
             try
             {
@@ -185,11 +185,11 @@ namespace MIS.Modelos.Registros
                     int recepcion = Convert.ToInt32(contador) + 1;
                     if (nro_recepcion == 0)
                     {
-                        query = $"INSERT INTO recepciones(recepcion, idcliente, idsede, idcontacto, idusuario, anio, estado, observacion, idforma_llegada) " +
-                                         $"VALUES({recepcion}, {idcliente}, {idsede}, {idcontacto}, {FG.UserId}, to_char(current_timestamp, 'YYYY'), 'Ingresado', '{observacion}', {idforma_llegada}) RETURNING id";
+                        query = $"INSERT INTO recepciones(recepcion, idcliente, idsede, idcontacto, fecha, idusuario, anio, estado, observacion, idforma_llegada) " +
+                                         $"VALUES({recepcion}, {idcliente}, {idsede}, {idcontacto}, '{fecha}', {FG.UserId}, to_char(current_timestamp, 'YYYY'), 'Ingresado', '{observacion}', {idforma_llegada}) RETURNING id";
                     } else
                     {
-                        query = $"update recepciones set idsede = {idsede}, idcontacto = {idcontacto}, observacion='{observacion}', idforma_llegada = {idforma_llegada} where recepcion = {nro_recepcion} returning id" ;
+                        query = $"update recepciones set fecha='{fecha}', idsede = {idsede}, idcontacto = {idcontacto}, observacion='{observacion}', idforma_llegada = {idforma_llegada} where recepcion = {nro_recepcion} returning id" ;
                     }
                     
                     object idGenerado = dbHelper.ExecuteScalar(query);
@@ -201,6 +201,8 @@ namespace MIS.Modelos.Registros
                         foreach(int id in ids)
                         {
                             string update = $"update recepcion_detalle set serie='NR' || (select to_char(fecha, 'YY') || trim(to_char(recepcion, '0000')) from recepciones where id = {idGenerado}) || '-'|| (select renglon from recepcion_detalle where id = {id}) where id = {id} and con_serie = false";
+                            dbHelper.ExecuteNonQuery(update);
+                            update = $"update recepcion_detalle set fechaing='{fecha}'";
                             dbHelper.ExecuteNonQuery(update);
                         }
                         int filasActualizadas = dbHelper.ExecuteNonQuery(updateQuery);
@@ -261,7 +263,7 @@ namespace MIS.Modelos.Registros
         }
         public async Task<DataTable> Consultar(string recepcion, int idcliente, string desde, string hasta)
         {
-            string where = $"where to_char(r.fecha, 'DD-MM-YYYY') >= '{desde}' and to_char(r.fecha, 'DD-MM-YYYY') <= '{hasta}'";
+            string where = $"where DATE_TRUNC('day', r.fecha) >= '{desde}' and DATE_TRUNC('day', r.fecha) <= '{hasta}'";
             if(recepcion != "")
             {
                 where += $" and r.recepcion = {recepcion}";
@@ -752,20 +754,25 @@ namespace MIS.Modelos.Registros
         #region Modal Recepción
         public async Task<DataTable> ModalRecepciones(string estado, int idcliente, string tipo)
         {
-            string where = "where r.estado != 'Cotizado' ";
-            if (estado != "Todos")
+            string where = "";
+            
+            if (tipo == "IR")
             {
-                where += $" and r.estado = '{estado}'";
+                where += $"where r.estado = '{estado}'";
+            }
+            if (tipo == "ODT")
+            {
+                where += $"where r.estado != 'Ingresado' and (r.estado = '{estado}' or c.convenio = 1) and i.inspeccion > 0";
+            }
+            if (tipo == "Cotizacion")
+            {
+                where += $"where r.estado = '{estado}'";
             }
             if (idcliente > 0)
             {
                 where += $" and r.idcliente = {idcliente}";
             }
-            if (tipo == "")
-            {
 
-            }
-            
             string query = $@"
                     select r.id, r.idcliente, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, r.estado, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
                     to_char(r.fecha, 'DD-MM-YYYY') as fecha, count(rd.renglon) as cantidad, string_agg(distinct m.descripcion, ', ') as magnitud, ru.nombrecompleto as registrado_por, r.observacion,
@@ -782,6 +789,7 @@ namespace MIS.Modelos.Registros
                     {where} and rd.inactivo = 0
                     group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente
                     order by r.recepcion desc";
+
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
             if (dataTable == null)
             {

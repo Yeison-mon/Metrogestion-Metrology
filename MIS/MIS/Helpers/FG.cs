@@ -21,7 +21,6 @@ namespace MIS.Helpers
             DataTable data = await combos.CargarCombos(tipo, condicion);
             if (data != null)
             {
-                DataTable datosOriginales = data.Copy();
 
                 DataRow newRow = data.NewRow();
                 newRow["id"] = 0;

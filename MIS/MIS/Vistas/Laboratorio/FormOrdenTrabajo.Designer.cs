@@ -41,6 +41,7 @@
             this.panelCotizacion = new System.Windows.Forms.Panel();
             this.tablaDetalle = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelContainer2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelCliente = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.labelEstado = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtODT = new System.Windows.Forms.TextBox();
             this.txtInspeccion = new System.Windows.Forms.TextBox();
+            this.cbMetrologo = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelContenedorPrincipar = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAprobar = new System.Windows.Forms.Button();
@@ -76,8 +78,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbMetrologo = new System.Windows.Forms.ComboBox();
             this.tcGeneral.SuspendLayout();
             this.tpRegistro.SuspendLayout();
             this.panelCotizacion.SuspendLayout();
@@ -192,7 +192,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaDetalle.RowHeadersVisible = false;
-            this.tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaDetalle.Size = new System.Drawing.Size(1347, 481);
             this.tablaDetalle.TabIndex = 19;
             // 
@@ -227,6 +227,19 @@
             this.tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelContainer2.Size = new System.Drawing.Size(1347, 111);
             this.tableLayoutPanelContainer2.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label2.Location = new System.Drawing.Point(0, 74);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 24);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Metrólogo";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelCliente
             // 
@@ -281,6 +294,7 @@
             this.txtEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtEstado.Location = new System.Drawing.Point(593, 0);
@@ -326,6 +340,8 @@
             this.txtODT.Size = new System.Drawing.Size(94, 27);
             this.txtODT.TabIndex = 18;
             this.txtODT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtODT.TextChanged += new System.EventHandler(this.txtODT_TextChanged);
+            this.txtODT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtODT_KeyPress);
             // 
             // txtInspeccion
             // 
@@ -338,6 +354,25 @@
             this.txtInspeccion.Size = new System.Drawing.Size(94, 27);
             this.txtInspeccion.TabIndex = 22;
             this.txtInspeccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInspeccion.TextChanged += new System.EventHandler(this.txtInspeccion_TextChanged);
+            this.txtInspeccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInspeccion_KeyPress);
+            // 
+            // cbMetrologo
+            // 
+            this.cbMetrologo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbMetrologo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbMetrologo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbMetrologo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.tableLayoutPanelContainer2.SetColumnSpan(this.cbMetrologo, 3);
+            this.cbMetrologo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMetrologo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.cbMetrologo.FormattingEnabled = true;
+            this.cbMetrologo.Location = new System.Drawing.Point(107, 74);
+            this.cbMetrologo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.cbMetrologo.Name = "cbMetrologo";
+            this.cbMetrologo.Size = new System.Drawing.Size(382, 27);
+            this.cbMetrologo.TabIndex = 24;
             // 
             // tableLayoutPanelContenedorPrincipar
             // 
@@ -421,6 +456,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(68, 68);
             this.btnLimpiar.TabIndex = 16;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnImprimir
             // 
@@ -433,6 +469,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(68, 68);
             this.btnImprimir.TabIndex = 13;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnGuardar
             // 
@@ -445,6 +482,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(68, 68);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnBuscar
             // 
@@ -764,36 +802,6 @@
             this.btnConsultar.Size = new System.Drawing.Size(68, 68);
             this.btnConsultar.TabIndex = 10;
             this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.label2.Location = new System.Drawing.Point(0, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Metrólogo";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cbMetrologo
-            // 
-            this.cbMetrologo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMetrologo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbMetrologo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbMetrologo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.tableLayoutPanelContainer2.SetColumnSpan(this.cbMetrologo, 3);
-            this.cbMetrologo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMetrologo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.cbMetrologo.FormattingEnabled = true;
-            this.cbMetrologo.Location = new System.Drawing.Point(107, 74);
-            this.cbMetrologo.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.cbMetrologo.Name = "cbMetrologo";
-            this.cbMetrologo.Size = new System.Drawing.Size(382, 27);
-            this.cbMetrologo.TabIndex = 24;
             // 
             // FormOrdenTrabajo
             // 

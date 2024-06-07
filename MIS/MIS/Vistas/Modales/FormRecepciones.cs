@@ -11,6 +11,7 @@ namespace MIS.Vistas.Modales
 
         public int recepcion { get; private set; }
         public int idrecepcion { get; private set; }
+        public int inspeccion { get; private set; }
         public int idcliente { get; private set; }
         private string tipo = "";
         public FormRecepciones(int idcliente, string tipo)
@@ -116,6 +117,7 @@ namespace MIS.Vistas.Modales
             {
                 DataGridViewRow fila = tablaRecepcion.Rows[filaSeleccionada];
                 recepcion = Convert.ToInt32(fila.Cells["nro_recepcion"].Value);
+                inspeccion = Convert.ToInt32(fila.Cells["nro_inspeccion"].Value);
                 idrecepcion = Convert.ToInt32(fila.Cells["id"].Value);
                 idcliente = Convert.ToInt32(fila.Cells["idcliente"].Value);
                 this.DialogResult = DialogResult.OK;

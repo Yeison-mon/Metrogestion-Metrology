@@ -1,4 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
+using MIS.Modelos.Laboratorio;
 using MIS.Modelos.Recepcion;
 using MIS.Modelos.Registros;
 using MIS.Reportes.Recepcion;
@@ -26,6 +27,7 @@ namespace MIS.Vistas.Modales
             tipo = tipo_documento;
             reportViewers.Add(rvRecepcion);
             reportViewers.Add(rvInspeccion);
+            reportViewers.Add(rvOrdenTrabajo);
         }
 
         private async void FormReportes_Load(object sender, EventArgs e)
@@ -43,6 +45,10 @@ namespace MIS.Vistas.Modales
                 case "Inspeccion":
                     ShowReportViewer(rvInspeccion);
                     await LoadInspeccionReport();
+                    break;
+                case "ODT":
+                    ShowReportViewer(rvOrdenTrabajo);
+                    await LoadOrdenTrabajoReport();
                     break;
             }
         }
@@ -92,6 +98,20 @@ namespace MIS.Vistas.Modales
             rvInspeccion.LocalReport.DataSources.Add(rdsDetalle);
             rvInspeccion.LocalReport.Refresh();
             rvInspeccion.RefreshReport();
+        }
+
+        private async Task LoadOrdenTrabajoReport()
+        {
+            OrdenTrabajoRepository orden = new OrdenTrabajoRepository();
+            DataTable te = await orden.EncabezadoReporte(documento);
+            ReportDataSource rdsEncabezado = new ReportDataSource("ordentrabajo", te);
+            DataTable td = await orden.DetalleReporte(documento);
+            ReportDataSource rdsDetalle = new ReportDataSource("ordentrabajo_detalle", td);
+            rvOrdenTrabajo.LocalReport.DataSources.Clear();
+            rvOrdenTrabajo.LocalReport.DataSources.Add(rdsEncabezado);
+            rvOrdenTrabajo.LocalReport.DataSources.Add(rdsDetalle);
+            rvOrdenTrabajo.LocalReport.Refresh();
+            rvOrdenTrabajo.RefreshReport();
         }
     }
 }

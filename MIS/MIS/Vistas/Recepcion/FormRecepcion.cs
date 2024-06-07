@@ -29,6 +29,7 @@ namespace MIS.Vistas.Recepcion
             btnBorrar.Visible = false;
             btnDuplicar.Visible = false;
             btnEtiqueta.Visible = false;
+            btnRechazar.Visible = false;
 
             cmsTabla.Visible = false;
             txtAnio.Text = DateTime.Now.Year.ToString();
@@ -98,7 +99,7 @@ namespace MIS.Vistas.Recepcion
                     DataGridViewRow firstRow = tablaIngresos.Rows[0];
                     idmagnitudprincipal = Convert.ToInt32(firstRow.Cells["idmagnitud"].Value);
                 }
-                
+
                 using (FormAgregarIngresos form = new FormAgregarIngresos(idcliente, idrecepcion, 0, idmagnitudprincipal))
                 {
                     form.IngresoAgregado += (eventSender, args) => BuscarIngresos(idcliente, nro_recepcion);
@@ -114,18 +115,20 @@ namespace MIS.Vistas.Recepcion
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     idcliente = form.idcliente;
-                    
+
                     BuscarCliente(idcliente, "", 0, 0);
                     limpiar();
                 }
             }
-            
+
         }
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             int idsede = 0;
             int idcontacto = 0;
             int forma_llegada = 0;
+            DateTime fecha = dtFechaRecepcion.Value.Date;
+            string fechaguardar = fecha.ToString("yyyy-MM-dd HH:mm:ss");
             if (cbFormasLlegada.DataSource != null && (int)cbFormasLlegada.SelectedValue > 0)
             {
                 forma_llegada = (int)cbFormasLlegada.SelectedValue;
@@ -134,7 +137,7 @@ namespace MIS.Vistas.Recepcion
             {
                 MessageBox.Show("Debe seleccionar la forma de llegada");
                 cbFormasLlegada.Focus();
-                
+
                 return;
             }
             if (cbSedes.SelectedValue != null)
@@ -158,7 +161,7 @@ namespace MIS.Vistas.Recepcion
                 ids.Add(id);
             }
             RecepcionRepository guardar = new RecepcionRepository();
-            int recepcion =  await guardar.GuardarRecepcion(ids, idcliente, idsede, idcontacto, nro_recepcion, txtObservacion.Text, forma_llegada);
+            int recepcion = await guardar.GuardarRecepcion(ids, idcliente, idsede, idcontacto, nro_recepcion, txtObservacion.Text, forma_llegada, fechaguardar);
             if (recepcion > 0)
             {
                 nro_recepcion = recepcion;
@@ -227,7 +230,7 @@ namespace MIS.Vistas.Recepcion
                         {
                             MessageBox.Show("Ingresos anulados no se pueden eliminar");
                         }
-                        
+
                     }
                     string ingresosText = string.Join(", ", ingresos);
                     DialogResult result = MessageBox.Show($"¿Desea borrar los ingresos: {ingresosText}?", "Confirmar borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -297,6 +300,7 @@ namespace MIS.Vistas.Recepcion
             btnDuplicar.Visible = false;
             btnCamara.Visible = false;
             btnLimpiar.Visible = false;
+            btnRechazar.Visible = false;
         }
         private async void BuscarIngresos(int idcliente, int nro)
         {
@@ -316,6 +320,7 @@ namespace MIS.Vistas.Recepcion
                 btnDuplicar.Visible = true;
                 btnCamara.Visible = true;
                 btnLimpiar.Visible = true;
+                btnRechazar.Visible = true;
                 tablaIngresos.CurrentCell = null;
                 tablaIngresos.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
                 tablaIngresos.Columns["id"].Visible = false;
@@ -356,7 +361,7 @@ namespace MIS.Vistas.Recepcion
                     {
                         await FG.CargarCombos(cbFormasLlegada, "formas_llegada", "", 0);
                     }
-                    
+
                 }
             }
         }
@@ -373,8 +378,13 @@ namespace MIS.Vistas.Recepcion
                 int idContacto = (int)dataTable.Rows[0]["idcontacto"];
                 txtObservacion.Text = dataTable.Rows[0]["observacion"].ToString();
                 await FG.CargarCombos(cbFormasLlegada, "formas_llegada", "", (int)dataTable.Rows[0]["idforma_llegada"]);
-                DateTime fechaRecepcion = (DateTime)dataTable.Rows[0]["fecha"];
-                dtFechaRecepcion.Value = fechaRecepcion;
+                string fechaRecepcionString = dataTable.Rows[0]["fecha"].ToString();
+                DateTimeOffset fechaRecepcionOffset = DateTimeOffset.Parse(fechaRecepcionString);
+                DateTime fechaRecepcionLocal = fechaRecepcionOffset.ToLocalTime().DateTime;
+                dtFechaRecepcion.Value = fechaRecepcionLocal;
+
+
+                dtFechaRecepcion.Value = fechaRecepcionLocal;
                 txtEstado.Text = dataTable.Rows[0]["estado"].ToString();
                 BuscarCliente(cliente, "", idSede, idContacto);
             }
@@ -440,7 +450,7 @@ namespace MIS.Vistas.Recepcion
                     {
                         bool success = false;
                         success = doc.SetPrinter(@"\\RECEPCION\Brother QL-800", true);
-                        
+
                         foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
                         {
                             doc.GetObject("NUMERO").Text = row.Cells["etiqueta"].Value.ToString();
@@ -452,8 +462,8 @@ namespace MIS.Vistas.Recepcion
                             }
                             for (int i = 0; i < 2; i++)
                             {
-                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
-                                doc.PrintOut(1, PrintOptionConstants.bpoDefault);
+                                doc.StartPrint("", PrintOptionConstants.bpoHighResolution);
+                                doc.PrintOut(1, PrintOptionConstants.bpoHighResolution);
                                 doc.EndPrint();
                             }
 
@@ -470,7 +480,7 @@ namespace MIS.Vistas.Recepcion
                 {
                     MessageBox.Show("Debe seleccionar uno o más ingresos");
                 }
-        } catch (Exception ex)
+            } catch (Exception ex)
             {
                 MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -481,7 +491,7 @@ namespace MIS.Vistas.Recepcion
             {
                 if (tablaIngresos.SelectedRows.Count > 0)
                 {
-                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\INGRESOS.lbx";
+                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\SERIE.lbx";
                     if (!File.Exists(path))
                     {
                         MessageBox.Show("El archivo no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -495,7 +505,7 @@ namespace MIS.Vistas.Recepcion
 
                         foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
                         {
-                            doc.GetObject("NUMERO").Text = row.Cells["codigo"].Value.ToString();
+                            doc.GetObject("SERIE").Text = row.Cells["codigo"].Value.ToString();
                             if (!success)
                             {
                                 MessageBox.Show("No se pudo establecer la impresora.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -504,8 +514,8 @@ namespace MIS.Vistas.Recepcion
                             }
                             for (int i = 0; i < 2; i++)
                             {
-                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
-                                doc.PrintOut(1, PrintOptionConstants.bpoDefault);
+                                doc.StartPrint("", PrintOptionConstants.bpoHighResolution);
+                                doc.PrintOut(1, PrintOptionConstants.bpoHighResolution);
                                 doc.EndPrint();
                             }
 
@@ -528,14 +538,13 @@ namespace MIS.Vistas.Recepcion
                 MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void serieClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 if (tablaIngresos.SelectedRows.Count > 0)
                 {
-                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\INGRESOS.lbx";
+                    string path = @"\\Server\metrogestion\008 SOFTWARE\ETIQUETAS\SERIE.lbx";
                     if (!File.Exists(path))
                     {
                         MessageBox.Show("El archivo no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -549,7 +558,7 @@ namespace MIS.Vistas.Recepcion
 
                         foreach (DataGridViewRow row in tablaIngresos.SelectedRows)
                         {
-                            doc.GetObject("NUMERO").Text = row.Cells["serie"].Value.ToString();
+                            doc.GetObject("SERIE").Text = row.Cells["serie"].Value.ToString();
                             if (!success)
                             {
                                 MessageBox.Show("No se pudo establecer la impresora.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -558,8 +567,8 @@ namespace MIS.Vistas.Recepcion
                             }
                             for (int i = 0; i < 2; i++)
                             {
-                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
-                                doc.PrintOut(1, PrintOptionConstants.bpoDefault);
+                                doc.StartPrint("", PrintOptionConstants.bpoHighResolution);
+                                doc.PrintOut(1, PrintOptionConstants.bpoHighResolution);
                                 doc.EndPrint();
                             }
 
@@ -629,18 +638,18 @@ namespace MIS.Vistas.Recepcion
         }
         private void labelContacto_Click(object sender, EventArgs e)
         {
-            if(idcliente == 0)
+            if (idcliente == 0)
             {
                 MessageBox.Show("Debe de seleccionar el cliente", "Sugerencias", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-            } else if(cbSedes.DataSource == null || (int)cbSedes.SelectedValue == 0)
+            } else if (cbSedes.DataSource == null || (int)cbSedes.SelectedValue == 0)
             {
                 MessageBox.Show("Debe de seleccionar la sede del cliente", "Sugerencias", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else
             {
-                using(FormContactos form = new FormContactos(idcliente, (int)cbSedes.SelectedValue, txtCliente.Text))
+                using (FormContactos form = new FormContactos(idcliente, (int)cbSedes.SelectedValue, txtCliente.Text))
                 {
                     form.ContactoGuardado += async (eventSender, args) => await FG.CargarCombos(cbContactos, "contactos", $"{idcliente}", 0);
                     DialogResult result = form.ShowDialog();
@@ -701,12 +710,12 @@ namespace MIS.Vistas.Recepcion
                                     doc.Close();
                                     return;
                                 }
-                                doc.StartPrint("", PrintOptionConstants.bpoDefault);
-                                doc.PrintOut(printDialog.PrinterSettings.Copies, PrintOptionConstants.bpoDefault);
+                                doc.StartPrint("", PrintOptionConstants.bpoHighResolution);
+                                doc.PrintOut(printDialog.PrinterSettings.Copies, PrintOptionConstants.bpoHighResolution);
                                 doc.EndPrint();
                             }
                             doc.Close();
-                            
+
                             RecepcionRepository etiqueta = new RecepcionRepository();
                             bool impresas = await etiqueta.SerieImpresa(ids);
                             if (impresas)
@@ -733,11 +742,11 @@ namespace MIS.Vistas.Recepcion
                 MessageBox.Show($"Error al imprimir: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
         private void tablaIngresos_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             bool valor = (bool)tablaIngresos.Rows[e.RowIndex].Cells["con_serie"].Value;
-            if (!valor)
+            
+            if (!valor && (tablaIngresos.Rows[e.RowIndex].Cells["codigo"].ToString() == ""))
             {
                 tablaIngresos.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 63, 63);
             }

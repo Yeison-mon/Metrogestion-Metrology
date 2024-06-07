@@ -60,6 +60,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnMinize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
+            this.btnSubRecep_Recibir = new System.Windows.Forms.Button();
+            this.btnSubLab_Recibir = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelSubConfiguracion.SuspendLayout();
@@ -127,7 +129,7 @@
             this.panelSubConfiguracion.Controls.Add(this.btnSubConf_Servicios);
             this.panelSubConfiguracion.Controls.Add(this.btnSubConf_Clientes);
             this.panelSubConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubConfiguracion.Location = new System.Drawing.Point(0, 587);
+            this.panelSubConfiguracion.Location = new System.Drawing.Point(0, 661);
             this.panelSubConfiguracion.Name = "panelSubConfiguracion";
             this.panelSubConfiguracion.Size = new System.Drawing.Size(233, 127);
             this.panelSubConfiguracion.TabIndex = 11;
@@ -209,7 +211,7 @@
             this.btnMConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnMConfiguracion.Image = global::MIS.Properties.Resources.configuracion32blanco;
             this.btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMConfiguracion.Location = new System.Drawing.Point(0, 547);
+            this.btnMConfiguracion.Location = new System.Drawing.Point(0, 621);
             this.btnMConfiguracion.Name = "btnMConfiguracion";
             this.btnMConfiguracion.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
             this.btnMConfiguracion.Size = new System.Drawing.Size(233, 40);
@@ -222,13 +224,14 @@
             // panelSubLaboratorio
             // 
             this.panelSubLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Recibir);
             this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Certificados);
             this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Inspeccion);
             this.panelSubLaboratorio.Controls.Add(this.btnSubLab_OrdenTrabajo);
             this.panelSubLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubLaboratorio.Location = new System.Drawing.Point(0, 420);
+            this.panelSubLaboratorio.Location = new System.Drawing.Point(0, 460);
             this.panelSubLaboratorio.Name = "panelSubLaboratorio";
-            this.panelSubLaboratorio.Size = new System.Drawing.Size(233, 127);
+            this.panelSubLaboratorio.Size = new System.Drawing.Size(233, 161);
             this.panelSubLaboratorio.TabIndex = 15;
             // 
             // btnSubLab_Certificados
@@ -272,6 +275,7 @@
             this.btnSubLab_Inspeccion.Text = "Inspeccion, Proceso y Final";
             this.btnSubLab_Inspeccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubLab_Inspeccion.UseVisualStyleBackColor = false;
+            this.btnSubLab_Inspeccion.Click += new System.EventHandler(this.btnSubLab_Inspeccion_Click);
             // 
             // btnSubLab_OrdenTrabajo
             // 
@@ -308,7 +312,7 @@
             this.btnLaboratorio.ForeColor = System.Drawing.Color.White;
             this.btnLaboratorio.Image = global::MIS.Properties.Resources.analisis32;
             this.btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLaboratorio.Location = new System.Drawing.Point(0, 380);
+            this.btnLaboratorio.Location = new System.Drawing.Point(0, 420);
             this.btnLaboratorio.Name = "btnLaboratorio";
             this.btnLaboratorio.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
             this.btnLaboratorio.Size = new System.Drawing.Size(233, 40);
@@ -324,7 +328,7 @@
             this.panelSubComercial.Controls.Add(this.btnSubCom_Facturacion);
             this.panelSubComercial.Controls.Add(this.btnSubCom_Cotizaciones);
             this.panelSubComercial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubComercial.Location = new System.Drawing.Point(0, 301);
+            this.panelSubComercial.Location = new System.Drawing.Point(0, 341);
             this.panelSubComercial.Name = "panelSubComercial";
             this.panelSubComercial.Size = new System.Drawing.Size(233, 79);
             this.panelSubComercial.TabIndex = 13;
@@ -385,7 +389,7 @@
             this.btnMComercial.ForeColor = System.Drawing.Color.White;
             this.btnMComercial.Image = global::MIS.Properties.Resources.Comercial32;
             this.btnMComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMComercial.Location = new System.Drawing.Point(0, 261);
+            this.btnMComercial.Location = new System.Drawing.Point(0, 301);
             this.btnMComercial.Name = "btnMComercial";
             this.btnMComercial.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
             this.btnMComercial.Size = new System.Drawing.Size(233, 40);
@@ -398,13 +402,14 @@
             // panelSubrecepcion
             // 
             this.panelSubrecepcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Recibir);
             this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Entrega);
             this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Inspeccion);
             this.panelSubrecepcion.Controls.Add(this.btnSubRecep_RegistroEquipos);
             this.panelSubrecepcion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubrecepcion.Location = new System.Drawing.Point(0, 140);
             this.panelSubrecepcion.Name = "panelSubrecepcion";
-            this.panelSubrecepcion.Size = new System.Drawing.Size(233, 121);
+            this.panelSubrecepcion.Size = new System.Drawing.Size(233, 161);
             this.panelSubrecepcion.TabIndex = 10;
             // 
             // btnSubRecep_Entrega
@@ -533,7 +538,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Image = global::MIS.Properties.Resources.salir32blanco;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 714);
+            this.btnSalir.Location = new System.Drawing.Point(0, 788);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
             this.btnSalir.Size = new System.Drawing.Size(233, 40);
@@ -637,6 +642,48 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnSubRecep_Recibir
+            // 
+            this.btnSubRecep_Recibir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubRecep_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubRecep_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubRecep_Recibir.FlatAppearance.BorderSize = 0;
+            this.btnSubRecep_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSubRecep_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSubRecep_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubRecep_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubRecep_Recibir.ForeColor = System.Drawing.Color.White;
+            this.btnSubRecep_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubRecep_Recibir.Location = new System.Drawing.Point(0, 121);
+            this.btnSubRecep_Recibir.Name = "btnSubRecep_Recibir";
+            this.btnSubRecep_Recibir.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnSubRecep_Recibir.Size = new System.Drawing.Size(233, 40);
+            this.btnSubRecep_Recibir.TabIndex = 7;
+            this.btnSubRecep_Recibir.Text = "Recibir Ingresos";
+            this.btnSubRecep_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubRecep_Recibir.UseVisualStyleBackColor = false;
+            // 
+            // btnSubLab_Recibir
+            // 
+            this.btnSubLab_Recibir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSubLab_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubLab_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubLab_Recibir.FlatAppearance.BorderSize = 0;
+            this.btnSubLab_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnSubLab_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSubLab_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubLab_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubLab_Recibir.ForeColor = System.Drawing.Color.White;
+            this.btnSubLab_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubLab_Recibir.Location = new System.Drawing.Point(0, 121);
+            this.btnSubLab_Recibir.Name = "btnSubLab_Recibir";
+            this.btnSubLab_Recibir.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnSubLab_Recibir.Size = new System.Drawing.Size(233, 41);
+            this.btnSubLab_Recibir.TabIndex = 7;
+            this.btnSubLab_Recibir.Text = "Recibir Ingresos";
+            this.btnSubLab_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubLab_Recibir.UseVisualStyleBackColor = false;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -699,5 +746,7 @@
         private System.Windows.Forms.Button btnSubLab_Inspeccion;
         private System.Windows.Forms.Button btnSubLab_OrdenTrabajo;
         private System.Windows.Forms.Button btnSubCom_Facturacion;
+        private System.Windows.Forms.Button btnSubRecep_Recibir;
+        private System.Windows.Forms.Button btnSubLab_Recibir;
     }
 }

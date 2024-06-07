@@ -759,7 +759,7 @@
         </Style>
       </Rectangle>
       <Line Name="Line6">
-        <Top>9.54891cm</Top>
+        <Top>8.27891cm</Top>
         <Left>11.2251cm</Left>
         <Height>0cm</Height>
         <Width>8.53112cm</Width>
@@ -790,7 +790,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>9.54891cm</Top>
+        <Top>8.27891cm</Top>
         <Left>11.2251cm</Left>
         <Height>0.6cm</Height>
         <Width>8.53112cm</Width>
@@ -837,7 +837,7 @@
         <Source>Embedded</Source>
         <Value>firma</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>8.52557cm</Top>
+        <Top>7.25557cm</Top>
         <Left>11.2251cm</Left>
         <Height>1.02334cm</Height>
         <Width>8.53112cm</Width>
@@ -870,7 +870,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>7.94349cm</Top>
+        <Top>6.67349cm</Top>
         <Left>11.2251cm</Left>
         <Height>1.60542cm</Height>
         <Width>8.53112cm</Width>
@@ -887,7 +887,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4.59375in</Height>
+    <Height>3.65625in</Height>
     <Style />
   </Body>
   <Width>8.5in</Width>
@@ -1696,6 +1696,16 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>0.89958cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
