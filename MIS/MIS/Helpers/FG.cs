@@ -6,6 +6,9 @@ using System.IO;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using MsBox.Avalonia.Dto;
+using MsBox.Avalonia.Enums;
+using MsBox.Avalonia;
 
 namespace MIS.Helpers
 {
@@ -15,6 +18,8 @@ namespace MIS.Helpers
         public static string UserName { get; set; }
         public static string Ip { get; set; }
         public static string Mac { get; set; }
+        public static string Url { get; set; }
+
         public static async Task CargarCombos(ComboBox comboBox, string tipo, string condicion, int seleccionado)
         {
             CombosRepository combos = new CombosRepository();
@@ -57,6 +62,21 @@ namespace MIS.Helpers
         {
             byte[] fileBytes = File.ReadAllBytes(filePath);
             return Convert.ToBase64String(fileBytes);
+        }
+
+        public static void ShowMsg(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void ShowAlert(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public static void ShowError(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

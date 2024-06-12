@@ -3,16 +3,59 @@
   "WorkspaceRootPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\helpers\\postgresqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CFD4C71F-330F-43D7-BF37-1365770E89EF}|..\\..\\MIS.Web\\MIS.Web\\MIS.Web.csproj|c:\\users\\programador\\downloads\\mis.web\\mis.web\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\helpers\\fg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\helpers\\fg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFD4C71F-330F-43D7-BF37-1365770E89EF}|..\\..\\MIS.Web\\MIS.Web\\MIS.Web.csproj|c:\\users\\programador\\downloads\\mis.web\\mis.web\\wwwroot\\reportes\\laboratorio\\rpordentrabajo.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFD4C71F-330F-43D7-BF37-1365770E89EF}|..\\..\\MIS.Web\\MIS.Web\\MIS.Web.csproj|c:\\users\\programador\\downloads\\mis.web\\mis.web\\wwwroot\\reportes\\recepcion\\rpinspeccion.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFD4C71F-330F-43D7-BF37-1365770E89EF}|..\\..\\MIS.Web\\MIS.Web\\MIS.Web.csproj|c:\\users\\programador\\downloads\\mis.web\\mis.web\\wwwroot\\reportes\\recepcion\\rprecepcion.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFD4C71F-330F-43D7-BF37-1365770E89EF}|..\\..\\MIS.Web\\MIS.Web\\MIS.Web.csproj|c:\\users\\programador\\downloads\\mis.web\\mis.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\recepcion\\forminspeccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\forminspeccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\modales\\formrecepciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\modales\\formrecepciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formordentrabajo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\helpers\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\helpers\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\helpers\\postgresqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\helpers\\postgresqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\mis\\modelos\\laboratorio\\ordentrabajorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\modelos\\laboratorio\\ordentrabajorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +65,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,42 +76,195 @@
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReportesController.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\Controllers\\ReportesController.cs",
+              "RelativeDocumentMoniker": "..\\..\\MIS.Web\\MIS.Web\\Controllers\\ReportesController.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\Controllers\\ReportesController.cs",
+              "RelativeToolTip": "..\\..\\MIS.Web\\MIS.Web\\Controllers\\ReportesController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwEcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T14:03:22.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "rpRecepcion.rdlc [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpRecepcion.rdlc",
+              "RelativeDocumentMoniker": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpRecepcion.rdlc",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpRecepcion.rdlc [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpRecepcion.rdlc [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-06-12T13:55:32.358Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\..\\MIS.Web\\MIS.Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\appsettings.json",
+              "RelativeToolTip": "..\\..\\MIS.Web\\MIS.Web\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-12T13:54:32.754Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Inicio.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Inicio.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Inicio.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Inicio.cs",
-              "RelativeToolTip": "MIS\\Vistas\\Inicio.cs",
-              "ViewState": "AQIAAE8BAAAAAAAAAAApwGYBAAAAAAAA",
+              "Title": "rpOrdenTrabajo.rdlc [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Laboratorio\\rpOrdenTrabajo.rdlc",
+              "RelativeDocumentMoniker": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Laboratorio\\rpOrdenTrabajo.rdlc",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Laboratorio\\rpOrdenTrabajo.rdlc [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Laboratorio\\rpOrdenTrabajo.rdlc [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-06-12T13:35:59.085Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "rpInspeccion.rdlc [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpInspeccion.rdlc",
+              "RelativeDocumentMoniker": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpInspeccion.rdlc",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpInspeccion.rdlc [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\MIS.Web\\MIS.Web\\wwwroot\\Reportes\\Recepcion\\rpInspeccion.rdlc [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-06-12T13:34:57.537Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormInspeccion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormInspeccion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormInspeccion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormInspeccion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormInspeccion.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAnwCYAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T14:18:35.569Z",
+              "WhenOpened": "2024-06-12T13:31:42.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormRecepciones.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Modales\\FormRecepciones.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAASwI0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T13:31:06.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormOrdenTrabajo.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormOrdenTrabajo.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAADgv90AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T13:29:57.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Inicio.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Inicio.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Inicio.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Inicio.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MIS\\Vistas\\Inicio.cs [Dise\u00F1o]",
+              "Title": "FG.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\FG.cs",
+              "RelativeDocumentMoniker": "MIS\\Helpers\\FG.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\FG.cs",
+              "RelativeToolTip": "MIS\\Helpers\\FG.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T14:14:40.202Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-06-11T19:40:26.797Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "PostgreSQLHelper.cs",
               "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\PostgreSQLHelper.cs",
               "RelativeDocumentMoniker": "MIS\\Helpers\\PostgreSQLHelper.cs",
               "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\PostgreSQLHelper.cs",
               "RelativeToolTip": "MIS\\Helpers\\PostgreSQLHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T13:30:42.366Z",
+              "WhenOpened": "2024-06-08T02:57:57.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormRecepcion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T19:56:42.693Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrdenTrabajoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Laboratorio\\OrdenTrabajoRepository.cs",
+              "RelativeDocumentMoniker": "MIS\\Modelos\\Laboratorio\\OrdenTrabajoRepository.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Modelos\\Laboratorio\\OrdenTrabajoRepository.cs",
+              "RelativeToolTip": "MIS\\Modelos\\Laboratorio\\OrdenTrabajoRepository.cs",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAnwPAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T19:55:06.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\ReportService.cs",
+              "RelativeDocumentMoniker": "MIS\\Helpers\\ReportService.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Helpers\\ReportService.cs",
+              "RelativeToolTip": "MIS\\Helpers\\ReportService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T19:09:12.492Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormRecepcion.cs",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ViewState": "AQIAAPcAAAAAAAAAAAAiwAsBAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T15:15:19.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormProcesoFinal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T15:10:23.207Z"
             }
           ]
         }

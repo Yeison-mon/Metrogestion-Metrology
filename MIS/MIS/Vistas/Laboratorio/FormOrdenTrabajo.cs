@@ -216,12 +216,12 @@ namespace MIS.Vistas.Laboratorio
             
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
+        private async void btnImprimir_Click(object sender, EventArgs e)
         {
             if (ordentrabajo > 0)
             {
-                FormReportes reportes = new FormReportes(ordentrabajo, "ODT");
-                reportes.ShowDialog();
+                ReportService reportService = new ReportService();
+                await reportService.OpenReportInBrowserAsync(ordentrabajo, "ODT");
             }
             else
             {

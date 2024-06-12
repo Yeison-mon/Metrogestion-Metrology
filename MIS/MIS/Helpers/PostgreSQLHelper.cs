@@ -3,6 +3,9 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Dto;
+using MsBox.Avalonia.Enums;
 
 namespace MIS.Helpers
 {
@@ -15,13 +18,13 @@ namespace MIS.Helpers
         {
             string host = "";
             string password = "";
-            if (false)
+            if (true)
             {
-                host = "192.168.0.107";
+                FG.Url = "192.168.0.107";
                 password = "integration2024";
             } else
             {
-                host = "localhost";
+                FG.Url = "localhost";
                 password = "Yeison.2024.";
             }
             
@@ -29,7 +32,7 @@ namespace MIS.Helpers
             int port = 5432;
             string database = "metrology";
             string username = "postgres";
-            connectionString = $"Host={host};Port={port};Database={database};Username={username};Password={password};";
+            connectionString = $"Host={FG.Url};Port={port};Database={database};Username={username};Password={password};";
         }
 
         public static PostgreSQLHelper GetInstance()
@@ -62,7 +65,7 @@ namespace MIS.Helpers
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FG.ShowError("Error", "Error al conectarse a la base de datos: " + ex.Message);
                 return null;
             }
         }
@@ -88,7 +91,7 @@ namespace MIS.Helpers
                         {
                             // Rollback en caso de error
                             transaction.Rollback();
-                            MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            FG.ShowError("Error al ejecutar la consulta: " + ex.Message, "Error");
                             return null;
                         }
                     }
@@ -96,7 +99,7 @@ namespace MIS.Helpers
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FG.ShowError("Error al conectarse a la base de datos: " + ex.Message, "Error");
                 return null;
             }
         }
@@ -122,7 +125,7 @@ namespace MIS.Helpers
                         catch (Exception ex)
                         {
                             transaction.Rollback();
-                            MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            FG.ShowError("Error al ejecutar la consulta: " + ex.Message, "Error");
                             return 0;
                         }
                     }
@@ -130,7 +133,7 @@ namespace MIS.Helpers
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FG.ShowError("Error al conectarse a la base de datos: " + ex.Message, "Error");
                 return 0;
             }
         }
@@ -160,7 +163,7 @@ namespace MIS.Helpers
                         catch (Exception ex)
                         {
                             transaction.Rollback();
-                            MessageBox.Show("Error al ejecutar la consulta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            FG.ShowError("Error al ejecutar la consulta: " + ex.Message, "Error");
                             return null;
                         }
                     }
@@ -168,7 +171,7 @@ namespace MIS.Helpers
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectarse a la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FG.ShowError("Error al conectarse a la base de datos: " + ex.Message, "Error");
                 return null;
             }
         }

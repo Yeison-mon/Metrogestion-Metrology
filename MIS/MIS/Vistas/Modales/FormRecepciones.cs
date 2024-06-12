@@ -1,4 +1,5 @@
-﻿using MIS.Modelos.Registros;
+﻿using MIS.Helpers;
+using MIS.Modelos.Registros;
 using System;
 using System.Data;
 using System.Drawing;
@@ -138,13 +139,13 @@ namespace MIS.Vistas.Modales
         {
             
         }
-        private void Imprimir(int nro, string tipo)
+        private async void Imprimir(int nro, string tipo)
         {
             int numeroRecepcion = nro;
             if (numeroRecepcion > 0)
             {
-                FormReportes reportes = new FormReportes(nro, tipo);
-                reportes.ShowDialog();
+                ReportService reportService = new ReportService();
+                await reportService.OpenReportInBrowserAsync(numeroRecepcion, tipo);
             }
             else
             {

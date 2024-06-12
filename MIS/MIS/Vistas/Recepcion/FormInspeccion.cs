@@ -39,12 +39,12 @@ namespace MIS.Vistas.Recepcion
             recepcion = 0;
         }
 
-        private void ImprimirInspeccion()
+        private async void ImprimirInspeccion()
         {
             if (inspeccion > 0)
             {
-                FormReportes reportes = new FormReportes(inspeccion, "Inspeccion");
-                reportes.ShowDialog();
+                ReportService reportService = new ReportService();
+                await reportService.OpenReportInBrowserAsync(inspeccion, "Inspeccion");
             }
             else
             {

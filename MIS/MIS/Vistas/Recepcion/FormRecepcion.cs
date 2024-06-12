@@ -258,20 +258,21 @@ namespace MIS.Vistas.Recepcion
         {
             ImprimirRecepcion();
         }
-        private void ImprimirRecepcion()
+        private async void ImprimirRecepcion()
         {
             int numeroRecepcion = nro_recepcion;
             string tipo = "Recepcion";
             if (numeroRecepcion > 0)
             {
-                FormReportes reportes = new FormReportes(nro_recepcion, tipo);
-                reportes.ShowDialog();
+                ReportService reportService = new ReportService();
+                await reportService.OpenReportInBrowserAsync(numeroRecepcion, tipo);
             }
             else
             {
                 MessageBox.Show("No se ha cargado el número de documento");
             }
         }
+
         private void limpiar()
         {
             btnAgregarIngreso.Enabled = false;
