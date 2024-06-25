@@ -1,14 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\",
+  "WorkspaceRootPath": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\laboratorio\\formsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\inicio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\inicio.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\programador\\downloads\\mis-01-04-2024\\mis\\mis\\vistas\\laboratorio\\formsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formsensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\recepcion\\formrecepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\helpers\\postgresqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\helpers\\postgresqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|c:\\users\\chiri\\documents\\metrogestion-metrology\\mis\\mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CFCC012B-12DC-4349-9FA5-6A8334546693}|MIS\\MIS.csproj|solutionrelative:mis\\vistas\\laboratorio\\formprocesofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,43 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormSensor.cs",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAlAAAA",
+              "Title": "Inicio.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.Designer.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Inicio.Designer.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.Designer.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Inicio.Designer.cs",
+              "ViewState": "AQIAAPUAAAAAAAAAAAAqwAkBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T21:12:06.071Z",
+              "WhenOpened": "2024-06-25T21:08:22.494Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormSensor.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormSensor.cs",
-              "ToolTip": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\Vistas\\Laboratorio\\FormSensor.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormSensor.cs [Dise\u00F1o]",
+              "Title": "Inicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Inicio.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Inicio.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T21:11:54.312Z",
+              "WhenOpened": "2024-06-25T21:08:19.206Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormProcesoFinal.cs",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAhwDkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T21:07:01.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Inicio.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Inicio.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Inicio.cs",
+              "ViewState": "AQIAAFYBAAAAAAAAAIA6wGkBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T21:06:45.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormRecepcion.cs",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "RelativeToolTip": "MIS\\Vistas\\Recepcion\\FormRecepcion.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAgwFgDAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T20:57:05.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PostgreSQLHelper.cs",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Helpers\\PostgreSQLHelper.cs",
+              "RelativeDocumentMoniker": "MIS\\Helpers\\PostgreSQLHelper.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Helpers\\PostgreSQLHelper.cs",
+              "RelativeToolTip": "MIS\\Helpers\\PostgreSQLHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T20:56:43.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormProcesoFinal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "RelativeDocumentMoniker": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs",
+              "ToolTip": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MIS\\Vistas\\Laboratorio\\FormProcesoFinal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T20:50:42.017Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

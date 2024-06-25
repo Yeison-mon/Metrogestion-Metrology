@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\MIS.csproj": {}
+    "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\MIS.csproj": {
+    "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\MIS.csproj",
+        "projectUniqueName": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
         "projectName": "MIS",
-        "projectPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\MIS.csproj",
-        "packagesPath": "C:\\Users\\PROGRAMADOR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PROGRAMADOR\\Downloads\\MIS-01-04-2024\\MIS\\MIS\\obj\\",
+        "projectPath": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
+        "packagesPath": "C:\\Users\\chiri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PROGRAMADOR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -229,7 +230,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -15,13 +15,13 @@ namespace MIS.Helpers
         {
             string host = "";
             string password = "";
-            if (true)
+            if (false)
             {
                 FG.Url = "192.168.0.100";
                 password = "integration2024";
             } else
             {
-                FG.Url = "localhost";
+                FG.Url = "26.143.211.65";
                 password = "Yeison.2024.";
             }
             

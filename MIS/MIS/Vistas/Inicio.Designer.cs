@@ -263,7 +263,6 @@
             btnSensor.Text = "Sensor";
             btnSensor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnSensor.UseVisualStyleBackColor = false;
-            btnSensor.Click += btnSensor_Click;
             // 
             // btnSubLab_Recibir
             // 

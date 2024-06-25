@@ -361,13 +361,6 @@ namespace MIS.Vistas
             hideSubmenu();
         }
 
-        private void btnSensor_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormSensor>();
-            btnLaboratorio.BackColor = Color.FromArgb(50, 50, 50);
-            hideSubmenu();
-        }
-
         private void hideSubmenu()
         {
             if (panelSubrecepcion.Visible == true)
