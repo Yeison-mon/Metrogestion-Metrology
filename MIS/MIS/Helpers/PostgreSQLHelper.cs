@@ -30,9 +30,6 @@ namespace MIS.Helpers
             string database = "metrology";
             string username = "postgres";
             connectionString = $"Host={FG.Url};Port={port};Database={database};Username={username};Password={password};";
-            //var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            //optionsBuilder.UseNpgsql($"UserID=postgres;Password={password};Host={FG.Url};Port={port};Database={database};Pooling=true;");
-            //_dbContext = new ApplicationDbContext(optionsBuilder.Options);
         }
 
         public static PostgreSQLHelper GetInstance()
