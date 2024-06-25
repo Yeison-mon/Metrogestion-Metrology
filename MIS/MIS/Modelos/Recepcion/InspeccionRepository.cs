@@ -1,5 +1,4 @@
 ﻿using MIS.Helpers;
-using MIS.Reportes.Recepcion;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -49,7 +48,7 @@ namespace MIS.Modelos.Recepcion
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                FG.ShowError("Error: " + ex.Message, "Error");
                 return null;
             }
         }

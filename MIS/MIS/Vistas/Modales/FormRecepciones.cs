@@ -34,6 +34,11 @@ namespace MIS.Vistas.Modales
                 cbEstados.Items.Add("Cotizado");
                 cbEstados.Items.Add("Inspeccionado");
             }
+            if (tipo == "IPF") 
+            {
+                cbEstados.Items.Add("Programado");
+            }
+
             cbEstados.SelectedIndex = 0;
             TablaRecepciones();
             tablaRecepcion.CellMouseDown += (sender, e) =>

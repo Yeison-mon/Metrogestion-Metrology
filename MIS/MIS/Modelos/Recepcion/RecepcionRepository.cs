@@ -755,26 +755,45 @@ namespace MIS.Modelos.Registros
         public async Task<DataTable> ModalRecepciones(string estado, int idcliente, string tipo)
         {
             string where = "";
-            
+            string tipoestado = "r.estado";
             if (tipo == "IR")
             {
                 where += $"where r.estado = '{estado}'";
-            }
-            if (tipo == "ODT")
-            {
-                where += $"where r.estado != 'Ingresado' and (r.estado = '{estado}' or c.convenio = 1) and i.inspeccion > 0";
+                tipoestado = "r.estado";
             }
             if (tipo == "Cotizacion")
             {
-                where += $"where r.estado = '{estado}'";
+                if (estado == "Inspeccionado")
+                {
+                    where += $"where i.estado = 'Inspeccionado'";
+                    tipoestado = "i.estado";
+                } else
+                {
+                    where += $"where co.estado = '{estado}'";
+                    tipoestado = "co.estado";
+                }
+                
+                
+            }
+            if (tipo == "ODT")
+            {
+                where += $"where r.estado = 'Cotizado' or co.estado = 'Aprobado' or c.convenio = 1 and i.inspeccion > 0 and o.id isnull";
+                tipoestado = "coalesce(co.estado, 'SIN COTIZAR') as estado";
+            }
+            if (tipo == "IPF")
+            {
+                where += $"where o.estado = 'Registrado' and pd.idingreso isnull and o.idusuorden = {FG.UserId}";
+                tipoestado = "o.estado";
             }
             if (idcliente > 0)
             {
                 where += $" and r.idcliente = {idcliente}";
+
             }
+            
 
             string query = $@"
-                    select r.id, r.idcliente, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, r.estado, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
+                    select r.id, r.idcliente, ROW_NUMBER() OVER(order by r.id desc) as fila, r.recepcion as nro_recepcion, coalesce(i.inspeccion, 0) as nro_inspeccion, r.anio,'NR-'|| to_char(r.fecha, 'YY-') || trim(to_char(r.recepcion, '0000')) as recepcion, {tipoestado}, c.nombrecompleto || '(' || c.documento  || ')' as cliente,
                     to_char(r.fecha, 'DD-MM-YYYY') as fecha, count(rd.renglon) as cantidad, string_agg(distinct m.descripcion, ', ') as magnitud, ru.nombrecompleto as registrado_por, r.observacion,
                     count(rd.inactivo) as anulados
                             from recepciones r
@@ -786,8 +805,12 @@ namespace MIS.Modelos.Registros
                         left join inspecciones i on i.id = id.idinspeccion
                         left join cotizacion_detalle cd on cd.idingreso = rd.id
                         left join cotizaciones co on co.id = cd.idcotizacion
+                        left join ordentrabajo_detalle od on od.idingreso = rd.id
+                        left join ordentrabajo o on o.id = od.idorden 
+                        left join procesofinal_detalle pd on pd.idingreso = rd.id
+                        left join procesosfinales pf on pf.id = pd.idprocesofinal
                     {where} and rd.inactivo = 0
-                    group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente
+                    group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente, r.estado, i.estado, co.estado, o.estado
                     order by r.recepcion desc";
 
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);

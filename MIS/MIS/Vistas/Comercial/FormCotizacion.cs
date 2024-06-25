@@ -1,6 +1,5 @@
 ﻿using MIS.Helpers;
 using MIS.Modelos.Comercial;
-using MIS.Reportes.Recepcion;
 using MIS.Vistas.Modales;
 using System;
 using System.Collections.Generic;

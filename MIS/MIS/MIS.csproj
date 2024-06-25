@@ -28,56 +28,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Reportes\Laboratorio\dsOrdenTrabajo.cs">
-      <DependentUpon>dsOrdenTrabajo.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="Reportes\Recepcion\dsInspeccion.cs">
-      <DependentUpon>dsInspeccion.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="Reportes\Recepcion\dsRecepcion.cs">
-      <DependentUpon>dsRecepcion.xsd</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Reportes\Laboratorio\rpOrdenTrabajo.rdlc" />
-    <EmbeddedResource Include="Reportes\Recepcion\rpRecepcion.rdlc" />
-    <EmbeddedResource Include="Reportes\Recepcion\rpInspeccion.rdlc" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="Reportes\Laboratorio\dsOrdenTrabajo.xsc">
-      <DependentUpon>dsOrdenTrabajo.xsd</DependentUpon>
-    </None>
-    <None Update="Reportes\Laboratorio\dsOrdenTrabajo.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsOrdenTrabajo.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Reportes\Laboratorio\dsOrdenTrabajo.xss">
-      <DependentUpon>dsOrdenTrabajo.xsd</DependentUpon>
-    </None>
-    <None Update="Reportes\Recepcion\dsInspeccion.xsc">
-      <DependentUpon>dsInspeccion.xsd</DependentUpon>
-    </None>
-    <None Update="Reportes\Recepcion\dsInspeccion.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsInspeccion.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Reportes\Recepcion\dsInspeccion.xss">
-      <DependentUpon>dsInspeccion.xsd</DependentUpon>
-    </None>
-    <None Update="Reportes\Recepcion\dsRecepcion.xsc">
-      <DependentUpon>dsRecepcion.xsd</DependentUpon>
-    </None>
-    <None Update="Reportes\Recepcion\dsRecepcion.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsRecepcion.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Reportes\Recepcion\dsRecepcion.xss">
-      <DependentUpon>dsRecepcion.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
@@ -98,6 +49,11 @@
   <ItemGroup>
     <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageReference Include="OxyPlot.WindowsForms" Version="2.1.2" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.21" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.1" />
@@ -115,7 +71,11 @@
     <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Primitives" Version="8.0.0" />
     <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.Data.Odbc" Version="8.0.0" />
+    <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.1" />
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.3" />
@@ -130,5 +90,36 @@
     <PackageReference Include="PdfiumViewer" Version="2.13.0" />
     <PackageReference Include="PdfiumViewer.Native.x86.v8-xfa" Version="2018.4.8.256" />
     <PackageReference Include="PdfiumViewer.Native.x86_64.no_v8-no_xfa" Version="2018.4.8.256" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="DataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSetRecepciones.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetRecepciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSetRecepciones.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRecepciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

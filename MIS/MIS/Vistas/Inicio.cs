@@ -17,7 +17,7 @@ namespace MIS.Vistas
         private bool menuAbierto = false;
         private bool mouseDown;
         private Point lastLocation;
-        
+
         public Inicio()
         {
             InitializeComponent();
@@ -74,7 +74,7 @@ namespace MIS.Vistas
                 login.Show();
             }
         }
-        
+
         private void btnMinize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -129,7 +129,7 @@ namespace MIS.Vistas
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
-        
+
         private void contraer_Click(object sender, EventArgs e)
         {
             maximizar.Visible = true;
@@ -137,7 +137,7 @@ namespace MIS.Vistas
             this.Size = new Size(sw, sh);
             this.Location = new Point(lx, ly);
         }
-        
+
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -226,7 +226,7 @@ namespace MIS.Vistas
             AbrirFormulario<FormDashboard>();
             btnDashboard.BackColor = Color.FromArgb(50, 50, 50);
         }
-        
+
 
         private void btnSubRecep_RegistroEquipos_Click(object sender, EventArgs e)
         {
@@ -286,7 +286,7 @@ namespace MIS.Vistas
                 btnMConfiguracion.BackColor = Color.FromArgb(15, 15, 15);
             if (Application.OpenForms["FormCotizacion"] == null)
                 btnMComercial.BackColor = Color.FromArgb(15, 15, 15);
-            if (Application.OpenForms["FormOrdenTrabajo"] == null)
+            if (Application.OpenForms["FormOrdenTrabajo"] == null || Application.OpenForms["FormProcesoFinal"] == null || Application.OpenForms["FormSensor"] == null)
                 btnLaboratorio.BackColor = Color.FromArgb(15, 15, 15);
             formularioActual = null;
         }
@@ -327,7 +327,7 @@ namespace MIS.Vistas
                 Login login = new Login();
                 login.Show();
             }
-            
+
         }
 
         private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
@@ -356,7 +356,16 @@ namespace MIS.Vistas
 
         private void btnSubLab_Inspeccion_Click(object sender, EventArgs e)
         {
+            AbrirFormulario<FormProcesoFinal>();
+            btnLaboratorio.BackColor = Color.FromArgb(50, 50, 50);
+            hideSubmenu();
+        }
 
+        private void btnSensor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormSensor>();
+            btnLaboratorio.BackColor = Color.FromArgb(50, 50, 50);
+            hideSubmenu();
         }
 
         private void hideSubmenu()
@@ -383,6 +392,21 @@ namespace MIS.Vistas
             }
         }
         #endregion
+
+
+        private void Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LiberarRecursosFormulariosInternos();
+        }
+        private void LiberarRecursosFormulariosInternos()
+        {
+            // Cerrar y liberar recursos de formularios internos si existen
+            if (formularioActual != null && !formularioActual.IsDisposed)
+            {
+                formularioActual.Close();
+                //formularioActual.Dispose();
+            }
+        }
 
     }
 }

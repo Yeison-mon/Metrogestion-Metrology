@@ -1,5 +1,4 @@
 ﻿using MIS.Helpers;
-using MIS.Reportes.Recepcion;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -56,7 +55,7 @@ namespace MIS.Modelos.Laboratorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener datos de la base de datos: {ex.Message}", "warning");
+                FG.ShowError($"Error al obtener datos de la base de datos: {ex.Message}", "error");
                 return null;
             }
         }
@@ -98,7 +97,7 @@ namespace MIS.Modelos.Laboratorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                FG.ShowError("Error: " + ex.Message, "Error");
                 return null;
             }
         }
@@ -162,26 +161,26 @@ namespace MIS.Modelos.Laboratorio
 
                         if (nro_orden > 0)
                         {
-                            MessageBox.Show("Actualizado con éxito");
+                            FG.ShowMsg("Actualizado con éxito", "");
                             return nro_orden;
                         }
                         else
                         {
-                            MessageBox.Show("Guardado con éxito");
+                            FG.ShowMsg("Guardado con éxito", "");
                             return orden;
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("No se guardo la recepción", "GuardarRecepcion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        FG.ShowAlert("No se guardo la recepción", "GuardarRecepcion");
                         return 0;
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro el numero de recepcion en el contador.", "GuardarRecepcion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    FG.ShowAlert("No se encontro el numero de recepcion en el contador.", "GuardarRecepcion");
                     return 0;
                 }
 
@@ -189,7 +188,7 @@ namespace MIS.Modelos.Laboratorio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar ingreso(s): " + ex.Message, "GuardarRecepcion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FG.ShowError("Error al eliminar ingreso(s): " + ex.Message, "GuardarRecepcion");
                 return 0;
             }
         }

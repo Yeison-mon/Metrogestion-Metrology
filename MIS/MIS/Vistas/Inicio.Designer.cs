@@ -29,689 +29,743 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panelContenedorForms = new System.Windows.Forms.Panel();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelSubConfiguracion = new System.Windows.Forms.Panel();
-            this.btnSubConf_Tablas = new System.Windows.Forms.Button();
-            this.btnSubConf_Servicios = new System.Windows.Forms.Button();
-            this.btnSubConf_Clientes = new System.Windows.Forms.Button();
-            this.btnMConfiguracion = new System.Windows.Forms.Button();
-            this.panelSubLaboratorio = new System.Windows.Forms.Panel();
-            this.btnSubLab_Certificados = new System.Windows.Forms.Button();
-            this.btnSubLab_Inspeccion = new System.Windows.Forms.Button();
-            this.btnSubLab_OrdenTrabajo = new System.Windows.Forms.Button();
-            this.btnLaboratorio = new System.Windows.Forms.Button();
-            this.panelSubComercial = new System.Windows.Forms.Panel();
-            this.btnSubCom_Facturacion = new System.Windows.Forms.Button();
-            this.btnSubCom_Cotizaciones = new System.Windows.Forms.Button();
-            this.btnMComercial = new System.Windows.Forms.Button();
-            this.panelSubrecepcion = new System.Windows.Forms.Panel();
-            this.btnSubRecep_Entrega = new System.Windows.Forms.Button();
-            this.btnSubRecep_Inspeccion = new System.Windows.Forms.Button();
-            this.btnSubRecep_RegistroEquipos = new System.Windows.Forms.Button();
-            this.btnMRecepcion = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.Tittle_Bar = new System.Windows.Forms.Panel();
-            this.contraer = new System.Windows.Forms.PictureBox();
-            this.maximizar = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnMinize = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnSubRecep_Recibir = new System.Windows.Forms.Button();
-            this.btnSubLab_Recibir = new System.Windows.Forms.Button();
-            this.panelContenedor.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            this.panelSubConfiguracion.SuspendLayout();
-            this.panelSubLaboratorio.SuspendLayout();
-            this.panelSubComercial.SuspendLayout();
-            this.panelSubrecepcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            this.Tittle_Bar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contraer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            this.SuspendLayout();
+            panelContenedor = new System.Windows.Forms.Panel();
+            panelContenedorForms = new System.Windows.Forms.Panel();
+            panelMenu = new System.Windows.Forms.Panel();
+            panelSubConfiguracion = new System.Windows.Forms.Panel();
+            btnSubConf_Tablas = new System.Windows.Forms.Button();
+            btnSubConf_Servicios = new System.Windows.Forms.Button();
+            btnSubConf_Clientes = new System.Windows.Forms.Button();
+            btnMConfiguracion = new System.Windows.Forms.Button();
+            panelSubLaboratorio = new System.Windows.Forms.Panel();
+            btnSensor = new System.Windows.Forms.Button();
+            btnSubLab_Recibir = new System.Windows.Forms.Button();
+            btnSubLab_Certificados = new System.Windows.Forms.Button();
+            btnSubLab_Inspeccion = new System.Windows.Forms.Button();
+            btnSubLab_OrdenTrabajo = new System.Windows.Forms.Button();
+            btnLaboratorio = new System.Windows.Forms.Button();
+            panelSubComercial = new System.Windows.Forms.Panel();
+            btnSubCom_Facturacion = new System.Windows.Forms.Button();
+            btnSubCom_Cotizaciones = new System.Windows.Forms.Button();
+            btnMComercial = new System.Windows.Forms.Button();
+            panelSubrecepcion = new System.Windows.Forms.Panel();
+            btnSubRecep_Recibir = new System.Windows.Forms.Button();
+            btnSubRecep_Entrega = new System.Windows.Forms.Button();
+            btnSubRecep_Inspeccion = new System.Windows.Forms.Button();
+            btnSubRecep_RegistroEquipos = new System.Windows.Forms.Button();
+            btnMRecepcion = new System.Windows.Forms.Button();
+            btnDashboard = new System.Windows.Forms.Button();
+            btnSalir = new System.Windows.Forms.Button();
+            btnMenu = new System.Windows.Forms.PictureBox();
+            Tittle_Bar = new System.Windows.Forms.Panel();
+            contraer = new System.Windows.Forms.PictureBox();
+            maximizar = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            btnMinize = new System.Windows.Forms.PictureBox();
+            btnClose = new System.Windows.Forms.PictureBox();
+            panelContenedor.SuspendLayout();
+            panelMenu.SuspendLayout();
+            panelSubConfiguracion.SuspendLayout();
+            panelSubLaboratorio.SuspendLayout();
+            panelSubComercial.SuspendLayout();
+            panelSubrecepcion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMenu).BeginInit();
+            Tittle_Bar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)contraer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)maximizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinize).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            SuspendLayout();
             // 
             // panelContenedor
             // 
-            this.panelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContenedor.BackColor = System.Drawing.Color.Black;
-            this.panelContenedor.Controls.Add(this.panelContenedorForms);
-            this.panelContenedor.Controls.Add(this.panelMenu);
-            this.panelContenedor.Controls.Add(this.Tittle_Bar);
-            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1201, 675);
-            this.panelContenedor.TabIndex = 3;
+            panelContenedor.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            panelContenedor.BackColor = System.Drawing.Color.Black;
+            panelContenedor.Controls.Add(panelContenedorForms);
+            panelContenedor.Controls.Add(panelMenu);
+            panelContenedor.Controls.Add(Tittle_Bar);
+            panelContenedor.Location = new System.Drawing.Point(0, 0);
+            panelContenedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new System.Drawing.Size(1401, 779);
+            panelContenedor.TabIndex = 3;
             // 
             // panelContenedorForms
             // 
-            this.panelContenedorForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
-            this.panelContenedorForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedorForms.Location = new System.Drawing.Point(250, 25);
-            this.panelContenedorForms.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelContenedorForms.Name = "panelContenedorForms";
-            this.panelContenedorForms.Size = new System.Drawing.Size(951, 650);
-            this.panelContenedorForms.TabIndex = 5;
+            panelContenedorForms.BackColor = System.Drawing.Color.FromArgb(230, 233, 239);
+            panelContenedorForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelContenedorForms.Location = new System.Drawing.Point(292, 29);
+            panelContenedorForms.Margin = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            panelContenedorForms.Name = "panelContenedorForms";
+            panelContenedorForms.Size = new System.Drawing.Size(1109, 750);
+            panelContenedorForms.TabIndex = 5;
             // 
             // panelMenu
             // 
-            this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panelMenu.Controls.Add(this.panelSubConfiguracion);
-            this.panelMenu.Controls.Add(this.btnMConfiguracion);
-            this.panelMenu.Controls.Add(this.panelSubLaboratorio);
-            this.panelMenu.Controls.Add(this.btnLaboratorio);
-            this.panelMenu.Controls.Add(this.panelSubComercial);
-            this.panelMenu.Controls.Add(this.btnMComercial);
-            this.panelMenu.Controls.Add(this.panelSubrecepcion);
-            this.panelMenu.Controls.Add(this.btnMRecepcion);
-            this.panelMenu.Controls.Add(this.btnDashboard);
-            this.panelMenu.Controls.Add(this.btnSalir);
-            this.panelMenu.Controls.Add(this.btnMenu);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 25);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 650);
-            this.panelMenu.TabIndex = 4;
+            panelMenu.AutoScroll = true;
+            panelMenu.BackColor = System.Drawing.Color.FromArgb(15, 15, 15);
+            panelMenu.Controls.Add(panelSubConfiguracion);
+            panelMenu.Controls.Add(btnMConfiguracion);
+            panelMenu.Controls.Add(panelSubLaboratorio);
+            panelMenu.Controls.Add(btnLaboratorio);
+            panelMenu.Controls.Add(panelSubComercial);
+            panelMenu.Controls.Add(btnMComercial);
+            panelMenu.Controls.Add(panelSubrecepcion);
+            panelMenu.Controls.Add(btnMRecepcion);
+            panelMenu.Controls.Add(btnDashboard);
+            panelMenu.Controls.Add(btnSalir);
+            panelMenu.Controls.Add(btnMenu);
+            panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            panelMenu.Location = new System.Drawing.Point(0, 29);
+            panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new System.Drawing.Size(292, 750);
+            panelMenu.TabIndex = 4;
             // 
             // panelSubConfiguracion
             // 
-            this.panelSubConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelSubConfiguracion.Controls.Add(this.btnSubConf_Tablas);
-            this.panelSubConfiguracion.Controls.Add(this.btnSubConf_Servicios);
-            this.panelSubConfiguracion.Controls.Add(this.btnSubConf_Clientes);
-            this.panelSubConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubConfiguracion.Location = new System.Drawing.Point(0, 661);
-            this.panelSubConfiguracion.Name = "panelSubConfiguracion";
-            this.panelSubConfiguracion.Size = new System.Drawing.Size(233, 127);
-            this.panelSubConfiguracion.TabIndex = 11;
+            panelSubConfiguracion.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelSubConfiguracion.Controls.Add(btnSubConf_Tablas);
+            panelSubConfiguracion.Controls.Add(btnSubConf_Servicios);
+            panelSubConfiguracion.Controls.Add(btnSubConf_Clientes);
+            panelSubConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSubConfiguracion.Location = new System.Drawing.Point(0, 813);
+            panelSubConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelSubConfiguracion.Name = "panelSubConfiguracion";
+            panelSubConfiguracion.Size = new System.Drawing.Size(275, 147);
+            panelSubConfiguracion.TabIndex = 11;
             // 
             // btnSubConf_Tablas
             // 
-            this.btnSubConf_Tablas.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubConf_Tablas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubConf_Tablas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubConf_Tablas.FlatAppearance.BorderSize = 0;
-            this.btnSubConf_Tablas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubConf_Tablas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubConf_Tablas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubConf_Tablas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubConf_Tablas.ForeColor = System.Drawing.Color.White;
-            this.btnSubConf_Tablas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Tablas.Location = new System.Drawing.Point(0, 80);
-            this.btnSubConf_Tablas.Name = "btnSubConf_Tablas";
-            this.btnSubConf_Tablas.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubConf_Tablas.Size = new System.Drawing.Size(233, 41);
-            this.btnSubConf_Tablas.TabIndex = 6;
-            this.btnSubConf_Tablas.Text = "Tablas del Sistema";
-            this.btnSubConf_Tablas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Tablas.UseVisualStyleBackColor = false;
+            btnSubConf_Tablas.BackColor = System.Drawing.Color.Transparent;
+            btnSubConf_Tablas.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubConf_Tablas.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubConf_Tablas.FlatAppearance.BorderSize = 0;
+            btnSubConf_Tablas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubConf_Tablas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubConf_Tablas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubConf_Tablas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubConf_Tablas.ForeColor = System.Drawing.Color.White;
+            btnSubConf_Tablas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Tablas.Location = new System.Drawing.Point(0, 92);
+            btnSubConf_Tablas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubConf_Tablas.Name = "btnSubConf_Tablas";
+            btnSubConf_Tablas.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubConf_Tablas.Size = new System.Drawing.Size(275, 47);
+            btnSubConf_Tablas.TabIndex = 6;
+            btnSubConf_Tablas.Text = "Tablas del Sistema";
+            btnSubConf_Tablas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Tablas.UseVisualStyleBackColor = false;
             // 
             // btnSubConf_Servicios
             // 
-            this.btnSubConf_Servicios.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubConf_Servicios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubConf_Servicios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubConf_Servicios.FlatAppearance.BorderSize = 0;
-            this.btnSubConf_Servicios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubConf_Servicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubConf_Servicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubConf_Servicios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubConf_Servicios.ForeColor = System.Drawing.Color.White;
-            this.btnSubConf_Servicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Servicios.Location = new System.Drawing.Point(0, 40);
-            this.btnSubConf_Servicios.Name = "btnSubConf_Servicios";
-            this.btnSubConf_Servicios.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubConf_Servicios.Size = new System.Drawing.Size(233, 40);
-            this.btnSubConf_Servicios.TabIndex = 5;
-            this.btnSubConf_Servicios.Text = "Servicios";
-            this.btnSubConf_Servicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Servicios.UseVisualStyleBackColor = false;
+            btnSubConf_Servicios.BackColor = System.Drawing.Color.Transparent;
+            btnSubConf_Servicios.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubConf_Servicios.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubConf_Servicios.FlatAppearance.BorderSize = 0;
+            btnSubConf_Servicios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubConf_Servicios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubConf_Servicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubConf_Servicios.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubConf_Servicios.ForeColor = System.Drawing.Color.White;
+            btnSubConf_Servicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Servicios.Location = new System.Drawing.Point(0, 46);
+            btnSubConf_Servicios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubConf_Servicios.Name = "btnSubConf_Servicios";
+            btnSubConf_Servicios.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubConf_Servicios.Size = new System.Drawing.Size(275, 46);
+            btnSubConf_Servicios.TabIndex = 5;
+            btnSubConf_Servicios.Text = "Servicios";
+            btnSubConf_Servicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Servicios.UseVisualStyleBackColor = false;
             // 
             // btnSubConf_Clientes
             // 
-            this.btnSubConf_Clientes.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubConf_Clientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubConf_Clientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubConf_Clientes.FlatAppearance.BorderSize = 0;
-            this.btnSubConf_Clientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubConf_Clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubConf_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubConf_Clientes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubConf_Clientes.ForeColor = System.Drawing.Color.White;
-            this.btnSubConf_Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Clientes.Location = new System.Drawing.Point(0, 0);
-            this.btnSubConf_Clientes.Name = "btnSubConf_Clientes";
-            this.btnSubConf_Clientes.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubConf_Clientes.Size = new System.Drawing.Size(233, 40);
-            this.btnSubConf_Clientes.TabIndex = 4;
-            this.btnSubConf_Clientes.Text = "Clientes / Proveedores";
-            this.btnSubConf_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubConf_Clientes.UseVisualStyleBackColor = false;
-            this.btnSubConf_Clientes.Click += new System.EventHandler(this.btnSubConf_Clientes_Click);
+            btnSubConf_Clientes.BackColor = System.Drawing.Color.Transparent;
+            btnSubConf_Clientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubConf_Clientes.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubConf_Clientes.FlatAppearance.BorderSize = 0;
+            btnSubConf_Clientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubConf_Clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubConf_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubConf_Clientes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubConf_Clientes.ForeColor = System.Drawing.Color.White;
+            btnSubConf_Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Clientes.Location = new System.Drawing.Point(0, 0);
+            btnSubConf_Clientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubConf_Clientes.Name = "btnSubConf_Clientes";
+            btnSubConf_Clientes.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubConf_Clientes.Size = new System.Drawing.Size(275, 46);
+            btnSubConf_Clientes.TabIndex = 4;
+            btnSubConf_Clientes.Text = "Clientes / Proveedores";
+            btnSubConf_Clientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubConf_Clientes.UseVisualStyleBackColor = false;
+            btnSubConf_Clientes.Click += btnSubConf_Clientes_Click;
             // 
             // btnMConfiguracion
             // 
-            this.btnMConfiguracion.BackColor = System.Drawing.Color.Transparent;
-            this.btnMConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnMConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnMConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnMConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMConfiguracion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnMConfiguracion.Image = global::MIS.Properties.Resources.configuracion32blanco;
-            this.btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMConfiguracion.Location = new System.Drawing.Point(0, 621);
-            this.btnMConfiguracion.Name = "btnMConfiguracion";
-            this.btnMConfiguracion.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnMConfiguracion.Size = new System.Drawing.Size(233, 40);
-            this.btnMConfiguracion.TabIndex = 8;
-            this.btnMConfiguracion.Text = "CONFIGURACIÓN";
-            this.btnMConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMConfiguracion.UseVisualStyleBackColor = false;
-            this.btnMConfiguracion.Click += new System.EventHandler(this.btnMConfiguracion_Click);
+            btnMConfiguracion.BackColor = System.Drawing.Color.Transparent;
+            btnMConfiguracion.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            btnMConfiguracion.FlatAppearance.BorderSize = 0;
+            btnMConfiguracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnMConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnMConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMConfiguracion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnMConfiguracion.ForeColor = System.Drawing.Color.White;
+            btnMConfiguracion.Image = Properties.Resources.configuracion32blanco;
+            btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMConfiguracion.Location = new System.Drawing.Point(0, 767);
+            btnMConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnMConfiguracion.Name = "btnMConfiguracion";
+            btnMConfiguracion.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnMConfiguracion.Size = new System.Drawing.Size(275, 46);
+            btnMConfiguracion.TabIndex = 8;
+            btnMConfiguracion.Text = "CONFIGURACIÓN";
+            btnMConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnMConfiguracion.UseVisualStyleBackColor = false;
+            btnMConfiguracion.Click += btnMConfiguracion_Click;
             // 
             // panelSubLaboratorio
             // 
-            this.panelSubLaboratorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Recibir);
-            this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Certificados);
-            this.panelSubLaboratorio.Controls.Add(this.btnSubLab_Inspeccion);
-            this.panelSubLaboratorio.Controls.Add(this.btnSubLab_OrdenTrabajo);
-            this.panelSubLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubLaboratorio.Location = new System.Drawing.Point(0, 460);
-            this.panelSubLaboratorio.Name = "panelSubLaboratorio";
-            this.panelSubLaboratorio.Size = new System.Drawing.Size(233, 161);
-            this.panelSubLaboratorio.TabIndex = 15;
+            panelSubLaboratorio.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelSubLaboratorio.Controls.Add(btnSensor);
+            panelSubLaboratorio.Controls.Add(btnSubLab_Recibir);
+            panelSubLaboratorio.Controls.Add(btnSubLab_Certificados);
+            panelSubLaboratorio.Controls.Add(btnSubLab_Inspeccion);
+            panelSubLaboratorio.Controls.Add(btnSubLab_OrdenTrabajo);
+            panelSubLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSubLaboratorio.Location = new System.Drawing.Point(0, 530);
+            panelSubLaboratorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelSubLaboratorio.Name = "panelSubLaboratorio";
+            panelSubLaboratorio.Size = new System.Drawing.Size(275, 237);
+            panelSubLaboratorio.TabIndex = 15;
             // 
-            // btnSubLab_Certificados
+            // btnSensor
             // 
-            this.btnSubLab_Certificados.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubLab_Certificados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubLab_Certificados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubLab_Certificados.FlatAppearance.BorderSize = 0;
-            this.btnSubLab_Certificados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubLab_Certificados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubLab_Certificados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubLab_Certificados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubLab_Certificados.ForeColor = System.Drawing.Color.White;
-            this.btnSubLab_Certificados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Certificados.Location = new System.Drawing.Point(0, 80);
-            this.btnSubLab_Certificados.Name = "btnSubLab_Certificados";
-            this.btnSubLab_Certificados.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubLab_Certificados.Size = new System.Drawing.Size(233, 41);
-            this.btnSubLab_Certificados.TabIndex = 6;
-            this.btnSubLab_Certificados.Text = "Certificados";
-            this.btnSubLab_Certificados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Certificados.UseVisualStyleBackColor = false;
-            // 
-            // btnSubLab_Inspeccion
-            // 
-            this.btnSubLab_Inspeccion.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubLab_Inspeccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubLab_Inspeccion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubLab_Inspeccion.FlatAppearance.BorderSize = 0;
-            this.btnSubLab_Inspeccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubLab_Inspeccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubLab_Inspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubLab_Inspeccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubLab_Inspeccion.ForeColor = System.Drawing.Color.White;
-            this.btnSubLab_Inspeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Inspeccion.Location = new System.Drawing.Point(0, 40);
-            this.btnSubLab_Inspeccion.Name = "btnSubLab_Inspeccion";
-            this.btnSubLab_Inspeccion.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubLab_Inspeccion.Size = new System.Drawing.Size(233, 40);
-            this.btnSubLab_Inspeccion.TabIndex = 5;
-            this.btnSubLab_Inspeccion.Text = "Inspeccion, Proceso y Final";
-            this.btnSubLab_Inspeccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Inspeccion.UseVisualStyleBackColor = false;
-            this.btnSubLab_Inspeccion.Click += new System.EventHandler(this.btnSubLab_Inspeccion_Click);
-            // 
-            // btnSubLab_OrdenTrabajo
-            // 
-            this.btnSubLab_OrdenTrabajo.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubLab_OrdenTrabajo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubLab_OrdenTrabajo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubLab_OrdenTrabajo.FlatAppearance.BorderSize = 0;
-            this.btnSubLab_OrdenTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubLab_OrdenTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubLab_OrdenTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubLab_OrdenTrabajo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubLab_OrdenTrabajo.ForeColor = System.Drawing.Color.White;
-            this.btnSubLab_OrdenTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_OrdenTrabajo.Location = new System.Drawing.Point(0, 0);
-            this.btnSubLab_OrdenTrabajo.Name = "btnSubLab_OrdenTrabajo";
-            this.btnSubLab_OrdenTrabajo.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubLab_OrdenTrabajo.Size = new System.Drawing.Size(233, 40);
-            this.btnSubLab_OrdenTrabajo.TabIndex = 4;
-            this.btnSubLab_OrdenTrabajo.Text = "Orden de Trabajo";
-            this.btnSubLab_OrdenTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_OrdenTrabajo.UseVisualStyleBackColor = false;
-            this.btnSubLab_OrdenTrabajo.Click += new System.EventHandler(this.btnSubLab_OrdenTrabajo_Click);
-            // 
-            // btnLaboratorio
-            // 
-            this.btnLaboratorio.BackColor = System.Drawing.Color.Transparent;
-            this.btnLaboratorio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLaboratorio.FlatAppearance.BorderSize = 0;
-            this.btnLaboratorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnLaboratorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLaboratorio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.btnLaboratorio.Image = global::MIS.Properties.Resources.analisis32;
-            this.btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLaboratorio.Location = new System.Drawing.Point(0, 420);
-            this.btnLaboratorio.Name = "btnLaboratorio";
-            this.btnLaboratorio.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnLaboratorio.Size = new System.Drawing.Size(233, 40);
-            this.btnLaboratorio.TabIndex = 14;
-            this.btnLaboratorio.Text = "LABORATORIO";
-            this.btnLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLaboratorio.UseVisualStyleBackColor = false;
-            this.btnLaboratorio.Click += new System.EventHandler(this.btnLaboratorio_Click);
-            // 
-            // panelSubComercial
-            // 
-            this.panelSubComercial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelSubComercial.Controls.Add(this.btnSubCom_Facturacion);
-            this.panelSubComercial.Controls.Add(this.btnSubCom_Cotizaciones);
-            this.panelSubComercial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubComercial.Location = new System.Drawing.Point(0, 341);
-            this.panelSubComercial.Name = "panelSubComercial";
-            this.panelSubComercial.Size = new System.Drawing.Size(233, 79);
-            this.panelSubComercial.TabIndex = 13;
-            // 
-            // btnSubCom_Facturacion
-            // 
-            this.btnSubCom_Facturacion.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubCom_Facturacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubCom_Facturacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubCom_Facturacion.FlatAppearance.BorderSize = 0;
-            this.btnSubCom_Facturacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubCom_Facturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubCom_Facturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubCom_Facturacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubCom_Facturacion.ForeColor = System.Drawing.Color.White;
-            this.btnSubCom_Facturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Facturacion.Location = new System.Drawing.Point(0, 40);
-            this.btnSubCom_Facturacion.Name = "btnSubCom_Facturacion";
-            this.btnSubCom_Facturacion.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubCom_Facturacion.Size = new System.Drawing.Size(233, 40);
-            this.btnSubCom_Facturacion.TabIndex = 5;
-            this.btnSubCom_Facturacion.Text = "Facturacion";
-            this.btnSubCom_Facturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Facturacion.UseVisualStyleBackColor = false;
-            // 
-            // btnSubCom_Cotizaciones
-            // 
-            this.btnSubCom_Cotizaciones.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubCom_Cotizaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubCom_Cotizaciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubCom_Cotizaciones.FlatAppearance.BorderSize = 0;
-            this.btnSubCom_Cotizaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubCom_Cotizaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubCom_Cotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubCom_Cotizaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubCom_Cotizaciones.ForeColor = System.Drawing.Color.White;
-            this.btnSubCom_Cotizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Cotizaciones.Location = new System.Drawing.Point(0, 0);
-            this.btnSubCom_Cotizaciones.Name = "btnSubCom_Cotizaciones";
-            this.btnSubCom_Cotizaciones.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubCom_Cotizaciones.Size = new System.Drawing.Size(233, 40);
-            this.btnSubCom_Cotizaciones.TabIndex = 4;
-            this.btnSubCom_Cotizaciones.Text = "Cotizaciones";
-            this.btnSubCom_Cotizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubCom_Cotizaciones.UseVisualStyleBackColor = false;
-            this.btnSubCom_Cotizaciones.Click += new System.EventHandler(this.btnSubCom_Cotizaciones_Click);
-            // 
-            // btnMComercial
-            // 
-            this.btnMComercial.BackColor = System.Drawing.Color.Transparent;
-            this.btnMComercial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMComercial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMComercial.FlatAppearance.BorderSize = 0;
-            this.btnMComercial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnMComercial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnMComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMComercial.ForeColor = System.Drawing.Color.White;
-            this.btnMComercial.Image = global::MIS.Properties.Resources.Comercial32;
-            this.btnMComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMComercial.Location = new System.Drawing.Point(0, 301);
-            this.btnMComercial.Name = "btnMComercial";
-            this.btnMComercial.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnMComercial.Size = new System.Drawing.Size(233, 40);
-            this.btnMComercial.TabIndex = 12;
-            this.btnMComercial.Text = "COMERCIAL";
-            this.btnMComercial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMComercial.UseVisualStyleBackColor = false;
-            this.btnMComercial.Click += new System.EventHandler(this.btnMComercial_Click);
-            // 
-            // panelSubrecepcion
-            // 
-            this.panelSubrecepcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Recibir);
-            this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Entrega);
-            this.panelSubrecepcion.Controls.Add(this.btnSubRecep_Inspeccion);
-            this.panelSubrecepcion.Controls.Add(this.btnSubRecep_RegistroEquipos);
-            this.panelSubrecepcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubrecepcion.Location = new System.Drawing.Point(0, 140);
-            this.panelSubrecepcion.Name = "panelSubrecepcion";
-            this.panelSubrecepcion.Size = new System.Drawing.Size(233, 161);
-            this.panelSubrecepcion.TabIndex = 10;
-            // 
-            // btnSubRecep_Entrega
-            // 
-            this.btnSubRecep_Entrega.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubRecep_Entrega.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubRecep_Entrega.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubRecep_Entrega.FlatAppearance.BorderSize = 0;
-            this.btnSubRecep_Entrega.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubRecep_Entrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubRecep_Entrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubRecep_Entrega.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubRecep_Entrega.ForeColor = System.Drawing.Color.White;
-            this.btnSubRecep_Entrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Entrega.Location = new System.Drawing.Point(0, 80);
-            this.btnSubRecep_Entrega.Name = "btnSubRecep_Entrega";
-            this.btnSubRecep_Entrega.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubRecep_Entrega.Size = new System.Drawing.Size(233, 41);
-            this.btnSubRecep_Entrega.TabIndex = 6;
-            this.btnSubRecep_Entrega.Text = "Nota de Entrega";
-            this.btnSubRecep_Entrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Entrega.UseVisualStyleBackColor = false;
-            this.btnSubRecep_Entrega.Click += new System.EventHandler(this.btnSubRecep_Devolucion_Click);
-            // 
-            // btnSubRecep_Inspeccion
-            // 
-            this.btnSubRecep_Inspeccion.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubRecep_Inspeccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubRecep_Inspeccion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubRecep_Inspeccion.FlatAppearance.BorderSize = 0;
-            this.btnSubRecep_Inspeccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubRecep_Inspeccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubRecep_Inspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubRecep_Inspeccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubRecep_Inspeccion.ForeColor = System.Drawing.Color.White;
-            this.btnSubRecep_Inspeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Inspeccion.Location = new System.Drawing.Point(0, 40);
-            this.btnSubRecep_Inspeccion.Name = "btnSubRecep_Inspeccion";
-            this.btnSubRecep_Inspeccion.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubRecep_Inspeccion.Size = new System.Drawing.Size(233, 40);
-            this.btnSubRecep_Inspeccion.TabIndex = 5;
-            this.btnSubRecep_Inspeccion.Text = "Inspección en Recepción";
-            this.btnSubRecep_Inspeccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Inspeccion.UseVisualStyleBackColor = false;
-            this.btnSubRecep_Inspeccion.Click += new System.EventHandler(this.btnSubRecep_RecibirEquipos_Click);
-            // 
-            // btnSubRecep_RegistroEquipos
-            // 
-            this.btnSubRecep_RegistroEquipos.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubRecep_RegistroEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubRecep_RegistroEquipos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubRecep_RegistroEquipos.FlatAppearance.BorderSize = 0;
-            this.btnSubRecep_RegistroEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubRecep_RegistroEquipos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubRecep_RegistroEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubRecep_RegistroEquipos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubRecep_RegistroEquipos.ForeColor = System.Drawing.Color.White;
-            this.btnSubRecep_RegistroEquipos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_RegistroEquipos.Location = new System.Drawing.Point(0, 0);
-            this.btnSubRecep_RegistroEquipos.Name = "btnSubRecep_RegistroEquipos";
-            this.btnSubRecep_RegistroEquipos.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubRecep_RegistroEquipos.Size = new System.Drawing.Size(233, 40);
-            this.btnSubRecep_RegistroEquipos.TabIndex = 4;
-            this.btnSubRecep_RegistroEquipos.Text = "Nota de Recepción";
-            this.btnSubRecep_RegistroEquipos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_RegistroEquipos.UseVisualStyleBackColor = false;
-            this.btnSubRecep_RegistroEquipos.Click += new System.EventHandler(this.btnSubRecep_RegistroEquipos_Click);
-            // 
-            // btnMRecepcion
-            // 
-            this.btnMRecepcion.BackColor = System.Drawing.Color.Transparent;
-            this.btnMRecepcion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMRecepcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMRecepcion.FlatAppearance.BorderSize = 0;
-            this.btnMRecepcion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnMRecepcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnMRecepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMRecepcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMRecepcion.ForeColor = System.Drawing.Color.White;
-            this.btnMRecepcion.Image = global::MIS.Properties.Resources.recepcion32blanco;
-            this.btnMRecepcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMRecepcion.Location = new System.Drawing.Point(0, 100);
-            this.btnMRecepcion.Name = "btnMRecepcion";
-            this.btnMRecepcion.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnMRecepcion.Size = new System.Drawing.Size(233, 40);
-            this.btnMRecepcion.TabIndex = 3;
-            this.btnMRecepcion.Text = "RECEPCIÓN";
-            this.btnMRecepcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMRecepcion.UseVisualStyleBackColor = false;
-            this.btnMRecepcion.Click += new System.EventHandler(this.btnMRecepcion_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.Image = global::MIS.Properties.Resources.home;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 60);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(233, 40);
-            this.btnDashboard.TabIndex = 7;
-            this.btnDashboard.Text = "INICIO";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Image = global::MIS.Properties.Resources.salir32blanco;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 788);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Padding = new System.Windows.Forms.Padding(30, 0, 10, 0);
-            this.btnSalir.Size = new System.Drawing.Size(233, 40);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenu.Image = global::MIS.Properties.Resources.LogoRectangular;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(233, 60);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // Tittle_Bar
-            // 
-            this.Tittle_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(59)))));
-            this.Tittle_Bar.Controls.Add(this.contraer);
-            this.Tittle_Bar.Controls.Add(this.maximizar);
-            this.Tittle_Bar.Controls.Add(this.pictureBox3);
-            this.Tittle_Bar.Controls.Add(this.btnMinize);
-            this.Tittle_Bar.Controls.Add(this.btnClose);
-            this.Tittle_Bar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Tittle_Bar.Location = new System.Drawing.Point(0, 0);
-            this.Tittle_Bar.Name = "Tittle_Bar";
-            this.Tittle_Bar.Size = new System.Drawing.Size(1201, 25);
-            this.Tittle_Bar.TabIndex = 3;
-            this.Tittle_Bar.Visible = false;
-            this.Tittle_Bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseDown);
-            this.Tittle_Bar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseMove);
-            this.Tittle_Bar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Tittle_Bar_MouseUp);
-            // 
-            // contraer
-            // 
-            this.contraer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.contraer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.contraer.Image = global::MIS.Properties.Resources.contraer;
-            this.contraer.Location = new System.Drawing.Point(1153, 7);
-            this.contraer.Name = "contraer";
-            this.contraer.Size = new System.Drawing.Size(15, 15);
-            this.contraer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.contraer.TabIndex = 4;
-            this.contraer.TabStop = false;
-            this.contraer.Visible = false;
-            this.contraer.Click += new System.EventHandler(this.contraer_Click);
-            // 
-            // maximizar
-            // 
-            this.maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.maximizar.Image = global::MIS.Properties.Resources.maximizar;
-            this.maximizar.Location = new System.Drawing.Point(1153, 7);
-            this.maximizar.Name = "maximizar";
-            this.maximizar.Size = new System.Drawing.Size(15, 15);
-            this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.maximizar.TabIndex = 3;
-            this.maximizar.TabStop = false;
-            this.maximizar.Click += new System.EventHandler(this.maximizar_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MIS.Properties.Resources.LogoCircular;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnMinize
-            // 
-            this.btnMinize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinize.Image = global::MIS.Properties.Resources.minimizar_ventana_white;
-            this.btnMinize.Location = new System.Drawing.Point(1132, 7);
-            this.btnMinize.Name = "btnMinize";
-            this.btnMinize.Size = new System.Drawing.Size(15, 15);
-            this.btnMinize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinize.TabIndex = 1;
-            this.btnMinize.TabStop = false;
-            this.btnMinize.Click += new System.EventHandler(this.btnMinize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::MIS.Properties.Resources.x_white;
-            this.btnClose.Location = new System.Drawing.Point(1174, 7);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(15, 15);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClose.TabIndex = 0;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSubRecep_Recibir
-            // 
-            this.btnSubRecep_Recibir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubRecep_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubRecep_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubRecep_Recibir.FlatAppearance.BorderSize = 0;
-            this.btnSubRecep_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubRecep_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubRecep_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubRecep_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubRecep_Recibir.ForeColor = System.Drawing.Color.White;
-            this.btnSubRecep_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Recibir.Location = new System.Drawing.Point(0, 121);
-            this.btnSubRecep_Recibir.Name = "btnSubRecep_Recibir";
-            this.btnSubRecep_Recibir.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubRecep_Recibir.Size = new System.Drawing.Size(233, 40);
-            this.btnSubRecep_Recibir.TabIndex = 7;
-            this.btnSubRecep_Recibir.Text = "Recibir Ingresos";
-            this.btnSubRecep_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubRecep_Recibir.UseVisualStyleBackColor = false;
+            btnSensor.BackColor = System.Drawing.Color.Transparent;
+            btnSensor.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSensor.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSensor.FlatAppearance.BorderSize = 0;
+            btnSensor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSensor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSensor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSensor.ForeColor = System.Drawing.Color.White;
+            btnSensor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSensor.Location = new System.Drawing.Point(0, 186);
+            btnSensor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSensor.Name = "btnSensor";
+            btnSensor.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSensor.Size = new System.Drawing.Size(275, 47);
+            btnSensor.TabIndex = 8;
+            btnSensor.Text = "Sensor";
+            btnSensor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSensor.UseVisualStyleBackColor = false;
+            btnSensor.Click += btnSensor_Click;
             // 
             // btnSubLab_Recibir
             // 
-            this.btnSubLab_Recibir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubLab_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubLab_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubLab_Recibir.FlatAppearance.BorderSize = 0;
-            this.btnSubLab_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnSubLab_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSubLab_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubLab_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubLab_Recibir.ForeColor = System.Drawing.Color.White;
-            this.btnSubLab_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Recibir.Location = new System.Drawing.Point(0, 121);
-            this.btnSubLab_Recibir.Name = "btnSubLab_Recibir";
-            this.btnSubLab_Recibir.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnSubLab_Recibir.Size = new System.Drawing.Size(233, 41);
-            this.btnSubLab_Recibir.TabIndex = 7;
-            this.btnSubLab_Recibir.Text = "Recibir Ingresos";
-            this.btnSubLab_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubLab_Recibir.UseVisualStyleBackColor = false;
+            btnSubLab_Recibir.BackColor = System.Drawing.Color.Transparent;
+            btnSubLab_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubLab_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubLab_Recibir.FlatAppearance.BorderSize = 0;
+            btnSubLab_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubLab_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubLab_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubLab_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubLab_Recibir.ForeColor = System.Drawing.Color.White;
+            btnSubLab_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Recibir.Location = new System.Drawing.Point(0, 139);
+            btnSubLab_Recibir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubLab_Recibir.Name = "btnSubLab_Recibir";
+            btnSubLab_Recibir.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubLab_Recibir.Size = new System.Drawing.Size(275, 47);
+            btnSubLab_Recibir.TabIndex = 7;
+            btnSubLab_Recibir.Text = "Recibir Ingresos";
+            btnSubLab_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Recibir.UseVisualStyleBackColor = false;
+            // 
+            // btnSubLab_Certificados
+            // 
+            btnSubLab_Certificados.BackColor = System.Drawing.Color.Transparent;
+            btnSubLab_Certificados.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubLab_Certificados.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubLab_Certificados.FlatAppearance.BorderSize = 0;
+            btnSubLab_Certificados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubLab_Certificados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubLab_Certificados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubLab_Certificados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubLab_Certificados.ForeColor = System.Drawing.Color.White;
+            btnSubLab_Certificados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Certificados.Location = new System.Drawing.Point(0, 92);
+            btnSubLab_Certificados.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubLab_Certificados.Name = "btnSubLab_Certificados";
+            btnSubLab_Certificados.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubLab_Certificados.Size = new System.Drawing.Size(275, 47);
+            btnSubLab_Certificados.TabIndex = 6;
+            btnSubLab_Certificados.Text = "Certificados";
+            btnSubLab_Certificados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Certificados.UseVisualStyleBackColor = false;
+            // 
+            // btnSubLab_Inspeccion
+            // 
+            btnSubLab_Inspeccion.BackColor = System.Drawing.Color.Transparent;
+            btnSubLab_Inspeccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubLab_Inspeccion.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubLab_Inspeccion.FlatAppearance.BorderSize = 0;
+            btnSubLab_Inspeccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubLab_Inspeccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubLab_Inspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubLab_Inspeccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubLab_Inspeccion.ForeColor = System.Drawing.Color.White;
+            btnSubLab_Inspeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Inspeccion.Location = new System.Drawing.Point(0, 46);
+            btnSubLab_Inspeccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubLab_Inspeccion.Name = "btnSubLab_Inspeccion";
+            btnSubLab_Inspeccion.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubLab_Inspeccion.Size = new System.Drawing.Size(275, 46);
+            btnSubLab_Inspeccion.TabIndex = 5;
+            btnSubLab_Inspeccion.Text = "Inspeccion, Proceso y Final";
+            btnSubLab_Inspeccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_Inspeccion.UseVisualStyleBackColor = false;
+            btnSubLab_Inspeccion.Click += btnSubLab_Inspeccion_Click;
+            // 
+            // btnSubLab_OrdenTrabajo
+            // 
+            btnSubLab_OrdenTrabajo.BackColor = System.Drawing.Color.Transparent;
+            btnSubLab_OrdenTrabajo.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubLab_OrdenTrabajo.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubLab_OrdenTrabajo.FlatAppearance.BorderSize = 0;
+            btnSubLab_OrdenTrabajo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubLab_OrdenTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubLab_OrdenTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubLab_OrdenTrabajo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubLab_OrdenTrabajo.ForeColor = System.Drawing.Color.White;
+            btnSubLab_OrdenTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_OrdenTrabajo.Location = new System.Drawing.Point(0, 0);
+            btnSubLab_OrdenTrabajo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubLab_OrdenTrabajo.Name = "btnSubLab_OrdenTrabajo";
+            btnSubLab_OrdenTrabajo.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubLab_OrdenTrabajo.Size = new System.Drawing.Size(275, 46);
+            btnSubLab_OrdenTrabajo.TabIndex = 4;
+            btnSubLab_OrdenTrabajo.Text = "Orden de Trabajo";
+            btnSubLab_OrdenTrabajo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubLab_OrdenTrabajo.UseVisualStyleBackColor = false;
+            btnSubLab_OrdenTrabajo.Click += btnSubLab_OrdenTrabajo_Click;
+            // 
+            // btnLaboratorio
+            // 
+            btnLaboratorio.BackColor = System.Drawing.Color.Transparent;
+            btnLaboratorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnLaboratorio.Dock = System.Windows.Forms.DockStyle.Top;
+            btnLaboratorio.FlatAppearance.BorderSize = 0;
+            btnLaboratorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnLaboratorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnLaboratorio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnLaboratorio.ForeColor = System.Drawing.Color.White;
+            btnLaboratorio.Image = Properties.Resources.analisis32;
+            btnLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnLaboratorio.Location = new System.Drawing.Point(0, 484);
+            btnLaboratorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnLaboratorio.Name = "btnLaboratorio";
+            btnLaboratorio.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnLaboratorio.Size = new System.Drawing.Size(275, 46);
+            btnLaboratorio.TabIndex = 14;
+            btnLaboratorio.Text = "LABORATORIO";
+            btnLaboratorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnLaboratorio.UseVisualStyleBackColor = false;
+            btnLaboratorio.Click += btnLaboratorio_Click;
+            // 
+            // panelSubComercial
+            // 
+            panelSubComercial.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelSubComercial.Controls.Add(btnSubCom_Facturacion);
+            panelSubComercial.Controls.Add(btnSubCom_Cotizaciones);
+            panelSubComercial.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSubComercial.Location = new System.Drawing.Point(0, 393);
+            panelSubComercial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelSubComercial.Name = "panelSubComercial";
+            panelSubComercial.Size = new System.Drawing.Size(275, 91);
+            panelSubComercial.TabIndex = 13;
+            // 
+            // btnSubCom_Facturacion
+            // 
+            btnSubCom_Facturacion.BackColor = System.Drawing.Color.Transparent;
+            btnSubCom_Facturacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubCom_Facturacion.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubCom_Facturacion.FlatAppearance.BorderSize = 0;
+            btnSubCom_Facturacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubCom_Facturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubCom_Facturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubCom_Facturacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubCom_Facturacion.ForeColor = System.Drawing.Color.White;
+            btnSubCom_Facturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubCom_Facturacion.Location = new System.Drawing.Point(0, 46);
+            btnSubCom_Facturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubCom_Facturacion.Name = "btnSubCom_Facturacion";
+            btnSubCom_Facturacion.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubCom_Facturacion.Size = new System.Drawing.Size(275, 46);
+            btnSubCom_Facturacion.TabIndex = 5;
+            btnSubCom_Facturacion.Text = "Facturacion";
+            btnSubCom_Facturacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubCom_Facturacion.UseVisualStyleBackColor = false;
+            // 
+            // btnSubCom_Cotizaciones
+            // 
+            btnSubCom_Cotizaciones.BackColor = System.Drawing.Color.Transparent;
+            btnSubCom_Cotizaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubCom_Cotizaciones.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubCom_Cotizaciones.FlatAppearance.BorderSize = 0;
+            btnSubCom_Cotizaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubCom_Cotizaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubCom_Cotizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubCom_Cotizaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubCom_Cotizaciones.ForeColor = System.Drawing.Color.White;
+            btnSubCom_Cotizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubCom_Cotizaciones.Location = new System.Drawing.Point(0, 0);
+            btnSubCom_Cotizaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubCom_Cotizaciones.Name = "btnSubCom_Cotizaciones";
+            btnSubCom_Cotizaciones.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubCom_Cotizaciones.Size = new System.Drawing.Size(275, 46);
+            btnSubCom_Cotizaciones.TabIndex = 4;
+            btnSubCom_Cotizaciones.Text = "Cotizaciones";
+            btnSubCom_Cotizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubCom_Cotizaciones.UseVisualStyleBackColor = false;
+            btnSubCom_Cotizaciones.Click += btnSubCom_Cotizaciones_Click;
+            // 
+            // btnMComercial
+            // 
+            btnMComercial.BackColor = System.Drawing.Color.Transparent;
+            btnMComercial.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMComercial.Dock = System.Windows.Forms.DockStyle.Top;
+            btnMComercial.FlatAppearance.BorderSize = 0;
+            btnMComercial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnMComercial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnMComercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnMComercial.ForeColor = System.Drawing.Color.White;
+            btnMComercial.Image = Properties.Resources.Comercial32;
+            btnMComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMComercial.Location = new System.Drawing.Point(0, 347);
+            btnMComercial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnMComercial.Name = "btnMComercial";
+            btnMComercial.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnMComercial.Size = new System.Drawing.Size(275, 46);
+            btnMComercial.TabIndex = 12;
+            btnMComercial.Text = "COMERCIAL";
+            btnMComercial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnMComercial.UseVisualStyleBackColor = false;
+            btnMComercial.Click += btnMComercial_Click;
+            // 
+            // panelSubrecepcion
+            // 
+            panelSubrecepcion.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelSubrecepcion.Controls.Add(btnSubRecep_Recibir);
+            panelSubrecepcion.Controls.Add(btnSubRecep_Entrega);
+            panelSubrecepcion.Controls.Add(btnSubRecep_Inspeccion);
+            panelSubrecepcion.Controls.Add(btnSubRecep_RegistroEquipos);
+            panelSubrecepcion.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSubrecepcion.Location = new System.Drawing.Point(0, 161);
+            panelSubrecepcion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelSubrecepcion.Name = "panelSubrecepcion";
+            panelSubrecepcion.Size = new System.Drawing.Size(275, 186);
+            panelSubrecepcion.TabIndex = 10;
+            // 
+            // btnSubRecep_Recibir
+            // 
+            btnSubRecep_Recibir.BackColor = System.Drawing.Color.Transparent;
+            btnSubRecep_Recibir.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubRecep_Recibir.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubRecep_Recibir.FlatAppearance.BorderSize = 0;
+            btnSubRecep_Recibir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubRecep_Recibir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubRecep_Recibir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubRecep_Recibir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubRecep_Recibir.ForeColor = System.Drawing.Color.White;
+            btnSubRecep_Recibir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Recibir.Location = new System.Drawing.Point(0, 139);
+            btnSubRecep_Recibir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubRecep_Recibir.Name = "btnSubRecep_Recibir";
+            btnSubRecep_Recibir.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubRecep_Recibir.Size = new System.Drawing.Size(275, 46);
+            btnSubRecep_Recibir.TabIndex = 7;
+            btnSubRecep_Recibir.Text = "Recibir Ingresos";
+            btnSubRecep_Recibir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Recibir.UseVisualStyleBackColor = false;
+            // 
+            // btnSubRecep_Entrega
+            // 
+            btnSubRecep_Entrega.BackColor = System.Drawing.Color.Transparent;
+            btnSubRecep_Entrega.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubRecep_Entrega.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubRecep_Entrega.FlatAppearance.BorderSize = 0;
+            btnSubRecep_Entrega.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubRecep_Entrega.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubRecep_Entrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubRecep_Entrega.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubRecep_Entrega.ForeColor = System.Drawing.Color.White;
+            btnSubRecep_Entrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Entrega.Location = new System.Drawing.Point(0, 92);
+            btnSubRecep_Entrega.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubRecep_Entrega.Name = "btnSubRecep_Entrega";
+            btnSubRecep_Entrega.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubRecep_Entrega.Size = new System.Drawing.Size(275, 47);
+            btnSubRecep_Entrega.TabIndex = 6;
+            btnSubRecep_Entrega.Text = "Nota de Entrega";
+            btnSubRecep_Entrega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Entrega.UseVisualStyleBackColor = false;
+            btnSubRecep_Entrega.Click += btnSubRecep_Devolucion_Click;
+            // 
+            // btnSubRecep_Inspeccion
+            // 
+            btnSubRecep_Inspeccion.BackColor = System.Drawing.Color.Transparent;
+            btnSubRecep_Inspeccion.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubRecep_Inspeccion.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubRecep_Inspeccion.FlatAppearance.BorderSize = 0;
+            btnSubRecep_Inspeccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubRecep_Inspeccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubRecep_Inspeccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubRecep_Inspeccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubRecep_Inspeccion.ForeColor = System.Drawing.Color.White;
+            btnSubRecep_Inspeccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Inspeccion.Location = new System.Drawing.Point(0, 46);
+            btnSubRecep_Inspeccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubRecep_Inspeccion.Name = "btnSubRecep_Inspeccion";
+            btnSubRecep_Inspeccion.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubRecep_Inspeccion.Size = new System.Drawing.Size(275, 46);
+            btnSubRecep_Inspeccion.TabIndex = 5;
+            btnSubRecep_Inspeccion.Text = "Inspección en Recepción";
+            btnSubRecep_Inspeccion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_Inspeccion.UseVisualStyleBackColor = false;
+            btnSubRecep_Inspeccion.Click += btnSubRecep_RecibirEquipos_Click;
+            // 
+            // btnSubRecep_RegistroEquipos
+            // 
+            btnSubRecep_RegistroEquipos.BackColor = System.Drawing.Color.Transparent;
+            btnSubRecep_RegistroEquipos.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSubRecep_RegistroEquipos.Dock = System.Windows.Forms.DockStyle.Top;
+            btnSubRecep_RegistroEquipos.FlatAppearance.BorderSize = 0;
+            btnSubRecep_RegistroEquipos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSubRecep_RegistroEquipos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSubRecep_RegistroEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSubRecep_RegistroEquipos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSubRecep_RegistroEquipos.ForeColor = System.Drawing.Color.White;
+            btnSubRecep_RegistroEquipos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_RegistroEquipos.Location = new System.Drawing.Point(0, 0);
+            btnSubRecep_RegistroEquipos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSubRecep_RegistroEquipos.Name = "btnSubRecep_RegistroEquipos";
+            btnSubRecep_RegistroEquipos.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
+            btnSubRecep_RegistroEquipos.Size = new System.Drawing.Size(275, 46);
+            btnSubRecep_RegistroEquipos.TabIndex = 4;
+            btnSubRecep_RegistroEquipos.Text = "Nota de Recepción";
+            btnSubRecep_RegistroEquipos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSubRecep_RegistroEquipos.UseVisualStyleBackColor = false;
+            btnSubRecep_RegistroEquipos.Click += btnSubRecep_RegistroEquipos_Click;
+            // 
+            // btnMRecepcion
+            // 
+            btnMRecepcion.BackColor = System.Drawing.Color.Transparent;
+            btnMRecepcion.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMRecepcion.Dock = System.Windows.Forms.DockStyle.Top;
+            btnMRecepcion.FlatAppearance.BorderSize = 0;
+            btnMRecepcion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnMRecepcion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnMRecepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnMRecepcion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnMRecepcion.ForeColor = System.Drawing.Color.White;
+            btnMRecepcion.Image = Properties.Resources.recepcion32blanco;
+            btnMRecepcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnMRecepcion.Location = new System.Drawing.Point(0, 115);
+            btnMRecepcion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnMRecepcion.Name = "btnMRecepcion";
+            btnMRecepcion.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnMRecepcion.Size = new System.Drawing.Size(275, 46);
+            btnMRecepcion.TabIndex = 3;
+            btnMRecepcion.Text = "RECEPCIÓN";
+            btnMRecepcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnMRecepcion.UseVisualStyleBackColor = false;
+            btnMRecepcion.Click += btnMRecepcion_Click;
+            // 
+            // btnDashboard
+            // 
+            btnDashboard.BackColor = System.Drawing.Color.Transparent;
+            btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDashboard.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnDashboard.ForeColor = System.Drawing.Color.White;
+            btnDashboard.Image = Properties.Resources.home;
+            btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnDashboard.Location = new System.Drawing.Point(0, 69);
+            btnDashboard.Margin = new System.Windows.Forms.Padding(0);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnDashboard.Size = new System.Drawing.Size(275, 46);
+            btnDashboard.TabIndex = 7;
+            btnDashboard.Text = "INICIO";
+            btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = System.Drawing.Color.Transparent;
+            btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSalir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSalir.ForeColor = System.Drawing.Color.White;
+            btnSalir.Image = Properties.Resources.salir32blanco;
+            btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSalir.Location = new System.Drawing.Point(0, 960);
+            btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
+            btnSalir.Size = new System.Drawing.Size(275, 46);
+            btnSalir.TabIndex = 9;
+            btnSalir.Text = "SALIR";
+            btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnMenu
+            // 
+            btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            btnMenu.Image = Properties.Resources.LogoRectangular;
+            btnMenu.Location = new System.Drawing.Point(0, 0);
+            btnMenu.Margin = new System.Windows.Forms.Padding(0);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new System.Drawing.Size(275, 69);
+            btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            btnMenu.TabIndex = 6;
+            btnMenu.TabStop = false;
+            btnMenu.Click += btnMenu_Click;
+            // 
+            // Tittle_Bar
+            // 
+            Tittle_Bar.BackColor = System.Drawing.Color.FromArgb(60, 60, 59);
+            Tittle_Bar.Controls.Add(contraer);
+            Tittle_Bar.Controls.Add(maximizar);
+            Tittle_Bar.Controls.Add(pictureBox3);
+            Tittle_Bar.Controls.Add(btnMinize);
+            Tittle_Bar.Controls.Add(btnClose);
+            Tittle_Bar.Dock = System.Windows.Forms.DockStyle.Top;
+            Tittle_Bar.Location = new System.Drawing.Point(0, 0);
+            Tittle_Bar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Tittle_Bar.Name = "Tittle_Bar";
+            Tittle_Bar.Size = new System.Drawing.Size(1401, 29);
+            Tittle_Bar.TabIndex = 3;
+            Tittle_Bar.Visible = false;
+            Tittle_Bar.MouseDown += Tittle_Bar_MouseDown;
+            Tittle_Bar.MouseMove += Tittle_Bar_MouseMove;
+            Tittle_Bar.MouseUp += Tittle_Bar_MouseUp;
+            // 
+            // contraer
+            // 
+            contraer.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            contraer.Cursor = System.Windows.Forms.Cursors.Hand;
+            contraer.Image = Properties.Resources.contraer;
+            contraer.Location = new System.Drawing.Point(1345, 8);
+            contraer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            contraer.Name = "contraer";
+            contraer.Size = new System.Drawing.Size(18, 17);
+            contraer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            contraer.TabIndex = 4;
+            contraer.TabStop = false;
+            contraer.Visible = false;
+            contraer.Click += contraer_Click;
+            // 
+            // maximizar
+            // 
+            maximizar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            maximizar.Image = Properties.Resources.maximizar;
+            maximizar.Location = new System.Drawing.Point(1345, 8);
+            maximizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            maximizar.Name = "maximizar";
+            maximizar.Size = new System.Drawing.Size(18, 17);
+            maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            maximizar.TabIndex = 3;
+            maximizar.TabStop = false;
+            maximizar.Click += maximizar_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.LogoCircular;
+            pictureBox3.Location = new System.Drawing.Point(4, 3);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(23, 23);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
+            // btnMinize
+            // 
+            btnMinize.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnMinize.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnMinize.Image = Properties.Resources.minimizar_ventana_white;
+            btnMinize.Location = new System.Drawing.Point(1321, 8);
+            btnMinize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnMinize.Name = "btnMinize";
+            btnMinize.Size = new System.Drawing.Size(18, 17);
+            btnMinize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            btnMinize.TabIndex = 1;
+            btnMinize.TabStop = false;
+            btnMinize.Click += btnMinize_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnClose.Image = Properties.Resources.x_white;
+            btnClose.Location = new System.Drawing.Point(1370, 8);
+            btnClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(18, 17);
+            btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            btnClose.TabIndex = 0;
+            btnClose.TabStop = false;
+            btnClose.Click += btnClose_Click;
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 675);
-            this.Controls.Add(this.panelContenedor);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(650, 650);
-            this.Name = "Inicio";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
-            this.panelContenedor.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
-            this.panelSubConfiguracion.ResumeLayout(false);
-            this.panelSubLaboratorio.ResumeLayout(false);
-            this.panelSubComercial.ResumeLayout(false);
-            this.panelSubrecepcion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            this.Tittle_Bar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.contraer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1370, 749);
+            Controls.Add(panelContenedor);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(756, 726);
+            Name = "Inicio";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Inicio";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            FormClosing += Inicio_FormClosing;
+            FormClosed += Inicio_FormClosed;
+            panelContenedor.ResumeLayout(false);
+            panelMenu.ResumeLayout(false);
+            panelSubConfiguracion.ResumeLayout(false);
+            panelSubLaboratorio.ResumeLayout(false);
+            panelSubComercial.ResumeLayout(false);
+            panelSubrecepcion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnMenu).EndInit();
+            Tittle_Bar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)contraer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)maximizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMinize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -748,5 +802,6 @@
         private System.Windows.Forms.Button btnSubCom_Facturacion;
         private System.Windows.Forms.Button btnSubRecep_Recibir;
         private System.Windows.Forms.Button btnSubLab_Recibir;
+        private System.Windows.Forms.Button btnSensor;
     }
 }

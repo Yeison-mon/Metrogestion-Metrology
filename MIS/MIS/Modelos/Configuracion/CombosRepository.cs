@@ -110,6 +110,9 @@ namespace MIS.Modelos
                     case "metrologo":
                         query = "select id, nombrecompleto as descripcion from seguridad.rbac_usuarios where id > 0 and estado != 'INACTIVO'";
                         break;
+                    case "tipo_acreditacion":
+                        query = "select id, descripcion from tipo_acreditacion where id > 0";
+                        break;
                     default:
                         return null;
                 }

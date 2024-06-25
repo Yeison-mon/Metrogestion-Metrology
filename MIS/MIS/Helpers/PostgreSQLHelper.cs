@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Npgsql;
-using MsBox.Avalonia;
-using MsBox.Avalonia.Dto;
-using MsBox.Avalonia.Enums;
 
 namespace MIS.Helpers
 {
@@ -13,6 +9,7 @@ namespace MIS.Helpers
     {
         private static PostgreSQLHelper instance;
         private readonly string connectionString;
+        //private readonly ApplicationDbContext _dbContext;
 
         private PostgreSQLHelper()
         {
@@ -20,7 +17,7 @@ namespace MIS.Helpers
             string password = "";
             if (true)
             {
-                FG.Url = "192.168.0.107";
+                FG.Url = "192.168.0.100";
                 password = "integration2024";
             } else
             {
@@ -33,6 +30,9 @@ namespace MIS.Helpers
             string database = "metrology";
             string username = "postgres";
             connectionString = $"Host={FG.Url};Port={port};Database={database};Username={username};Password={password};";
+            //var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+            //optionsBuilder.UseNpgsql($"UserID=postgres;Password={password};Host={FG.Url};Port={port};Database={database};Pooling=true;");
+            //_dbContext = new ApplicationDbContext(optionsBuilder.Options);
         }
 
         public static PostgreSQLHelper GetInstance()
@@ -65,7 +65,7 @@ namespace MIS.Helpers
             }
             catch (Exception ex)
             {
-                FG.ShowError("Error", "Error al conectarse a la base de datos: " + ex.Message);
+                FG.ShowError("Error al conectarse a la base de datos: " + ex.Message, "Error");
                 return null;
             }
         }

@@ -1,7 +1,6 @@
 ﻿using MIS.Helpers;
 using MIS.Modelos.Comercial;
 using MIS.Modelos.Laboratorio;
-using MIS.Reportes.Recepcion;
 using MIS.Vistas.Modales;
 using System;
 using System.Collections.Generic;
@@ -36,6 +35,7 @@ namespace MIS.Vistas.Laboratorio
             btnGuardar.Visible = false;
             btnImprimir.Visible = false;
             btnAgregarItems.Visible = false;
+            btnAprobar.Visible = false;
             idcliente = 0;
             cbMetrologo.DataSource = null;
             cbMetrologo.Items.Clear();
@@ -105,7 +105,6 @@ namespace MIS.Vistas.Laboratorio
                 tablaDetalle.Columns["observacion"].HeaderText = "Observación";
                 tablaDetalle.Columns["observacion"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
-            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
