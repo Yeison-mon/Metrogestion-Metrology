@@ -78,17 +78,19 @@ namespace MIS.Modelos.Laboratorio
                     MessageBox.Show("No se proporciono la informacion");
                     return null;
                 }
-                string query = $@"select r.id, r.idcliente, c.nombrecompleto as cliente, coalesce(o.estado, '') as estado,
-                    i.fecha as fecha_inspeccion, i.inspeccion, coalesce(o.orden) as ordentrabajo, coalesce(o.idusuorden, 0) as idmetrologo
+                string query = $@"select r.id, coalesce(o.id, 0) as idodt, r.idcliente, c.nombrecompleto as cliente, coalesce(o.estado, '') as estado, coalesce(p.estado, '') as estado_proceso,
+                    i.fecha as fecha_inspeccion, i.inspeccion, coalesce(o.orden) as ordentrabajo, coalesce(o.idusuorden, 0) as idmetrologo, coalesce(o.fecha::text, '') as fecha
                         from recepciones r 
                     inner join clientes c on c.id = r.idcliente
                     inner join recepcion_detalle rd on rd.idrecepcion = r.id 
                     inner join inspeccion_detalle id on rd.id  = id.idingreso
                     inner join inspecciones i on i.id = id.idinspeccion
                     left join ordentrabajo_detalle od on od.idingreso = rd.id
-                    left join ordentrabajo o on o.id = od.idorden 
+                    left join ordentrabajo o on o.id = od.idorden
+                    left join procesofinal_detalle pf on pf.idingreso = rd.id
+                    left join procesosfinales p on p.id = pf.idprocesofinal
                         {where}
-                    group by r.id, r.idcliente, c.nombrecompleto, i.estado, i.fecha, i.inspeccion, o.orden, o.estado, o.idusuorden;";
+                    group by r.id,o.id, r.idcliente, c.nombrecompleto, i.estado, i.fecha, i.inspeccion, o.orden, o.estado, o.idusuorden, p.estado, o.fecha;";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
                 if (dataTable == null)
                     return null;
@@ -102,7 +104,7 @@ namespace MIS.Modelos.Laboratorio
             }
         }
 
-        public async Task<int> Guardar(List<int> ids, List<string> observaciones, int nro_orden, string observacion, int idmetrologo)
+        public async Task<int> Guardar(List<int> ids, List<string> observaciones, int nro_orden, string observacion, int idmetrologo, string fecha)
         {
             try
             {
@@ -115,13 +117,13 @@ namespace MIS.Modelos.Laboratorio
                     int orden = Convert.ToInt32(contador) + 1;
                     if (nro_orden == 0)
                     {
-                        insert = $"INSERT INTO ordentrabajo(orden, idusuario, idusuorden,estado, observacion) " +
-                                         $"VALUES({orden}, {FG.UserId}, {idmetrologo},'Registrado', '{observacion}') RETURNING id";
+                        insert = $"INSERT INTO ordentrabajo(orden, idusuario, idusuorden,estado, observacion, fecha) " +
+                                         $"VALUES({orden}, {FG.UserId}, {idmetrologo},'Registrado', '{observacion}', '{fecha}') RETURNING id";
 
                     }
                     else
                     {
-                        insert = $"update ordentrabajo set observacion='{observacion}', idusuorden={idmetrologo} where orden = {nro_orden} returning id";
+                        insert = $"update ordentrabajo set fecha='{fecha}', observacion='{observacion}', idusuorden={idmetrologo} where orden = {nro_orden} returning id";
                     }
 
                     object idGenerado = dbHelper.ExecuteScalar(insert);
@@ -173,14 +175,14 @@ namespace MIS.Modelos.Laboratorio
                     }
                     else
                     {
-                        FG.ShowAlert("No se guardo la recepción", "GuardarRecepcion");
+                        FG.ShowAlert("No se guardo la odt", "GuardarRecepcion");
                         return 0;
                     }
 
                 }
                 else
                 {
-                    FG.ShowAlert("No se encontro el numero de recepcion en el contador.", "GuardarRecepcion");
+                    FG.ShowAlert("No se encontro el numero de odt en el contador.", "GuardarRecepcion");
                     return 0;
                 }
 
@@ -239,6 +241,67 @@ namespace MIS.Modelos.Laboratorio
                 inner join ordentrabajo o on o.id = od.idorden 
                 where o.orden = {ordentrabajo} order by rd.id";
             return await dbHelper.ExecuteQueryAsync(query);
+        }
+
+        public async Task<int> EstadosODT(int id, int idusuario, string fecha, int tipo)
+        {
+            try
+            {
+                string encontrar = $"select idodt from estado_odt where idodt = {id}";
+                object encontrado = await dbHelper.ExecuteScalarAsync(encontrar);
+                string update = "";
+                string insert = "";
+                if (encontrado != null || Convert.ToInt32(encontrado) > 0) 
+                {
+                    switch (tipo) 
+                    { 
+                        case 1:
+                            update = $"update estado_odt set revisada = 1, fecha_revisada = '{fecha}', idusuario_revisa = {idusuario} where idodt = {id}";
+                            break;
+                        case 2:
+                            update = $"update estado_odt set sellos = 1, fecha_sellos = '{fecha}', idusuario_sello = {idusuario} where idodt = {id}";
+                            break;
+                        case 3:
+                            update = $"update estado_odt set aprobado = 1, fecha_aprobado = '{fecha}', idusuario_aprueba = {idusuario} where idodt = {id}";
+                            break;
+                    }
+                } else
+                {
+                    switch (tipo)
+                    {
+                        case 1:
+                            insert = $@"INSERT INTO public.estado_odt
+                                    (idodt, revisada, fecha_revisada, idusuario_revisa)
+                                    VALUES({id}, 1, '{fecha}', {idusuario});";
+                            break;
+                        case 2:
+                            insert = $@"INSERT INTO public.estado_odt
+                                    (idodt, sellos, fecha_sellos, idusuario_sello)
+                                    VALUES({id}, 1, '{fecha}', {idusuario});";
+                            break;
+                        case 3:
+                            insert = $@"INSERT INTO public.estado_odt
+                                    (idodt, aprobado, fecha_aprobado, idusuario_aprueba)
+                                    VALUES({id}, 1, '{fecha}', {idusuario});";
+                            break;
+                    }
+                }
+                if (update != "")
+                {
+                    dbHelper.ExecuteNonQuery(update);
+                    return 1;
+                } else
+                {
+                    dbHelper.ExecuteNonQuery(insert);
+                    return 1;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                FG.ShowError("Error: " + ex.Message, "GuardarRecepcion");
+                return 0;
+            }
         }
     }
 }

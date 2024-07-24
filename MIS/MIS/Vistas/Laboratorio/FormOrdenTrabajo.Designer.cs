@@ -78,6 +78,8 @@
             label4 = new System.Windows.Forms.Label();
             panel3 = new System.Windows.Forms.Panel();
             btnConsultar = new System.Windows.Forms.Button();
+            label8 = new System.Windows.Forms.Label();
+            dtFecha = new System.Windows.Forms.DateTimePicker();
             tcGeneral.SuspendLayout();
             tpRegistro.SuspendLayout();
             panelCotizacion.SuspendLayout();
@@ -146,7 +148,7 @@
             panelCotizacion.Location = new System.Drawing.Point(0, 0);
             panelCotizacion.Margin = new System.Windows.Forms.Padding(0);
             panelCotizacion.Name = "panelCotizacion";
-            panelCotizacion.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            panelCotizacion.Padding = new System.Windows.Forms.Padding(12);
             panelCotizacion.Size = new System.Drawing.Size(1596, 797);
             panelCotizacion.TabIndex = 2;
             // 
@@ -217,6 +219,8 @@
             tableLayoutPanelContainer2.Controls.Add(txtODT, 3, 1);
             tableLayoutPanelContainer2.Controls.Add(txtInspeccion, 1, 1);
             tableLayoutPanelContainer2.Controls.Add(cbMetrologo, 1, 2);
+            tableLayoutPanelContainer2.Controls.Add(label8, 4, 1);
+            tableLayoutPanelContainer2.Controls.Add(dtFecha, 5, 1);
             tableLayoutPanelContainer2.Dock = System.Windows.Forms.DockStyle.Top;
             tableLayoutPanelContainer2.Location = new System.Drawing.Point(12, 12);
             tableLayoutPanelContainer2.Margin = new System.Windows.Forms.Padding(0);
@@ -417,6 +421,7 @@
             btnAprobar.TabIndex = 20;
             btnAprobar.UseVisualStyleBackColor = true;
             btnAprobar.Visible = false;
+            btnAprobar.Click += btnAprobar_Click;
             // 
             // btnImportar
             // 
@@ -509,7 +514,7 @@
             tpConsultar.Location = new System.Drawing.Point(4, 28);
             tpConsultar.Margin = new System.Windows.Forms.Padding(0);
             tpConsultar.Name = "tpConsultar";
-            tpConsultar.Size = new System.Drawing.Size(1596, 798);
+            tpConsultar.Size = new System.Drawing.Size(1596, 797);
             tpConsultar.TabIndex = 1;
             tpConsultar.Text = "Consultar";
             // 
@@ -526,8 +531,8 @@
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Margin = new System.Windows.Forms.Padding(0);
             panel1.Name = "panel1";
-            panel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            panel1.Size = new System.Drawing.Size(1596, 798);
+            panel1.Padding = new System.Windows.Forms.Padding(12);
+            panel1.Size = new System.Drawing.Size(1596, 797);
             panel1.TabIndex = 3;
             // 
             // tablaRecepciones
@@ -576,7 +581,7 @@
             tablaRecepciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             tablaRecepciones.RowHeadersVisible = false;
             tablaRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            tablaRecepciones.Size = new System.Drawing.Size(1572, 541);
+            tablaRecepciones.Size = new System.Drawing.Size(1572, 540);
             tablaRecepciones.TabIndex = 12;
             // 
             // tableLayoutPanel4
@@ -785,7 +790,7 @@
             panel3.BackColor = System.Drawing.Color.FromArgb(230, 233, 239);
             panel3.Controls.Add(btnConsultar);
             panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel3.Location = new System.Drawing.Point(12, 699);
+            panel3.Location = new System.Drawing.Point(12, 698);
             panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(1572, 87);
@@ -803,6 +808,35 @@
             btnConsultar.Size = new System.Drawing.Size(79, 78);
             btnConsultar.TabIndex = 10;
             btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label8.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            label8.Location = new System.Drawing.Point(582, 40);
+            label8.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(98, 28);
+            label8.TabIndex = 25;
+            label8.Text = "Fecha";
+            label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dtFecha
+            // 
+            dtFecha.CalendarFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dtFecha.CalendarForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+            dtFecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(120, 120, 120);
+            dtFecha.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dtFecha.Location = new System.Drawing.Point(692, 40);
+            dtFecha.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
+            dtFecha.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtFecha.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dtFecha.Name = "dtFecha";
+            dtFecha.Size = new System.Drawing.Size(110, 24);
+            dtFecha.TabIndex = 26;
             // 
             // FormOrdenTrabajo
             // 
@@ -883,5 +917,7 @@
         private System.Windows.Forms.TextBox txtInspeccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbMetrologo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtFecha;
     }
 }

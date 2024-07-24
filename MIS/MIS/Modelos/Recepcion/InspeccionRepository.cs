@@ -32,14 +32,14 @@ namespace MIS.Modelos.Recepcion
                     return null;
                 }
                 string query = $@"select r.id, r.idcliente, r.idsede, r.idcontacto, r.estado, r.recepcion, r.fecha as fecha_recepcion, c.nombrecompleto as cliente, coalesce(i.estado, '') as estado_inspeccion,
-                    i.fecha as fecha_inspeccion, coalesce(i.inspeccion, 0) as inspeccion
+                    i.fecha as fecha_inspeccion, coalesce(i.inspeccion, 0) as inspeccion, coalesce(i.observacion, '') as observacion
                         from recepciones r 
                     inner join clientes c on c.id = r.idcliente
                     inner join recepcion_detalle rd on rd.idrecepcion = r.id 
                     left join inspeccion_detalle id on rd.id  = id.idingreso
                     left join inspecciones i on i.id = id.idinspeccion
                         {where}
-                    group by r.id, r.idcliente, r.idsede, r.idcontacto, r.estado, r.recepcion, r.fecha, c.nombrecompleto, i.estado, i.fecha, i.inspeccion";
+                    group by r.id, r.idcliente, r.idsede, r.idcontacto, r.estado, r.recepcion, r.fecha, c.nombrecompleto, i.estado, i.fecha, i.inspeccion, i.observacion";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
                 if (dataTable == null)
                     return null;
@@ -94,7 +94,7 @@ namespace MIS.Modelos.Recepcion
             }
         }
 
-        public async Task<int> GuardarInspeccion(List<int> ids, List<string> piezas, List<string> funcionalidades, List<string> acabados, List<string> observaciones, List<string> estados, int nro_recepcion, int nro_inspeccion, string observacion)
+        public async Task<int> GuardarInspeccion(List<int> ids, List<string> piezas, List<string> funcionalidades, List<string> acabados, List<string> observaciones, List<string> estados, int nro_recepcion, int nro_inspeccion, string observacion, string fecha)
         {
             try
             {
@@ -107,13 +107,13 @@ namespace MIS.Modelos.Recepcion
                     int inspeccion = Convert.ToInt32(contador) + 1;
                     if (nro_inspeccion == 0)
                     {
-                        insert = $"INSERT INTO inspecciones(inspeccion, idusuario, estado, observacion) " +
-                                         $"VALUES({inspeccion}, {FG.UserId}, 'Inspeccionado', '{observacion}') RETURNING id";
+                        insert = $"INSERT INTO inspecciones(inspeccion, idusuario, estado, observacion, fecha) " +
+                                         $"VALUES({inspeccion}, {FG.UserId}, 'Inspeccionado', '{observacion}', '{fecha}') RETURNING id";
                         
                     }
                     else
                     {
-                        insert = $"update inspecciones set observacion='{observacion}' where inspeccion = {nro_inspeccion} returning id";
+                        insert = $"update inspecciones set fecha = '{fecha}', observacion='{observacion}' where inspeccion = {nro_inspeccion} returning id";
                     }
 
                     object idGenerado = dbHelper.ExecuteScalar(insert);

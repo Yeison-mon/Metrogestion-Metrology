@@ -9,7 +9,6 @@ namespace MIS.Helpers
     {
         private static PostgreSQLHelper instance;
         private readonly string connectionString;
-        //private readonly ApplicationDbContext _dbContext;
 
         private PostgreSQLHelper()
         {
@@ -21,7 +20,7 @@ namespace MIS.Helpers
                 password = "integration2024";
             } else
             {
-                FG.Url = "26.143.211.65";
+                FG.Url = "localhost";
                 password = "Yeison.2024.";
             }
             

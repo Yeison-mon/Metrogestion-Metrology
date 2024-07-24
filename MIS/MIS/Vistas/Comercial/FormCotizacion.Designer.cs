@@ -97,9 +97,11 @@
             cmsAdjuntos = new System.Windows.Forms.ContextMenuStrip(components);
             AdjuntarCotizacion = new System.Windows.Forms.ToolStripMenuItem();
             AdjuntarAnexo = new System.Windows.Forms.ToolStripMenuItem();
+            AdjuntarFactura = new System.Windows.Forms.ToolStripMenuItem();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             VerCotizacionAdj = new System.Windows.Forms.ToolStripMenuItem();
             VerAnexoAdj = new System.Windows.Forms.ToolStripMenuItem();
+            VerFactura = new System.Windows.Forms.ToolStripMenuItem();
             btnImportar = new System.Windows.Forms.Button();
             btnAgregarItems = new System.Windows.Forms.Button();
             btnLimpiar = new System.Windows.Forms.Button();
@@ -197,7 +199,7 @@
             panelCotizacion.Location = new System.Drawing.Point(0, 0);
             panelCotizacion.Margin = new System.Windows.Forms.Padding(0);
             panelCotizacion.Name = "panelCotizacion";
-            panelCotizacion.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            panelCotizacion.Padding = new System.Windows.Forms.Padding(12);
             panelCotizacion.Size = new System.Drawing.Size(1242, 1100);
             panelCotizacion.TabIndex = 2;
             // 
@@ -552,7 +554,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             tablaDetalle.DefaultCellStyle = dataGridViewCellStyle2;
-            tablaDetalle.Dock = System.Windows.Forms.DockStyle.Fill;
+            tablaDetalle.Dock = System.Windows.Forms.DockStyle.Top;
             tablaDetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             tablaDetalle.EnableHeadersVisualStyles = false;
             tablaDetalle.GridColor = System.Drawing.Color.FromArgb(230, 233, 239);
@@ -571,7 +573,7 @@
             tablaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             tablaDetalle.RowHeadersVisible = false;
             tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            tablaDetalle.Size = new System.Drawing.Size(1218, 829);
+            tablaDetalle.Size = new System.Drawing.Size(1218, 532);
             tablaDetalle.TabIndex = 19;
             // 
             // ColumnId
@@ -980,9 +982,9 @@
             // 
             // cmsAdjuntos
             // 
-            cmsAdjuntos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { AdjuntarCotizacion, AdjuntarAnexo, toolStripSeparator1, VerCotizacionAdj, VerAnexoAdj });
+            cmsAdjuntos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { AdjuntarCotizacion, AdjuntarAnexo, AdjuntarFactura, toolStripSeparator1, VerCotizacionAdj, VerAnexoAdj, VerFactura });
             cmsAdjuntos.Name = "cmsAdjuntos";
-            cmsAdjuntos.Size = new System.Drawing.Size(180, 98);
+            cmsAdjuntos.Size = new System.Drawing.Size(180, 142);
             // 
             // AdjuntarCotizacion
             // 
@@ -997,6 +999,14 @@
             AdjuntarAnexo.Size = new System.Drawing.Size(179, 22);
             AdjuntarAnexo.Text = "Adjuntar Anexo";
             AdjuntarAnexo.Click += AdjuntarAnexo_Click;
+            AdjuntarAnexo.MouseHover += AdjuntarAnexo_MouseHover;
+            // 
+            // AdjuntarFactura
+            // 
+            AdjuntarFactura.Name = "AdjuntarFactura";
+            AdjuntarFactura.Size = new System.Drawing.Size(179, 22);
+            AdjuntarFactura.Text = "Adjuntar Factura";
+            AdjuntarFactura.Click += AdjuntarFactura_Click;
             // 
             // toolStripSeparator1
             // 
@@ -1016,6 +1026,13 @@
             VerAnexoAdj.Size = new System.Drawing.Size(179, 22);
             VerAnexoAdj.Text = "Ver Anexo";
             VerAnexoAdj.Click += VerAnexoAdj_Click;
+            // 
+            // VerFactura
+            // 
+            VerFactura.Name = "VerFactura";
+            VerFactura.Size = new System.Drawing.Size(179, 22);
+            VerFactura.Text = "Ver Factura";
+            VerFactura.Click += VerFactura_Click;
             // 
             // btnImportar
             // 
@@ -1043,6 +1060,7 @@
             btnAgregarItems.Size = new System.Drawing.Size(79, 78);
             btnAgregarItems.TabIndex = 17;
             btnAgregarItems.UseVisualStyleBackColor = true;
+            btnAgregarItems.Click += btnAgregarItems_Click;
             // 
             // btnLimpiar
             // 
@@ -1107,7 +1125,7 @@
             tpConsultar.Location = new System.Drawing.Point(4, 28);
             tpConsultar.Margin = new System.Windows.Forms.Padding(0);
             tpConsultar.Name = "tpConsultar";
-            tpConsultar.Size = new System.Drawing.Size(1239, 1100);
+            tpConsultar.Size = new System.Drawing.Size(1242, 1100);
             tpConsultar.TabIndex = 1;
             tpConsultar.Text = "Consultar";
             // 
@@ -1124,8 +1142,8 @@
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Margin = new System.Windows.Forms.Padding(0);
             panel1.Name = "panel1";
-            panel1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
-            panel1.Size = new System.Drawing.Size(1239, 1100);
+            panel1.Padding = new System.Windows.Forms.Padding(12);
+            panel1.Size = new System.Drawing.Size(1242, 1100);
             panel1.TabIndex = 3;
             // 
             // tablaRecepciones
@@ -1174,7 +1192,7 @@
             tablaRecepciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             tablaRecepciones.RowHeadersVisible = false;
             tablaRecepciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            tablaRecepciones.Size = new System.Drawing.Size(1215, 843);
+            tablaRecepciones.Size = new System.Drawing.Size(1218, 843);
             tablaRecepciones.TabIndex = 12;
             // 
             // tableLayoutPanel4
@@ -1195,7 +1213,7 @@
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            tableLayoutPanel4.Size = new System.Drawing.Size(1215, 73);
+            tableLayoutPanel4.Size = new System.Drawing.Size(1218, 73);
             tableLayoutPanel4.TabIndex = 13;
             // 
             // label3
@@ -1204,10 +1222,10 @@
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label3.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label3.Location = new System.Drawing.Point(607, 35);
+            label3.Location = new System.Drawing.Point(608, 35);
             label3.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(253, 24);
+            label3.Size = new System.Drawing.Size(254, 24);
             label3.TabIndex = 7;
             label3.Text = "Filtro";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1217,7 +1235,7 @@
             txtFiltro.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
             txtFiltro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtFiltro.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtFiltro.Location = new System.Drawing.Point(872, 35);
+            txtFiltro.Location = new System.Drawing.Point(874, 35);
             txtFiltro.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new System.Drawing.Size(259, 27);
@@ -1236,7 +1254,7 @@
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new System.Drawing.Size(1215, 0);
+            tableLayoutPanel5.Size = new System.Drawing.Size(1218, 0);
             tableLayoutPanel5.TabIndex = 7;
             // 
             // tableLayoutPanel8
@@ -1263,7 +1281,7 @@
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            tableLayoutPanel8.Size = new System.Drawing.Size(1215, 73);
+            tableLayoutPanel8.Size = new System.Drawing.Size(1218, 73);
             tableLayoutPanel8.TabIndex = 6;
             // 
             // dtpCHasta
@@ -1273,7 +1291,7 @@
             dtpCHasta.CalendarMonthBackground = System.Drawing.Color.FromArgb(120, 120, 120);
             dtpCHasta.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             dtpCHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpCHasta.Location = new System.Drawing.Point(749, 35);
+            dtpCHasta.Location = new System.Drawing.Point(750, 35);
             dtpCHasta.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             dtpCHasta.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             dtpCHasta.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -1288,7 +1306,7 @@
             dtpCDesde.CalendarMonthBackground = System.Drawing.Color.FromArgb(120, 120, 120);
             dtpCDesde.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             dtpCDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpCDesde.Location = new System.Drawing.Point(607, 35);
+            dtpCDesde.Location = new System.Drawing.Point(608, 35);
             dtpCDesde.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             dtpCDesde.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             dtpCDesde.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -1308,7 +1326,7 @@
             cbCCliente.Location = new System.Drawing.Point(182, 35);
             cbCCliente.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             cbCCliente.Name = "cbCCliente";
-            cbCCliente.Size = new System.Drawing.Size(413, 27);
+            cbCCliente.Size = new System.Drawing.Size(414, 27);
             cbCCliente.TabIndex = 10;
             // 
             // txtCNro
@@ -1328,10 +1346,10 @@
             label7.BackColor = System.Drawing.Color.Transparent;
             label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label7.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label7.Location = new System.Drawing.Point(749, 0);
+            label7.Location = new System.Drawing.Point(750, 0);
             label7.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(454, 23);
+            label7.Size = new System.Drawing.Size(456, 23);
             label7.TabIndex = 7;
             label7.Text = "Hasta";
             label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1342,7 +1360,7 @@
             label6.BackColor = System.Drawing.Color.Transparent;
             label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label6.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label6.Location = new System.Drawing.Point(607, 0);
+            label6.Location = new System.Drawing.Point(608, 0);
             label6.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(130, 23);
@@ -1359,7 +1377,7 @@
             label5.Location = new System.Drawing.Point(182, 0);
             label5.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(413, 23);
+            label5.Size = new System.Drawing.Size(414, 23);
             label5.TabIndex = 5;
             label5.Text = "Cliente";
             label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1386,7 +1404,7 @@
             panel3.Location = new System.Drawing.Point(12, 1001);
             panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1215, 87);
+            panel3.Size = new System.Drawing.Size(1218, 87);
             panel3.TabIndex = 11;
             // 
             // btnConsultar
@@ -1407,7 +1425,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new System.Drawing.Size(1267, 843);
+            ClientSize = new System.Drawing.Size(1267, 763);
             Controls.Add(tcGeneral);
             Controls.Add(labelDescripcion);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
@@ -1531,5 +1549,7 @@
         private System.Windows.Forms.ToolStripMenuItem VerAnexoAdj;
         private System.Windows.Forms.ContextMenuStrip cmsDetalle;
         private System.Windows.Forms.ToolStripMenuItem asignarAnexo;
+        private System.Windows.Forms.ToolStripMenuItem AdjuntarFactura;
+        private System.Windows.Forms.ToolStripMenuItem VerFactura;
     }
 }

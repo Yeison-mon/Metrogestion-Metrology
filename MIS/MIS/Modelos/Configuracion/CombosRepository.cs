@@ -113,6 +113,19 @@ namespace MIS.Modelos
                     case "tipo_acreditacion":
                         query = "select id, descripcion from tipo_acreditacion where id > 0";
                         break;
+                    case "correos_cliente":
+                        query = $@"SELECT row_number() over () as id,correo as descripcion
+                                    FROM (
+                                        SELECT correo_principal AS correo FROM clientes WHERE id = {condicion} and id > 0 and correo_principal != ''
+                                        UNION
+                                        SELECT correo_factura AS correo FROM clientes WHERE id = {condicion} and correo_factura != ''
+                                        UNION
+                                        SELECT correo FROM correos_cliente WHERE idcliente = {condicion} and id > 0 and correo != ''
+                                    ) AS subquery";
+                        break;
+                    case "componentes":
+                        query = "select id, descripcion from componentes where estado = 1";
+                        break;
                     default:
                         return null;
                 }
@@ -201,6 +214,21 @@ namespace MIS.Modelos
                         insercion = $"insert into {tabla} (descripcion, iddepartamento) values('{texto}', {id})";
                         break;
                     case "formas_llegada":
+                        busqueda = $"select count(*) from {tabla} where descripcion = '{texto}'";
+                        insercion = $"insert into {tabla} (descripcion) values('{texto}')";
+                        break;
+                    case "correos_cliente":
+                        busqueda = $@"SELECT COUNT(*)
+                                    FROM (
+                                        SELECT correo_principal AS correo FROM clientes WHERE correo_principal = '{texto}'
+                                        UNION
+                                        SELECT correo_factura AS correo FROM clientes WHERE correo_factura = '{texto}'
+                                        UNION
+                                        SELECT correo FROM correos_cliente WHERE correo = '{texto}'
+                                    ) AS subquery;";
+                        insercion = $"insert into {tabla} (correo) values('{texto}')";
+                        break;
+                    case "componentes":
                         busqueda = $"select count(*) from {tabla} where descripcion = '{texto}'";
                         insercion = $"insert into {tabla} (descripcion) values('{texto}')";
                         break;

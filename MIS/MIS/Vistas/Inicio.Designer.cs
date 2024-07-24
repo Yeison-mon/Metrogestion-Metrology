@@ -38,7 +38,6 @@
             btnSubConf_Clientes = new System.Windows.Forms.Button();
             btnMConfiguracion = new System.Windows.Forms.Button();
             panelSubLaboratorio = new System.Windows.Forms.Panel();
-            btnSensor = new System.Windows.Forms.Button();
             btnSubLab_Recibir = new System.Windows.Forms.Button();
             btnSubLab_Certificados = new System.Windows.Forms.Button();
             btnSubLab_Inspeccion = new System.Windows.Forms.Button();
@@ -130,7 +129,7 @@
             panelSubConfiguracion.Controls.Add(btnSubConf_Servicios);
             panelSubConfiguracion.Controls.Add(btnSubConf_Clientes);
             panelSubConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            panelSubConfiguracion.Location = new System.Drawing.Point(0, 813);
+            panelSubConfiguracion.Location = new System.Drawing.Point(0, 764);
             panelSubConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panelSubConfiguracion.Name = "panelSubConfiguracion";
             panelSubConfiguracion.Size = new System.Drawing.Size(275, 147);
@@ -216,7 +215,7 @@
             btnMConfiguracion.ForeColor = System.Drawing.Color.White;
             btnMConfiguracion.Image = Properties.Resources.configuracion32blanco;
             btnMConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnMConfiguracion.Location = new System.Drawing.Point(0, 767);
+            btnMConfiguracion.Location = new System.Drawing.Point(0, 718);
             btnMConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnMConfiguracion.Name = "btnMConfiguracion";
             btnMConfiguracion.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
@@ -230,7 +229,6 @@
             // panelSubLaboratorio
             // 
             panelSubLaboratorio.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
-            panelSubLaboratorio.Controls.Add(btnSensor);
             panelSubLaboratorio.Controls.Add(btnSubLab_Recibir);
             panelSubLaboratorio.Controls.Add(btnSubLab_Certificados);
             panelSubLaboratorio.Controls.Add(btnSubLab_Inspeccion);
@@ -239,30 +237,8 @@
             panelSubLaboratorio.Location = new System.Drawing.Point(0, 530);
             panelSubLaboratorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panelSubLaboratorio.Name = "panelSubLaboratorio";
-            panelSubLaboratorio.Size = new System.Drawing.Size(275, 237);
+            panelSubLaboratorio.Size = new System.Drawing.Size(275, 188);
             panelSubLaboratorio.TabIndex = 15;
-            // 
-            // btnSensor
-            // 
-            btnSensor.BackColor = System.Drawing.Color.Transparent;
-            btnSensor.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnSensor.Dock = System.Windows.Forms.DockStyle.Top;
-            btnSensor.FlatAppearance.BorderSize = 0;
-            btnSensor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            btnSensor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 30, 30);
-            btnSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnSensor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            btnSensor.ForeColor = System.Drawing.Color.White;
-            btnSensor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnSensor.Location = new System.Drawing.Point(0, 186);
-            btnSensor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnSensor.Name = "btnSensor";
-            btnSensor.Padding = new System.Windows.Forms.Padding(47, 0, 0, 0);
-            btnSensor.Size = new System.Drawing.Size(275, 47);
-            btnSensor.TabIndex = 8;
-            btnSensor.Text = "Sensor";
-            btnSensor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnSensor.UseVisualStyleBackColor = false;
             // 
             // btnSubLab_Recibir
             // 
@@ -625,7 +601,7 @@
             btnSalir.ForeColor = System.Drawing.Color.White;
             btnSalir.Image = Properties.Resources.salir32blanco;
             btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnSalir.Location = new System.Drawing.Point(0, 960);
+            btnSalir.Location = new System.Drawing.Point(0, 911);
             btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Padding = new System.Windows.Forms.Padding(35, 0, 12, 0);
@@ -801,6 +777,5 @@
         private System.Windows.Forms.Button btnSubCom_Facturacion;
         private System.Windows.Forms.Button btnSubRecep_Recibir;
         private System.Windows.Forms.Button btnSubLab_Recibir;
-        private System.Windows.Forms.Button btnSensor;
     }
 }

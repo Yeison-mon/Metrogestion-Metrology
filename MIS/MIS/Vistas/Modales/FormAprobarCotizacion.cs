@@ -216,8 +216,8 @@ namespace MIS.Vistas.Modales
             {
                 if (fechaYHoraSeleccionada < fechaYHoraActual)
                 {
-                    MessageBox.Show("La fecha y hora seleccionadas no pueden ser menores a la fecha y hora actual.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    //MessageBox.Show("La fecha y hora seleccionadas no pueden ser menores a la fecha y hora actual.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //return;
                 }
                 tiempo = fechaYHoraGuardar.ToString("yyyy-MM-dd HH:mm:ss");
                 if (tcGeneral.SelectedTab == tpDocumento)

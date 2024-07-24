@@ -129,6 +129,7 @@ namespace MIS.Vistas.Recepcion
                 txtNroRecepcion.Text = tabla.Rows[0]["recepcion"].ToString();
                 this.recepcion = (int)tabla.Rows[0]["recepcion"];
                 this.inspeccion = (int)tabla.Rows[0]["inspeccion"];
+                txtObservacion.Text = tabla.Rows[0]["observacion"].ToString();
                 txtNroInspeccion.Text = tabla.Rows[0]["inspeccion"].ToString() != "0" ? tabla.Rows[0]["inspeccion"].ToString() : "";
                 dtFechaRecepcion.Value = (DateTime)tabla.Rows[0]["fecha_recepcion"];
                 dtFechaInspeccion.Value = tabla.Rows[0]["fecha_inspeccion"].ToString() != "" ? (DateTime)tabla.Rows[0]["fecha_inspeccion"] : DateTime.Now;
@@ -268,6 +269,8 @@ namespace MIS.Vistas.Recepcion
             List<string> acabados = new List<string>();
             List<string> observaciones = new List<string>();
             List<string> estados = new List<string>();
+            DateTime fecha = dtFechaInspeccion.Value.Date;
+            string fechaguardar = fecha.ToString("yyyy-MM-dd HH:mm:ss");
             foreach (DataGridViewRow row in tablaIngresos.Rows)
             {
                 int id = Convert.ToInt32(row.Cells["id"].Value);
@@ -284,7 +287,7 @@ namespace MIS.Vistas.Recepcion
                 estados.Add(estado);
             }
             InspeccionRepository guardar = new InspeccionRepository();
-            inspeccion = await guardar.GuardarInspeccion(ids, piezas, funcionalidades, acabados, observaciones, estados, recepcion, inspeccion, txtObservacion.Text);
+            inspeccion = await guardar.GuardarInspeccion(ids, piezas, funcionalidades, acabados, observaciones, estados, recepcion, inspeccion, txtObservacion.Text, fechaguardar);
             if (inspeccion > 0)
             {
                 txtNroInspeccion.Text = inspeccion.ToString();

@@ -467,7 +467,6 @@ namespace MIS.Vistas.Recepcion
                                 doc.PrintOut(1, PrintOptionConstants.bpoHighResolution);
                                 doc.EndPrint();
                             }
-
                         }
                         doc.Close();
                         MessageBox.Show("Etiqueta(s) impresa(s)");

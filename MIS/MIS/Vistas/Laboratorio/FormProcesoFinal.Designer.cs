@@ -58,6 +58,7 @@
             dtFechaODT = new System.Windows.Forms.DateTimePicker();
             tableLayoutPanelContenedorPrincipar = new System.Windows.Forms.TableLayoutPanel();
             panel2 = new System.Windows.Forms.Panel();
+            btnCulminar = new System.Windows.Forms.Button();
             btnLimpiar = new System.Windows.Forms.Button();
             btnImprimir = new System.Windows.Forms.Button();
             btnGuardar = new System.Windows.Forms.Button();
@@ -106,7 +107,7 @@
             labelDescripcion.Location = new System.Drawing.Point(0, 0);
             labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             labelDescripcion.Name = "labelDescripcion";
-            labelDescripcion.Size = new System.Drawing.Size(1541, 74);
+            labelDescripcion.Size = new System.Drawing.Size(1301, 74);
             labelDescripcion.TabIndex = 1;
             labelDescripcion.Text = "INSPECCIÓN EN PROCESO Y FINAL";
             labelDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,7 +124,7 @@
             tcGeneral.Name = "tcGeneral";
             tcGeneral.Padding = new System.Drawing.Point(5, 3);
             tcGeneral.SelectedIndex = 0;
-            tcGeneral.Size = new System.Drawing.Size(1541, 733);
+            tcGeneral.Size = new System.Drawing.Size(1301, 733);
             tcGeneral.TabIndex = 3;
             tcGeneral.TabStop = false;
             // 
@@ -136,7 +137,7 @@
             tpRegistro.Location = new System.Drawing.Point(4, 28);
             tpRegistro.Margin = new System.Windows.Forms.Padding(0);
             tpRegistro.Name = "tpRegistro";
-            tpRegistro.Size = new System.Drawing.Size(1533, 701);
+            tpRegistro.Size = new System.Drawing.Size(1293, 701);
             tpRegistro.TabIndex = 0;
             tpRegistro.Text = "Registro";
             // 
@@ -154,7 +155,7 @@
             panelRecepcion.Margin = new System.Windows.Forms.Padding(0);
             panelRecepcion.Name = "panelRecepcion";
             panelRecepcion.Padding = new System.Windows.Forms.Padding(12);
-            panelRecepcion.Size = new System.Drawing.Size(1533, 701);
+            panelRecepcion.Size = new System.Drawing.Size(1293, 701);
             panelRecepcion.TabIndex = 2;
             // 
             // tablaDetalle
@@ -201,8 +202,9 @@
             tablaDetalle.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             tablaDetalle.RowHeadersVisible = false;
             tablaDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            tablaDetalle.Size = new System.Drawing.Size(1509, 333);
+            tablaDetalle.Size = new System.Drawing.Size(1269, 333);
             tablaDetalle.TabIndex = 14;
+            tablaDetalle.CellClick += tablaDetalle_CellClick;
             // 
             // tableLayoutPanel3
             // 
@@ -218,7 +220,7 @@
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.05042F));
             tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.94958F));
-            tableLayoutPanel3.Size = new System.Drawing.Size(1509, 137);
+            tableLayoutPanel3.Size = new System.Drawing.Size(1269, 137);
             tableLayoutPanel3.TabIndex = 13;
             // 
             // txtObservacion
@@ -244,7 +246,7 @@
             label1.Location = new System.Drawing.Point(0, 0);
             label1.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(1497, 23);
+            label1.Size = new System.Drawing.Size(1257, 23);
             label1.TabIndex = 14;
             label1.Text = "Observación";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -279,7 +281,7 @@
             tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             tableLayoutPanelContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            tableLayoutPanelContainer2.Size = new System.Drawing.Size(1509, 120);
+            tableLayoutPanelContainer2.Size = new System.Drawing.Size(1269, 120);
             tableLayoutPanelContainer2.TabIndex = 7;
             // 
             // dtFechaIPF
@@ -351,6 +353,8 @@
             txtNroIPF.Size = new System.Drawing.Size(109, 27);
             txtNroIPF.TabIndex = 18;
             txtNroIPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            txtNroIPF.TextChanged += txtNroIPF_TextChanged;
+            txtNroIPF.KeyPress += txtNroIPF_KeyPress;
             // 
             // labelNumero
             // 
@@ -377,6 +381,8 @@
             txtNroODT.Size = new System.Drawing.Size(109, 27);
             txtNroODT.TabIndex = 3;
             txtNroODT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            txtNroODT.TextChanged += txtNroODT_TextChanged;
+            txtNroODT.KeyPress += txtNroODT_KeyPress;
             // 
             // txtEstado
             // 
@@ -461,12 +467,13 @@
             tableLayoutPanelContenedorPrincipar.RowCount = 1;
             tableLayoutPanelContenedorPrincipar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanelContenedorPrincipar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            tableLayoutPanelContenedorPrincipar.Size = new System.Drawing.Size(1509, 0);
+            tableLayoutPanelContenedorPrincipar.Size = new System.Drawing.Size(1269, 0);
             tableLayoutPanelContenedorPrincipar.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.FromArgb(230, 233, 239);
+            panel2.Controls.Add(btnCulminar);
             panel2.Controls.Add(btnLimpiar);
             panel2.Controls.Add(btnImprimir);
             panel2.Controls.Add(btnGuardar);
@@ -475,8 +482,22 @@
             panel2.Location = new System.Drawing.Point(12, 602);
             panel2.Margin = new System.Windows.Forms.Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(1509, 87);
+            panel2.Size = new System.Drawing.Size(1269, 87);
             panel2.TabIndex = 11;
+            // 
+            // btnCulminar
+            // 
+            btnCulminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            btnCulminar.FlatAppearance.BorderSize = 0;
+            btnCulminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCulminar.Image = Properties.Resources.enviardocumento64;
+            btnCulminar.Location = new System.Drawing.Point(351, 6);
+            btnCulminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCulminar.Name = "btnCulminar";
+            btnCulminar.Size = new System.Drawing.Size(79, 78);
+            btnCulminar.TabIndex = 17;
+            btnCulminar.UseVisualStyleBackColor = true;
+            btnCulminar.Click += btnCulminar_Click;
             // 
             // btnLimpiar
             // 
@@ -490,6 +511,7 @@
             btnLimpiar.Size = new System.Drawing.Size(79, 78);
             btnLimpiar.TabIndex = 16;
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnImprimir
             // 
@@ -503,6 +525,7 @@
             btnImprimir.Size = new System.Drawing.Size(79, 78);
             btnImprimir.TabIndex = 13;
             btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
             // 
             // btnGuardar
             // 
@@ -516,6 +539,7 @@
             btnGuardar.Size = new System.Drawing.Size(79, 78);
             btnGuardar.TabIndex = 11;
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnBuscar
             // 
@@ -540,7 +564,7 @@
             tpConsultar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tpConsultar.Name = "tpConsultar";
             tpConsultar.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            tpConsultar.Size = new System.Drawing.Size(1242, 701);
+            tpConsultar.Size = new System.Drawing.Size(1293, 701);
             tpConsultar.TabIndex = 1;
             tpConsultar.Text = "Consultar";
             // 
@@ -558,7 +582,7 @@
             panel1.Margin = new System.Windows.Forms.Padding(0);
             panel1.Name = "panel1";
             panel1.Padding = new System.Windows.Forms.Padding(12);
-            panel1.Size = new System.Drawing.Size(1234, 695);
+            panel1.Size = new System.Drawing.Size(1285, 695);
             panel1.TabIndex = 3;
             // 
             // tablaConsulta
@@ -607,7 +631,7 @@
             tablaConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             tablaConsulta.RowHeadersVisible = false;
             tablaConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            tablaConsulta.Size = new System.Drawing.Size(1210, 438);
+            tablaConsulta.Size = new System.Drawing.Size(1261, 438);
             tablaConsulta.TabIndex = 12;
             // 
             // tableLayoutPanel4
@@ -630,7 +654,7 @@
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            tableLayoutPanel4.Size = new System.Drawing.Size(1210, 73);
+            tableLayoutPanel4.Size = new System.Drawing.Size(1261, 73);
             tableLayoutPanel4.TabIndex = 13;
             // 
             // label3
@@ -639,10 +663,10 @@
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label3.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label3.Location = new System.Drawing.Point(602, 35);
+            label3.Location = new System.Drawing.Point(627, 35);
             label3.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(253, 24);
+            label3.Size = new System.Drawing.Size(264, 24);
             label3.TabIndex = 7;
             label3.Text = "Filtro";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -652,7 +676,7 @@
             txtFiltro.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
             txtFiltro.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtFiltro.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtFiltro.Location = new System.Drawing.Point(867, 35);
+            txtFiltro.Location = new System.Drawing.Point(903, 35);
             txtFiltro.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new System.Drawing.Size(259, 27);
@@ -667,7 +691,7 @@
             label5.Location = new System.Drawing.Point(0, 0);
             label5.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(362, 23);
+            label5.Size = new System.Drawing.Size(378, 23);
             label5.TabIndex = 5;
             label5.Text = "Cliente";
             label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -684,7 +708,7 @@
             cbCCliente.Location = new System.Drawing.Point(0, 35);
             cbCCliente.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             cbCCliente.Name = "cbCCliente";
-            cbCCliente.Size = new System.Drawing.Size(362, 27);
+            cbCCliente.Size = new System.Drawing.Size(378, 27);
             cbCCliente.TabIndex = 10;
             // 
             // tableLayoutPanel5
@@ -700,7 +724,7 @@
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new System.Drawing.Size(1210, 0);
+            tableLayoutPanel5.Size = new System.Drawing.Size(1261, 0);
             tableLayoutPanel5.TabIndex = 7;
             // 
             // tableLayoutPanel8
@@ -727,7 +751,7 @@
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.79365F));
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            tableLayoutPanel8.Size = new System.Drawing.Size(1210, 73);
+            tableLayoutPanel8.Size = new System.Drawing.Size(1261, 73);
             tableLayoutPanel8.TabIndex = 6;
             // 
             // txtCInspeccion
@@ -735,7 +759,7 @@
             txtCInspeccion.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
             txtCInspeccion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtCInspeccion.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            txtCInspeccion.Location = new System.Drawing.Point(158, 35);
+            txtCInspeccion.Location = new System.Drawing.Point(165, 35);
             txtCInspeccion.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             txtCInspeccion.Name = "txtCInspeccion";
             txtCInspeccion.Size = new System.Drawing.Size(132, 27);
@@ -748,7 +772,7 @@
             dtpCHasta.CalendarMonthBackground = System.Drawing.Color.FromArgb(120, 120, 120);
             dtpCHasta.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             dtpCHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpCHasta.Location = new System.Drawing.Point(483, 35);
+            dtpCHasta.Location = new System.Drawing.Point(503, 35);
             dtpCHasta.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             dtpCHasta.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             dtpCHasta.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -763,7 +787,7 @@
             dtpCDesde.CalendarMonthBackground = System.Drawing.Color.FromArgb(120, 120, 120);
             dtpCDesde.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             dtpCDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtpCDesde.Location = new System.Drawing.Point(338, 35);
+            dtpCDesde.Location = new System.Drawing.Point(352, 35);
             dtpCDesde.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             dtpCDesde.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             dtpCDesde.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -788,10 +812,10 @@
             label7.BackColor = System.Drawing.Color.Transparent;
             label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label7.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label7.Location = new System.Drawing.Point(483, 0);
+            label7.Location = new System.Drawing.Point(503, 0);
             label7.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(715, 23);
+            label7.Size = new System.Drawing.Size(746, 23);
             label7.TabIndex = 7;
             label7.Text = "Hasta";
             label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -802,10 +826,10 @@
             label6.BackColor = System.Drawing.Color.Transparent;
             label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label6.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label6.Location = new System.Drawing.Point(338, 0);
+            label6.Location = new System.Drawing.Point(352, 0);
             label6.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(133, 23);
+            label6.Size = new System.Drawing.Size(139, 23);
             label6.TabIndex = 6;
             label6.Text = "Desde";
             label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -819,7 +843,7 @@
             label4.Location = new System.Drawing.Point(0, 0);
             label4.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(146, 23);
+            label4.Size = new System.Drawing.Size(153, 23);
             label4.TabIndex = 4;
             label4.Text = "Recepcion";
             label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -830,10 +854,10 @@
             label9.BackColor = System.Drawing.Color.Transparent;
             label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             label9.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
-            label9.Location = new System.Drawing.Point(158, 0);
+            label9.Location = new System.Drawing.Point(165, 0);
             label9.Margin = new System.Windows.Forms.Padding(0, 0, 12, 12);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(168, 23);
+            label9.Size = new System.Drawing.Size(175, 23);
             label9.TabIndex = 13;
             label9.Text = "Inspeccion";
             label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -846,7 +870,7 @@
             panel3.Location = new System.Drawing.Point(12, 596);
             panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1210, 87);
+            panel3.Size = new System.Drawing.Size(1261, 87);
             panel3.TabIndex = 11;
             // 
             // btnConsultar
@@ -866,7 +890,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1541, 807);
+            ClientSize = new System.Drawing.Size(1301, 807);
             Controls.Add(tcGeneral);
             Controls.Add(labelDescripcion);
             Name = "FormProcesoFinal";
@@ -942,5 +966,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnCulminar;
     }
 }

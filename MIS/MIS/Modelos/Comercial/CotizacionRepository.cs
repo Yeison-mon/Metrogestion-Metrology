@@ -204,7 +204,7 @@ namespace MIS.Modelos.Comercial
             }
         }
 
-        public async Task<int> Guardar(List<int> ids, int idcliente, int idsede, int idcontacto, int nro_cotizacion, string observacion)
+        public async Task<int> Guardar(List<int> ids, int idcliente, int idsede, int idcontacto, int nro_cotizacion, int idcotizacion, string observacion)
         {
             try
             {
@@ -214,11 +214,21 @@ namespace MIS.Modelos.Comercial
                 if (contador != null)
                 {
                     int cotizacion = Convert.ToInt32(contador) + 1;
-                    if (nro_cotizacion == 0)
+                    if (idcotizacion == 0)
                     {
+                        if (nro_cotizacion > 0) 
+                        { 
+                            string busqueda = $"select cotizacion from cotizaciones where cotizacion = {nro_cotizacion}";
+                            object encontrado = await dbHelper.ExecuteScalarAsync(busqueda);
+                            if (encontrado != null) 
+                            {
+                                MessageBox.Show($"La cotizacion: {nro_cotizacion} ya existe :)");
+                                return 0;
+                            }
+                        }
                         query = $@"INSERT INTO public.cotizaciones
                                         (cotizacion, anio, idcliente, idsede, idcontacto, idusuario, estado, observacion)
-                                        VALUES({cotizacion}, '{DateTime.Now.ToString("yyyy")}', {idcliente}, {idsede}, {idcontacto}, {FG.UserId}, 'Registrado', '{observacion}') returning id;";
+                                        VALUES({nro_cotizacion}, '{DateTime.Now.ToString("yyyy")}', {idcliente}, {idsede}, {idcontacto}, {FG.UserId}, 'Registrado', '{observacion}') returning id;";
                     }
                     else
                     {
@@ -279,7 +289,7 @@ namespace MIS.Modelos.Comercial
             try
             {
                 string query = "";
-                object id = await dbHelper.ExecuteScalarAsync($@"select coalesce(id, 0) as id from archivos.archivos_laboratorio where nrocontrol = {idcotizacion} and base64 = '{base64}' and tipo = 'COTIZACION ADJUNTO'");
+                object id = await dbHelper.ExecuteScalarAsync($@"select coalesce(id, 0) as id from archivos.archivos_laboratorio where nrocontrol = {idcotizacion} and base64 = '{base64}' and tipo = '{tipo}'");
                 if (Convert.ToInt32(id) == 0)
                 {
                     query = $@"insert into archivos.archivos_laboratorio
@@ -329,6 +339,24 @@ namespace MIS.Modelos.Comercial
             }
         }
 
+        public async Task<int> AnexosCotizacion(int idcotizacion)
+        {
+            try
+            {
+                string query = "";
+                string busAnexos = $"select max(nroarchivo) from archivos.archivos_laboratorio al where nrocontrol = {idcotizacion} and tipo = 'COTIZACION ANEXO'";
+                object anexos = await dbHelper.ExecuteScalarAsync(busAnexos);
+                if (anexos != null && anexos != DBNull.Value) 
+                    return (int)anexos;
+                else
+                    return 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar ingreso(s): " + ex.Message, "GuardarCotizacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
 
         #endregion
         #region Modal Aprobar
@@ -455,7 +483,7 @@ namespace MIS.Modelos.Comercial
 	                                from cotizacion_aprobacion ca
 	                                left join archivos.archivos_laboratorio al on al.nrocontrol = ca.id
 	                                left join archivos.fotos_laboratorio fl on fl.nrocontrol = ca.id
-                                where idcotizacion = {idcotizacion}";
+                                where ca.idcotizacion = {idcotizacion} and (al.tipo = 'APROBACION COTIZACION' or fl.tipo = 'APROBACION COTIZACION')";
                 DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
                 if (dataTable.Rows.Count > 0)
                     return dataTable;
@@ -470,6 +498,31 @@ namespace MIS.Modelos.Comercial
             }
         }
 
+        #endregion
+        #region
+        public bool FacturaExterna(int idcotizacion, int cotizacion, int factura, string fechacoti, string fechafactura)
+        {
+            try
+            {
+                string query = $"update cotizaciones set coti_factura = {cotizacion}, factura = {factura}, fecha_coti_externa = '{fechacoti}', fecha_factura = '{fechafactura}' where id = {idcotizacion}";
+                int guardado = dbHelper.ExecuteNonQuery(query);
+                if (guardado > 0)
+                {
+                    MessageBox.Show("Guardado o Actualizado con éxito");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Error al Guardadar o Actualizadar");
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message, "Acción cancelada");
+                return false;
+            }
+        }
         #endregion
     }
 }

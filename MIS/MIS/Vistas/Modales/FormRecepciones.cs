@@ -25,18 +25,22 @@ namespace MIS.Vistas.Modales
                 cbEstados.Items.Add("Ingresado");
                 cbEstados.Items.Add("Inspeccionado");
             }
-            if (tipo == "Cotizacion")
+            else if (tipo == "Cotizacion")
             {
                 cbEstados.Items.Add("Inspeccionado");
             }
-            if (tipo == "ODT")
+            else if (tipo == "ODT")
             {
                 cbEstados.Items.Add("Cotizado");
                 cbEstados.Items.Add("Inspeccionado");
             }
-            if (tipo == "IPF") 
+            else if (tipo == "IPF") 
             {
                 cbEstados.Items.Add("Programado");
+            }
+            else if (tipo == "Devolucion")
+            {
+                cbEstados.Items.Add("Por entregar");
             }
 
             cbEstados.SelectedIndex = 0;

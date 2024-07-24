@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {}
+    "C:\\Users\\chiri\\OneDrive\\Documentos\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {
+    "C:\\Users\\chiri\\OneDrive\\Documentos\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
+        "projectUniqueName": "C:\\Users\\chiri\\OneDrive\\Documentos\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
         "projectName": "MIS",
-        "projectPath": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
+        "projectPath": "C:\\Users\\chiri\\OneDrive\\Documentos\\Metrogestion-Metrology\\MIS\\MIS\\MIS.csproj",
         "packagesPath": "C:\\Users\\chiri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chiri\\Documents\\Metrogestion-Metrology\\MIS\\MIS\\obj\\",
+        "outputPath": "C:\\Users\\chiri\\OneDrive\\Documentos\\Metrogestion-Metrology\\MIS\\MIS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,9 +58,9 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
-            "MessageBox.Avalonia": {
+            "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
-              "version": "[3.1.5.1, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.Bcl.AsyncInterfaces": {
               "target": "Package",
@@ -209,6 +209,10 @@
             "System.Threading.Channels": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[19.0.0, )"
             }
           },
           "imports": [

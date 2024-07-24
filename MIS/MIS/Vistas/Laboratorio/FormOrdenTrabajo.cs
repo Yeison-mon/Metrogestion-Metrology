@@ -19,6 +19,7 @@ namespace MIS.Vistas.Laboratorio
         private int idcliente = 0;
         private int inspeccion = 0;
         private int ordentrabajo = 0;
+        private int idodt = 0;
         public FormOrdenTrabajo()
         {
             InitializeComponent();
@@ -29,7 +30,12 @@ namespace MIS.Vistas.Laboratorio
             txtCliente.Text = "";
             txtEstado.Text = "Temporal";
             txtODT.Text = "";
+            idodt = 0;
+            ordentrabajo = 0;
+            idcliente = 0;
+            inspeccion = 0;
             txtInspeccion.Text = "";
+            dtFecha.Value = DateTime.Now;
             btnLimpiar.Visible = false;
             btnImportar.Visible = false;
             btnGuardar.Visible = false;
@@ -59,20 +65,21 @@ namespace MIS.Vistas.Laboratorio
                         Buscar(inspeccion, 0);
                     }
                     Detalle(id);
-                    
+
                 }
             }
         }
 
         private async void BuscarCliente(int id)
         {
+            
             CotizacionRepository cliente = new CotizacionRepository();
             DataTable tabla = await cliente.BuscarCliente(id, "");
             if (tabla != null)
             {
                 if (tabla.Rows.Count > 0)
                 {
-                    
+
                     txtCliente.Text = tabla.Rows[0]["nombrecompleto"].ToString();
                     idcliente = (int)tabla.Rows[0]["id"];
                     btnAgregarItems.Enabled = true;
@@ -92,7 +99,6 @@ namespace MIS.Vistas.Laboratorio
             {
                 btnGuardar.Visible = true;
                 btnImportar.Visible = true;
-                btnAprobar.Visible = true;
                 btnLimpiar.Visible = true;
                 tablaDetalle.DataSource = tabla;
                 tablaDetalle.CurrentCell = null;
@@ -113,6 +119,8 @@ namespace MIS.Vistas.Laboratorio
         }
         private async void Buscar(int inspeccion, int ordentrabajo)
         {
+            this.ordentrabajo = 0;
+            idodt = 0;
             OrdenTrabajoRepository buscar = new OrdenTrabajoRepository();
             DataTable tabla = await buscar.Buscar(inspeccion, ordentrabajo);
             if (tabla != null && tabla.Rows.Count > 0)
@@ -121,6 +129,31 @@ namespace MIS.Vistas.Laboratorio
                 txtEstado.Text = tabla.Rows[0]["estado"].ToString() != "" ? tabla.Rows[0]["estado"].ToString() : "Temporal";
                 txtInspeccion.Text = tabla.Rows[0]["inspeccion"].ToString();
                 txtODT.Text = tabla.Rows[0]["ordentrabajo"].ToString() != "0" ? tabla.Rows[0]["ordentrabajo"].ToString() : "";
+                string proceso = tabla.Rows[0]["estado_proceso"].ToString() != "" ? tabla.Rows[0]["estado_proceso"].ToString() : "";
+                string fechaString = tabla.Rows[0]["fecha"].ToString();
+                DateTime fechaLocal = DateTime.Now;
+                if (!string.IsNullOrEmpty(fechaString))
+                {
+                    if (DateTimeOffset.TryParse(fechaString, out DateTimeOffset fechaOffset))
+                    {
+                        fechaLocal = fechaOffset.ToLocalTime().DateTime;
+                    }
+                    else
+                    {
+                        fechaLocal = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    fechaLocal = DateTime.Now;
+                }
+
+                dtFecha.Value = fechaLocal;
+                idodt = (int)tabla.Rows[0]["idodt"];
+                if (proceso != "")
+                {
+                    btnAprobar.Visible = true;
+                }
                 if (txtODT.Text != "")
                 {
                     this.ordentrabajo = (int)tabla.Rows[0]["ordentrabajo"];
@@ -191,13 +224,16 @@ namespace MIS.Vistas.Laboratorio
             if ((int)cbMetrologo.SelectedValue > 0)
             {
                 metrologo = (int)cbMetrologo.SelectedValue;
-            } else
+            }
+            else
             {
                 MessageBox.Show("Es obligatorio la selección del metrólogo");
                 return;
             }
             List<int> ids = new List<int>();
             List<string> observaciones = new List<string>();
+            DateTime fecha = dtFecha.Value.Date;
+            string fechaguardar = fecha.ToString("yyyy-MM-dd HH:mm:ss");
             foreach (DataGridViewRow row in tablaDetalle.Rows)
             {
                 int id = Convert.ToInt32(row.Cells["id"].Value);
@@ -206,13 +242,13 @@ namespace MIS.Vistas.Laboratorio
                 observaciones.Add(observacion);
             }
             OrdenTrabajoRepository guardar = new OrdenTrabajoRepository();
-            ordentrabajo = await guardar.Guardar(ids, observaciones, ordentrabajo, "", metrologo);
+            ordentrabajo = await guardar.Guardar(ids, observaciones, ordentrabajo, "", metrologo, fechaguardar);
             if (ordentrabajo > 0)
             {
                 txtODT.Text = ordentrabajo.ToString();
                 btnImprimir.Visible = true;
             }
-            
+
         }
 
         private async void btnImprimir_Click(object sender, EventArgs e)
@@ -225,6 +261,20 @@ namespace MIS.Vistas.Laboratorio
             else
             {
                 MessageBox.Show("No se ha cargado el número de documento");
+            }
+        }
+
+        private void btnAprobar_Click(object sender, EventArgs e)
+        {
+            if (idodt > 0) 
+            {
+                using (FormAprobarODT form = new FormAprobarODT(idodt))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        Buscar(inspeccion, ordentrabajo);
+                    }
+                }
             }
         }
     }

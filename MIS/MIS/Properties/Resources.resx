@@ -130,6 +130,12 @@
   <data name="LogoCuadrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoCuadrado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="enviardocumento64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enviardocumento641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mensaje32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mensaje32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maximizar-ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximizar-ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,6 +147,9 @@
   </data>
   <data name="interrogacion64azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interrogacion64azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documentoborrar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documentoborrar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="captura64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\captura64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,9 +171,6 @@
   </data>
   <data name="cancelar32rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar32rojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="camara64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\camara64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logistica32blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logistica32blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +202,8 @@
   <data name="guardar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guardar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mensaje32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mensaje32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="camara64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camara64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Comercial32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Comercial32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +259,7 @@
   <data name="LogoCircular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogoCircular1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="documentoborrar64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documentoborrar64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="correo64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correo64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

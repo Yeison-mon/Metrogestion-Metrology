@@ -1,9 +1,7 @@
 ﻿using MIS.Helpers;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -100,7 +98,6 @@ namespace MIS.Modelos.Registros
         {
             try
             {
-                // Obtener la recepción del primer ingreso de la lista
                 int firstId = ids.First();
                 string getReceptionQuery = $"SELECT idrecepcion FROM recepcion_detalle WHERE id = {firstId}";
                 object receptionResult = await dbHelper.ExecuteScalarAsync(getReceptionQuery);
@@ -115,7 +112,6 @@ namespace MIS.Modelos.Registros
 
                 foreach (int id in ids)
                 {
-                    // Eliminar el ingreso solo si pertenece a la misma recepción
                     string deleteQuery = $"DELETE FROM recepcion_detalle WHERE id = {id} AND idrecepcion = {receptionId}";
                     int result = await Task.Run(() => dbHelper.ExecuteNonQuery(deleteQuery));
 
@@ -622,7 +618,7 @@ namespace MIS.Modelos.Registros
                     string query = $@"INSERT INTO recepcion_detalle (renglon, ingreso, idusuario, serie, con_serie, fechaing, idrecepcion, idcliente, idequipo, idmarca, idmodelo, idintervalo1, idintervalo2, idmagnitud, ubicacion, material, accesorios, observacion, idtipoindicacion, tipo_servicio)
                             SELECT
                                 COALESCE((SELECT MAX(renglon) FROM recepcion_detalle WHERE idrecepcion = (SELECT idrecepcion FROM recepcion_detalle WHERE id = {id})), 0) + 1 as renglon,
-                                {numeroingreso}, {FG.UserId}, '{serie}', {serie.Length>0}, NOW(), idrecepcion, idcliente, idequipo, idmarca, idmodelo, idintervalo1, idintervalo2, idmagnitud, ubicacion, material, accesorios, observacion, idtipoindicacion, tipo_servicio
+                                {numeroingreso}, {FG.UserId}, '', false, NOW(), idrecepcion, idcliente, idequipo, idmarca, idmodelo, idintervalo1, idintervalo2, idmagnitud, ubicacion, material, accesorios, observacion, idtipoindicacion, tipo_servicio
                             FROM recepcion_detalle
                             WHERE id = {id};";
                     string updatedontador = $"update contador set ingreso = {numeroingreso} where id = 1;";
@@ -765,15 +761,13 @@ namespace MIS.Modelos.Registros
             {
                 if (estado == "Inspeccionado")
                 {
-                    where += $"where i.estado = 'Inspeccionado'";
+                    where += $"where i.estado = 'Inspeccionado' and rd.cotizado = 0";
                     tipoestado = "i.estado";
                 } else
                 {
-                    where += $"where co.estado = '{estado}'";
+                    where += $"where co.estado = '{estado}' and rd.cotizado = 0";
                     tipoestado = "co.estado";
                 }
-                
-                
             }
             if (tipo == "ODT")
             {
@@ -785,11 +779,16 @@ namespace MIS.Modelos.Registros
                 where += $"where o.estado = 'Registrado' and pd.idingreso isnull and o.idusuorden = {FG.UserId}";
                 tipoestado = "o.estado";
             }
+            if (tipo == "Devolucion")
+            {
+                where += "where coalesce(eo.idodt,0) > 0 and coalesce(eo.aprobado, 0) > 0 and (c.convenio = 1 or co.factura > 0)";
+            }
             if (idcliente > 0)
             {
                 where += $" and r.idcliente = {idcliente}";
 
             }
+            
             
 
             string query = $@"
@@ -809,10 +808,10 @@ namespace MIS.Modelos.Registros
                         left join ordentrabajo o on o.id = od.idorden 
                         left join procesofinal_detalle pd on pd.idingreso = rd.id
                         left join procesosfinales pf on pf.id = pd.idprocesofinal
+                        left join estado_odt eo on eo.idodt = o.id
                     {where} and rd.inactivo = 0
                     group by r.id, r.recepcion, c.nombrecompleto, c.documento, r.fecha, ru.nombrecompleto, r.observacion, i.inspeccion, r.idcliente, r.estado, i.estado, co.estado, o.estado
                     order by r.recepcion desc";
-
             DataTable dataTable = await dbHelper.ExecuteQueryAsync(query);
             if (dataTable == null)
             {

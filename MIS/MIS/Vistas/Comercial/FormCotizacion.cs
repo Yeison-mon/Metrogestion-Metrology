@@ -23,7 +23,7 @@ namespace MIS.Vistas.Comercial
                 MouseEventArgs me = e as MouseEventArgs;
                 Point localMousePosition = btnAdjuntar.PointToClient(Cursor.Position);
                 cmsAdjuntos.Show(btnAdjuntar, localMousePosition);
-                
+
             };
             tablaDetalle.CellMouseDown += (sender, e) =>
             {
@@ -162,7 +162,7 @@ namespace MIS.Vistas.Comercial
                 }
             }
         }
-        private async void ImportarRecepcion(int id) 
+        private async void ImportarRecepcion(int id)
         {
             CotizacionRepository importar = new CotizacionRepository();
             bool importado = await importar.ImportarRecepcion(id, idcotizacion);
@@ -221,7 +221,7 @@ namespace MIS.Vistas.Comercial
                 limpiar();
             }
 
-                
+
         }
 
         private void txtCotizacion_TextChanged(object sender, EventArgs e)
@@ -235,7 +235,7 @@ namespace MIS.Vistas.Comercial
             }
         }
 
-       
+
         private async void Buscar(int cotizacion, string anio)
         {
             CotizacionRepository buscar = new CotizacionRepository();
@@ -250,7 +250,7 @@ namespace MIS.Vistas.Comercial
                     txtAnio.Text = tabla.Rows[0]["anio"].ToString();
                     txtEstado.Text = tabla.Rows[0]["estado"].ToString();
                     int idsede = Convert.ToInt32(tabla.Rows[0]["idsede"]);
-                    int idcontacto= Convert.ToInt32(tabla.Rows[0]["idcontacto"]);
+                    int idcontacto = Convert.ToInt32(tabla.Rows[0]["idcontacto"]);
                     BuscarCliente(idcliente, "", idsede, idcontacto);
                     btnImprimir.Visible = true;
                     btnAdjuntar.Visible = true;
@@ -270,7 +270,15 @@ namespace MIS.Vistas.Comercial
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            if (txtCotizacion.Text == "")
+            {
+                MessageBox.Show("Proporcione un numero de cotización");
+                return;
+            }
+            else
+            {
+                this.cotizacion = Convert.ToInt32(txtCotizacion.Text);
+            }
             List<int> ids = new List<int>();
             int idsede = 0;
             int idcontacto = 0;
@@ -288,7 +296,8 @@ namespace MIS.Vistas.Comercial
                 ids.Add(id);
             }
             CotizacionRepository guardar = new CotizacionRepository();
-            int cotizacion = await guardar.Guardar(ids, idcliente, idsede, idcontacto, this.cotizacion, "");
+
+            int cotizacion = await guardar.Guardar(ids, idcliente, idsede, idcontacto, this.cotizacion, idcotizacion, "");
             if (cotizacion > 0)
             {
                 Buscar(cotizacion, txtAnio.Text);
@@ -297,7 +306,7 @@ namespace MIS.Vistas.Comercial
                 btnAprobar.Visible = true;
                 btnImprimir.Visible = true;
             }
-            
+
         }
 
         private void txtCotizacion_KeyDown(object sender, KeyEventArgs e)
@@ -307,7 +316,7 @@ namespace MIS.Vistas.Comercial
                 Buscar(int.Parse(txtCotizacion.Text), txtAnio.Text);
                 e.SuppressKeyPress = true;
             }
-            
+
         }
 
         private void btnAprobar_Click(object sender, EventArgs e)
@@ -365,7 +374,7 @@ namespace MIS.Vistas.Comercial
 
         private async void VerCotizacionAdj_Click(object sender, EventArgs e)
         {
-            
+
             string tipo = "COTIZACION ADJUNTO";
 
             CotizacionRepository adjunto = new CotizacionRepository();
@@ -434,5 +443,88 @@ namespace MIS.Vistas.Comercial
                 MessageBox.Show("Archivo seleccionado: " + rutaArchivo);
             }
         }
+
+        private void AdjuntarFactura_Click(object sender, EventArgs e)
+        {
+            if (idcotizacion > 0)
+            {
+                using (FormAdjFactura form = new FormAdjFactura(idcotizacion))
+                {
+                    DialogResult result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        FG.ShowMsg("Cotizacion Facturada", "Éxito");
+                    }
+                }
+            }
+        }
+
+        private async void VerFactura_Click(object sender, EventArgs e)
+        {
+            string tipo = "COTIZACION FACTURA";
+
+            CotizacionRepository adjunto = new CotizacionRepository();
+            var (tipoArchivo, base64) = await adjunto.VerAdjunto(idcotizacion, tipo);
+
+            if (!string.IsNullOrEmpty(base64))
+            {
+                byte[] fileBytes = Convert.FromBase64String(base64);
+                string tempFilePath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.pdf");
+                File.WriteAllBytes(tempFilePath, fileBytes);
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = tempFilePath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el adjunto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAgregarItems_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AdjuntarAnexo_MouseHover(object sender, EventArgs e)
+        {
+            UpdateContextMenuStrip();
+        }
+        private async void UpdateContextMenuStrip()
+        {
+            CotizacionRepository anexos = new CotizacionRepository();
+            int adjuntos = await anexos.AnexosCotizacion(idcotizacion);
+
+            AdjuntarAnexo.DropDownItems.Clear(); // Limpiar el menú existente
+
+            if (adjuntos > 0)
+            {
+                for (int i = 1; i <= adjuntos; i++)
+                {
+                    ToolStripMenuItem adjuntoMenuItem = new ToolStripMenuItem($"Adjunto {i}");
+                    adjuntoMenuItem.DropDownItems.Add("Ver", null, VerAdjunto_Click);
+                    adjuntoMenuItem.DropDownItems.Add("Borrar", null, BorrarAdjunto_Click);
+                    AdjuntarAnexo.DropDownItems.Add(adjuntoMenuItem);
+                }
+            }
+        }
+        private void VerAdjunto_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BorrarAdjunto_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AgregarAdjunto_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
     }
 }

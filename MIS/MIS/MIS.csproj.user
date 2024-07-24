@@ -29,6 +29,9 @@
     <Compile Update="Vistas\Modales\Camara.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vistas\Modales\FormAdjFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vistas\Modales\FormAgregarDescripciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -41,10 +44,16 @@
     <Compile Update="Vistas\Modales\FormAprobarCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vistas\Modales\FormAprobarODT.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vistas\Modales\FormBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vistas\Modales\FormContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\Modales\FormCorreos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vistas\Modales\FormDuplicar.cs">
@@ -56,11 +65,19 @@
     <Compile Update="Vistas\Modales\FormSedes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vistas\Recepcion\FormDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vistas\Recepcion\FormInspeccion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Vistas\Recepcion\FormRecepcion.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

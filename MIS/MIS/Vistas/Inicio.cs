@@ -280,7 +280,7 @@ namespace MIS.Vistas
         {
             if (Application.OpenForms["FormDashboard"] == null)
                 btnDashboard.BackColor = Color.FromArgb(15, 15, 15);
-            if (Application.OpenForms["FormRecepcion"] == null || Application.OpenForms["FormInspeccion"] == null || Application.OpenForms["FormDevolucion"] == null)
+            if (Application.OpenForms["FormRecepcion"] == null || Application.OpenForms["FormDevolucion"] == null || Application.OpenForms["FormInspeccion"] == null || Application.OpenForms["FormDevolucion"] == null)
                 btnMRecepcion.BackColor = Color.FromArgb(15, 15, 15);
             if (Application.OpenForms["FormClientes"] == null)
                 btnMConfiguracion.BackColor = Color.FromArgb(15, 15, 15);
@@ -308,6 +308,8 @@ namespace MIS.Vistas
 
         private void btnSubRecep_Devolucion_Click(object sender, EventArgs e)
         {
+            AbrirFormulario<FormDevolucion>();
+            btnMRecepcion.BackColor = Color.FromArgb(50, 50, 50);
             hideSubmenu();
         }
 
